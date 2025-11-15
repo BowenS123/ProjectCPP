@@ -404,8 +404,10 @@ C:/Users/bowen/OneDrive/Documenten/ClankerFactory/mainwindow.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/bowen/OneDrive/Documenten/ClankerFactory/clankerfactory.h
+ mdp:C:/Users/bowen/OneDrive/Documenten/ClankerFactory/enemy.h
  mdp:C:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/moc_predefs.h
  mdp:C:/Users/bowen/OneDrive/Documenten/ClankerFactory/mainwindow.h
 C:/Users/bowen/OneDrive/Documenten/ClankerFactory/clankerfactory.cpp
 C:/Users/bowen/OneDrive/Documenten/ClankerFactory/mainwindow.cpp
  uic:./ui_mainwindow.h
+C:/Users/bowen/OneDrive/Documenten/ClankerFactory/enemy.h

@@ -28,21 +28,24 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QLabel *scoutCountLabel;
-    QPushButton *produceButton;
-    QLabel *workerCountLabel;
-    QLabel *resourcesLabel;
-    QProgressBar *factoryHealthBar;
-    QTextEdit *logTextEdit;
-    QComboBox *clankerTypeComboBox;
     QPushButton *damageButton;
     QPushButton *pauseButton;
-    QPushButton *produceBatteryButton;
-    QProgressBar *workerEnergyBar;
+    QPushButton *produceButton;
     QProgressBar *scoutEnergyBar;
+    QProgressBar *workerEnergyBar;
+    QProgressBar *factoryHealthBar;
+    QTextEdit *logTextEdit;
+    QLabel *resourcesLabel;
+    QLabel *scoutCountLabel;
+    QPushButton *produceBatteryButton;
+    QLabel *enemyCountLabel;
+    QComboBox *clankerTypeComboBox;
+    QLabel *workerCountLabel;
     QLabel *batteryLabel;
+    QProgressBar *defenderEnergyBar;
+    QLabel *defenderCountLabel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,45 +56,72 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(70, 10, 601, 344));
-        gridLayout = new QGridLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(70, 10, 601, 344));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        scoutCountLabel = new QLabel(widget);
-        scoutCountLabel->setObjectName("scoutCountLabel");
+        damageButton = new QPushButton(layoutWidget);
+        damageButton->setObjectName("damageButton");
 
-        gridLayout->addWidget(scoutCountLabel, 2, 3, 1, 1);
+        gridLayout->addWidget(damageButton, 4, 0, 1, 1);
 
-        produceButton = new QPushButton(widget);
+        pauseButton = new QPushButton(layoutWidget);
+        pauseButton->setObjectName("pauseButton");
+
+        gridLayout->addWidget(pauseButton, 1, 0, 1, 1);
+
+        produceButton = new QPushButton(layoutWidget);
         produceButton->setObjectName("produceButton");
 
         gridLayout->addWidget(produceButton, 2, 0, 1, 1);
 
-        workerCountLabel = new QLabel(widget);
-        workerCountLabel->setObjectName("workerCountLabel");
+        scoutEnergyBar = new QProgressBar(layoutWidget);
+        scoutEnergyBar->setObjectName("scoutEnergyBar");
+        scoutEnergyBar->setValue(24);
 
-        gridLayout->addWidget(workerCountLabel, 2, 2, 1, 1);
+        gridLayout->addWidget(scoutEnergyBar, 3, 3, 1, 1);
 
-        resourcesLabel = new QLabel(widget);
-        resourcesLabel->setObjectName("resourcesLabel");
+        workerEnergyBar = new QProgressBar(layoutWidget);
+        workerEnergyBar->setObjectName("workerEnergyBar");
+        workerEnergyBar->setValue(24);
 
-        gridLayout->addWidget(resourcesLabel, 0, 1, 1, 1);
+        gridLayout->addWidget(workerEnergyBar, 3, 2, 1, 1);
 
-        factoryHealthBar = new QProgressBar(widget);
+        factoryHealthBar = new QProgressBar(layoutWidget);
         factoryHealthBar->setObjectName("factoryHealthBar");
         factoryHealthBar->setMaximum(500);
         factoryHealthBar->setValue(500);
 
         gridLayout->addWidget(factoryHealthBar, 0, 0, 1, 1);
 
-        logTextEdit = new QTextEdit(widget);
+        logTextEdit = new QTextEdit(layoutWidget);
         logTextEdit->setObjectName("logTextEdit");
 
         gridLayout->addWidget(logTextEdit, 5, 0, 1, 1);
 
-        clankerTypeComboBox = new QComboBox(widget);
+        resourcesLabel = new QLabel(layoutWidget);
+        resourcesLabel->setObjectName("resourcesLabel");
+
+        gridLayout->addWidget(resourcesLabel, 0, 1, 1, 1);
+
+        scoutCountLabel = new QLabel(layoutWidget);
+        scoutCountLabel->setObjectName("scoutCountLabel");
+
+        gridLayout->addWidget(scoutCountLabel, 2, 3, 1, 1);
+
+        produceBatteryButton = new QPushButton(layoutWidget);
+        produceBatteryButton->setObjectName("produceBatteryButton");
+
+        gridLayout->addWidget(produceBatteryButton, 3, 0, 1, 1);
+
+        enemyCountLabel = new QLabel(layoutWidget);
+        enemyCountLabel->setObjectName("enemyCountLabel");
+
+        gridLayout->addWidget(enemyCountLabel, 4, 2, 1, 1);
+
+        clankerTypeComboBox = new QComboBox(layoutWidget);
         clankerTypeComboBox->addItem(QString());
         clankerTypeComboBox->addItem(QString());
         clankerTypeComboBox->addItem(QString());
@@ -99,37 +129,26 @@ public:
 
         gridLayout->addWidget(clankerTypeComboBox, 2, 1, 1, 1);
 
-        damageButton = new QPushButton(widget);
-        damageButton->setObjectName("damageButton");
+        workerCountLabel = new QLabel(layoutWidget);
+        workerCountLabel->setObjectName("workerCountLabel");
 
-        gridLayout->addWidget(damageButton, 4, 0, 1, 1);
+        gridLayout->addWidget(workerCountLabel, 2, 2, 1, 1);
 
-        pauseButton = new QPushButton(widget);
-        pauseButton->setObjectName("pauseButton");
-
-        gridLayout->addWidget(pauseButton, 1, 0, 1, 1);
-
-        produceBatteryButton = new QPushButton(widget);
-        produceBatteryButton->setObjectName("produceBatteryButton");
-
-        gridLayout->addWidget(produceBatteryButton, 3, 0, 1, 1);
-
-        workerEnergyBar = new QProgressBar(widget);
-        workerEnergyBar->setObjectName("workerEnergyBar");
-        workerEnergyBar->setValue(24);
-
-        gridLayout->addWidget(workerEnergyBar, 3, 2, 1, 1);
-
-        scoutEnergyBar = new QProgressBar(widget);
-        scoutEnergyBar->setObjectName("scoutEnergyBar");
-        scoutEnergyBar->setValue(24);
-
-        gridLayout->addWidget(scoutEnergyBar, 3, 3, 1, 1);
-
-        batteryLabel = new QLabel(widget);
+        batteryLabel = new QLabel(layoutWidget);
         batteryLabel->setObjectName("batteryLabel");
 
         gridLayout->addWidget(batteryLabel, 0, 2, 1, 1);
+
+        defenderEnergyBar = new QProgressBar(layoutWidget);
+        defenderEnergyBar->setObjectName("defenderEnergyBar");
+        defenderEnergyBar->setValue(24);
+
+        gridLayout->addWidget(defenderEnergyBar, 3, 4, 1, 1);
+
+        defenderCountLabel = new QLabel(layoutWidget);
+        defenderCountLabel->setObjectName("defenderCountLabel");
+
+        gridLayout->addWidget(defenderCountLabel, 2, 4, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -148,18 +167,20 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        scoutCountLabel->setText(QCoreApplication::translate("MainWindow", "scoutCount", nullptr));
+        damageButton->setText(QCoreApplication::translate("MainWindow", "Damage", nullptr));
+        pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
         produceButton->setText(QCoreApplication::translate("MainWindow", "Produce Clanker", nullptr));
-        workerCountLabel->setText(QCoreApplication::translate("MainWindow", "workerCount", nullptr));
         resourcesLabel->setText(QCoreApplication::translate("MainWindow", "Resources", nullptr));
+        scoutCountLabel->setText(QCoreApplication::translate("MainWindow", "scoutCount", nullptr));
+        produceBatteryButton->setText(QCoreApplication::translate("MainWindow", "Produce Battery", nullptr));
+        enemyCountLabel->setText(QCoreApplication::translate("MainWindow", "enemyCount", nullptr));
         clankerTypeComboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Worker", nullptr));
         clankerTypeComboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Scout", nullptr));
         clankerTypeComboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Defender", nullptr));
 
-        damageButton->setText(QCoreApplication::translate("MainWindow", "Damage", nullptr));
-        pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
-        produceBatteryButton->setText(QCoreApplication::translate("MainWindow", "Produce Battery", nullptr));
+        workerCountLabel->setText(QCoreApplication::translate("MainWindow", "workerCount", nullptr));
         batteryLabel->setText(QCoreApplication::translate("MainWindow", "Battery", nullptr));
+        defenderCountLabel->setText(QCoreApplication::translate("MainWindow", "defenderCount", nullptr));
     } // retranslateUi
 
 };

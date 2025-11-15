@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include "ClankerFactory.h"
+#include "Enemy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,11 +26,15 @@ private slots:
     void on_produceBatteryButton_clicked();
     void on_damageButton_clicked();
     void gameLoop();
+    void spawnEnemy();
 
 private:
     Ui::MainWindow *ui;
     ClankerSim::Factory factory{"My Factory"};
     QTimer* gameTimer;
+    QTimer* enemySpawnTimer;
+    std::vector<Enemy> enemies;
+    int enemySpawnCount = 0;
 
     void updateUI();
 };
