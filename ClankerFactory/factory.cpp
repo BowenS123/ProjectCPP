@@ -188,9 +188,13 @@ std::string Factory::defendAgainst(Enemy& enemy) {
     int workerCount = 0;
     for (auto* clanker : clankers) {
         if (auto* defender = dynamic_cast<DefenderClanker*>(clanker)) {
-            ++defenderCount;
+            if (defender->getEnergy() > 0) {
+                ++defenderCount;
+            }
         } else if (auto* worker = dynamic_cast<WorkerClanker*>(clanker)) {
-            ++workerCount;
+            if (worker->getEnergy() > 0) {
+                ++workerCount;
+            }
         }
     }
     if (const Clanker* first = getFirstActiveClanker()) {

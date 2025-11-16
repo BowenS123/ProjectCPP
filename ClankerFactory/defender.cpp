@@ -20,9 +20,17 @@ void DefenderClanker::work() {
         return;
     }
 
-    energy -= 10;
     if (energy <= 20) {
         recharge(*factoryRef);
+    }
+
+    if (energy <= 0) {
+        return;
+    }
+
+    energy -= 10;
+    if (energy < 0) {
+        energy = 0;
     }
 
     std::cout << getName() << " holds the defensive line\n";

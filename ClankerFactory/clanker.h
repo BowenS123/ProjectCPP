@@ -15,6 +15,9 @@ public:
     virtual ~Clanker() = default;
 
     int getEnergy() const noexcept;
+    bool hasEnergy() const noexcept {
+        return energy > 0;
+    }
     void recharge(Factory& factory);
     void setOwner(Factory* factory) {
         owner = factory;

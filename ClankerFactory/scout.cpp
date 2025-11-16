@@ -26,10 +26,16 @@ void ScoutClanker::work() {
 
     if (energy <= 10) {
         recharge(*factoryRef);
+    }
+
+    if (energy <= 0) {
         return;
     }
 
     energy -= 5;
+    if (energy < 0) {
+        energy = 0;
+    }
     factoryRef->addResources(10);
 }
 

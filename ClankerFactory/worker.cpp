@@ -26,10 +26,15 @@ void WorkerClanker::work() {
 
     if (energy <= 20) {
         recharge(*factoryRef);
+    }
+    if (energy <= 0) {
         return;
     }
 
     energy -= 5;
+    if (energy < 0) {
+        energy = 0;
+    }
 
     if (factoryRef->getResources() >= 10 && factoryRef->getHealth() < Factory::MAX_HEALTH) {
         factoryRef->addResources(-10);
