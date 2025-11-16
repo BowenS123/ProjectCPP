@@ -73,6 +73,54 @@ build CMakeFiles/ClankerFactory.dir/mainwindow.cpp.obj: CXX_COMPILER__ClankerFac
   OBJECT_DIR = CMakeFiles\ClankerFactory.dir
   OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
 
+build CMakeFiles/ClankerFactory.dir/clanker.cpp.obj: CXX_COMPILER__ClankerFactory_unscanned_Debug C$:/Users/bowen/OneDrive/Documenten/ClankerFactory/clanker.cpp || cmake_object_order_depends_target_ClankerFactory
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ClankerFactory.dir\clanker.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ClankerFactory.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
+
+build CMakeFiles/ClankerFactory.dir/worker.cpp.obj: CXX_COMPILER__ClankerFactory_unscanned_Debug C$:/Users/bowen/OneDrive/Documenten/ClankerFactory/worker.cpp || cmake_object_order_depends_target_ClankerFactory
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ClankerFactory.dir\worker.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ClankerFactory.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
+
+build CMakeFiles/ClankerFactory.dir/scout.cpp.obj: CXX_COMPILER__ClankerFactory_unscanned_Debug C$:/Users/bowen/OneDrive/Documenten/ClankerFactory/scout.cpp || cmake_object_order_depends_target_ClankerFactory
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ClankerFactory.dir\scout.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ClankerFactory.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
+
+build CMakeFiles/ClankerFactory.dir/defender.cpp.obj: CXX_COMPILER__ClankerFactory_unscanned_Debug C$:/Users/bowen/OneDrive/Documenten/ClankerFactory/defender.cpp || cmake_object_order_depends_target_ClankerFactory
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ClankerFactory.dir\defender.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ClankerFactory.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
+
+build CMakeFiles/ClankerFactory.dir/factory.cpp.obj: CXX_COMPILER__ClankerFactory_unscanned_Debug C$:/Users/bowen/OneDrive/Documenten/ClankerFactory/factory.cpp || cmake_object_order_depends_target_ClankerFactory
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ClankerFactory.dir\factory.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ClankerFactory.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
+
+build CMakeFiles/ClankerFactory.dir/enemy.cpp.obj: CXX_COMPILER__ClankerFactory_unscanned_Debug C$:/Users/bowen/OneDrive/Documenten/ClankerFactory/enemy.cpp || cmake_object_order_depends_target_ClankerFactory
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ClankerFactory.dir\enemy.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/include -isystem C:/Qt/6.10.0/mingw_64/include/QtCore -isystem C:/Qt/6.10.0/mingw_64/include -isystem C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\ClankerFactory.dir
+  OBJECT_FILE_DIR = CMakeFiles\ClankerFactory.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ClankerFactory
@@ -81,7 +129,7 @@ build CMakeFiles/ClankerFactory.dir/mainwindow.cpp.obj: CXX_COMPILER__ClankerFac
 #############################################
 # Link the executable ClankerFactory.exe
 
-build ClankerFactory.exe: CXX_EXECUTABLE_LINKER__ClankerFactory_Debug CMakeFiles/ClankerFactory.dir/ClankerFactory_autogen/mocs_compilation.cpp.obj CMakeFiles/ClankerFactory.dir/main.cpp.obj CMakeFiles/ClankerFactory.dir/mainwindow.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || ClankerFactory_autogen ClankerFactory_autogen_timestamp_deps
+build ClankerFactory.exe: CXX_EXECUTABLE_LINKER__ClankerFactory_Debug CMakeFiles/ClankerFactory.dir/ClankerFactory_autogen/mocs_compilation.cpp.obj CMakeFiles/ClankerFactory.dir/main.cpp.obj CMakeFiles/ClankerFactory.dir/mainwindow.cpp.obj CMakeFiles/ClankerFactory.dir/clanker.cpp.obj CMakeFiles/ClankerFactory.dir/worker.cpp.obj CMakeFiles/ClankerFactory.dir/scout.cpp.obj CMakeFiles/ClankerFactory.dir/defender.cpp.obj CMakeFiles/ClankerFactory.dir/factory.cpp.obj CMakeFiles/ClankerFactory.dir/enemy.cpp.obj | C$:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a || ClankerFactory_autogen ClankerFactory_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.10.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

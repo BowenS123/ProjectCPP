@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->factoryHealthBar->setMinimum(0);
     ui->factoryHealthBar->setMaximum(ClankerSim::Factory::MAX_HEALTH);
-    ui->factoryHealthBar->setValue(factory.health);
+    ui->factoryHealthBar->setValue(factory.getHealth());
 
     ui->workerEnergyBar->setMinimum(0);
     ui->workerEnergyBar->setMaximum(100);
@@ -55,21 +55,21 @@ void MainWindow::on_produceButton_clicked()
     if (type == "Worker" && factory.getResources() >= 20) {
         factory.addResources(-20);
         auto w = new ClankerSim::WorkerClanker("Worker", 1);
-        w->setFactory(&factory);
+        w->setFactory(factory);
         factory.produceClanker(w);
         ui->logTextEdit->append("Produced Worker Clanker!");
     }
     else if (type == "Scout" && factory.getResources() >= 30) {
         factory.addResources(-30);
         auto s = new ClankerSim::ScoutClanker("Scout", 2);
-        s->setFactory(&factory);
+        s->setFactory(factory);
         factory.produceClanker(s);
         ui->logTextEdit->append("Produced Scout Clanker!");
     }
     else if (type == "Defender" && factory.getResources() >= 40) {
         factory.addResources(-40);
         auto d = new ClankerSim::DefenderClanker("Defender", 3);
-        d->setFactory(&factory);
+        d->setFactory(factory);
         factory.produceClanker(d);
         ui->logTextEdit->append("Produced Defender Clanker!");
     } else {
@@ -99,36 +99,18 @@ void MainWindow::gameLoop()
 {
     factory.update(1.0f);
 
-    for (Enemy &e : enemies) {
-        if (!e.alive) continue;
-
-        int defenderCount = 0;
-        int workerCount = 0;
-
-        for (auto* c : factory.getClankers()) {
-            if (dynamic_cast<ClankerSim::DefenderClanker*>(c)) {
-                defenderCount++;
-                }
-            else if (dynamic_cast<ClankerSim::WorkerClanker*>(c)) {
-                workerCount++;
-            }
+    for (ClankerSim::Enemy &enemy : enemies) {
+        if (!enemy.isAlive()) {
+            continue;
         }
-
-        if (defenderCount > 0) {
-            e.takeDamage(defenderCount * 10);
-            ui->logTextEdit->append("Defenders attack the enemy!");
-        }
-        else if (workerCount > 0) {
-            e.takeDamage(workerCount * 5);
-            ui->logTextEdit->append("Workers attack the enemy!");
-        }
-        else {
-            factory.takeDamage(e.attack);
-            ui->logTextEdit->append("Enemy hits the factory!");
+        const std::string& outcome = factory.defendAgainst(enemy);
+        ui->logTextEdit->append(QString::fromStdString(outcome));
+        if (!enemy.isAlive()) {
+            ui->logTextEdit->append(QString::fromStdString(enemy.getName() + " defeated!"));
         }
     }
 
-    enemies.erase(std::remove_if(enemies.begin(), enemies.end(), [](Enemy &e){ return !e.alive; }), enemies.end());
+    enemies.erase(std::remove_if(enemies.begin(), enemies.end(), [](ClankerSim::Enemy &enemy){ return !enemy.isAlive(); }), enemies.end());
 
     updateUI();
 }
@@ -140,7 +122,7 @@ void MainWindow::spawnEnemy()
     int hp = 40 + enemySpawnCount * 5;
     int attack = 5 + enemySpawnCount / 2;
 
-    enemies.push_back(Enemy(hp, attack));
+    enemies.emplace_back(hp, attack);
     ui->logTextEdit->append(QString("An enemy approaches! HP: %1, ATK: %2").arg(hp).arg(attack));
 
     updateUI();
@@ -148,15 +130,16 @@ void MainWindow::spawnEnemy()
 
 void MainWindow::updateUI()
 {
-    ui->factoryHealthBar->setValue(factory.health);
+    ui->factoryHealthBar->setValue(factory.getHealth());
     ui->resourcesLabel->setText(QString("Resources: %1").arg(factory.getResources()));
     ui->batteryLabel->setText(QString("Batteries: %1").arg(factory.getBatteries()));
-    ui->enemyCountLabel->setText(QString("Enemies: %1").arg(enemies.size()));
+    ui->enemyCountLabel->setText(QString("Enemies: %1").arg(static_cast<int>(enemies.size())));
 
     int workerCount = 0, scoutCount = 0, defenderCount = 0;
     int workerEnergy = 0, scoutEnergy = 0, defenderEnergy = 0;
 
-    for (auto* c : factory.getClankers()) {
+    const std::vector<ClankerSim::Clanker*>& activeClankers = factory.getClankers();
+    for (auto* c : activeClankers) {
         if (auto w = dynamic_cast<ClankerSim::WorkerClanker*>(c)) {
             workerCount++;
             workerEnergy += w->getEnergy();
@@ -181,6 +164,10 @@ void MainWindow::updateUI()
     ui->scoutEnergyBar->setValue(scoutEnergy);
     ui->defenderEnergyBar->setMaximum(defenderCount * 100);
     ui->defenderEnergyBar->setValue(defenderEnergy);
+
+    if (enemySpawnCount % 3 == 0) {
+        ClankerSim::FactoryInspector::dump(factory);
+    }
 
     if (factory.isDestroyed()) {
         ui->logTextEdit->append("GAME OVER! Factory destroyed!");

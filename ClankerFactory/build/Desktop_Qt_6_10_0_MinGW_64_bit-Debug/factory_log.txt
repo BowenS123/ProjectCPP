@@ -1,0 +1,64 @@
+[1763331267324597300] Factory constructed
+[1763331270962521200] Produced clanker: Scout
+[1763331273004755300] Produced clanker: Defender
+[1763331274322764800] First responder: Scout
+[1763331274322767500] Defenders retaliated
+[1763331275330662900] First responder: Scout
+[1763331275330666000] Defenders retaliated
+[1763331275590177200] Produced clanker: Scout
+[1763331276323947200] First responder: Scout
+[1763331276323950100] Defenders retaliated
+[1763331276692716900] Produced clanker: Worker
+[1763331277335875300] Factory repaired by 15
+[1763331277335884700] First responder: Scout
+[1763331277335885300] Defenders retaliated
+[1763331278322345500] Factory repaired by 15
+[1763331278322354700] First responder: Scout
+[1763331278322355400] Defenders retaliated
+[1763331279327365400] Factory repaired by 15
+[1763331280329318700] Factory repaired by 15
+[1763331280473695100] Produced 1 battery
+[1763331281349645200] Factory repaired by 15
+[1763331281349651400] First responder: Scout
+[1763331281349652000] Defenders retaliated
+[1763331282353486900] Factory repaired by 15
+[1763331282353495900] First responder: Scout
+[1763331282353496300] Defenders retaliated
+[1763331283191154100] Produced 1 battery
+[1763331283356502500] Factory repaired by 15
+[1763331283356508200] First responder: Scout
+[1763331283356508600] Defenders retaliated
+[1763331284365513000] Factory repaired by 15
+[1763331284365520900] First responder: Scout
+[1763331284365521400] Defenders retaliated
+[1763331285361475200] Factory repaired by 15
+[1763331285361483100] First responder: Scout
+[1763331285361483600] Defenders retaliated
+[1763331286355570800] Factory repaired by 15
+[1763331287378213900] Factory repaired by 15
+[1763331288391676300] Factory repaired by 15
+[1763331288391683300] First responder: Scout
+[1763331288391683900] Defenders retaliated
+[1763331289387342200] First responder: Scout
+[1763331289387346500] Defenders retaliated
+[1763331290385069400] First responder: Scout
+[1763331290385072800] Defenders retaliated
+[1763331291394165700] First responder: Scout
+[1763331291394169900] Defenders retaliated
+[1763331291984211800] Produced 1 battery
+[1763331292391524000] First responder: Scout
+[1763331292391528000] Defenders retaliated
+[1763331293387359100] Factory repaired by 15
+[1763331293387369800] First responder: Scout
+[1763331293387370500] Defenders retaliated
+[1763331294385160100] Factory repaired by 15
+[1763331295396569600] Factory repaired by 15
+[1763331295396578100] First responder: Scout
+[1763331295396578800] Defenders retaliated
+[1763331296393274700] Factory repaired by 15
+[1763331296393282900] First responder: Scout
+[1763331296393283200] Defenders retaliated
+[1763331297384530500] Factory repaired by 15
+[1763331297384538700] First responder: Scout
+[1763331297384539400] Defenders retaliated
+[1763331298210496600] Factory destroyed

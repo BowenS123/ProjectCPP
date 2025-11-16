@@ -17,14 +17,28 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+    clanker.cpp
+    worker.cpp
+    scout.cpp
+    defender.cpp
+    factory.cpp
+    enemy.cpp
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ClankerFactory
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        clankerfactory.h
-        enemy.h
+
+    entity.h
+    clanker.h
+    worker.h
+    scout.h
+    defender.h
+    factory.h
+    enemy.h
+    util.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ClankerFactory APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

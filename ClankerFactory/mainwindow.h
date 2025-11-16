@@ -1,10 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "factory.h"
+#include "worker.h"
+#include "scout.h"
+#include "defender.h"
+#include "enemy.h"
+
 #include <QMainWindow>
 #include <QTimer>
-#include "ClankerFactory.h"
-#include "Enemy.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,7 +37,7 @@ private:
     ClankerSim::Factory factory{"My Factory"};
     QTimer* gameTimer;
     QTimer* enemySpawnTimer;
-    std::vector<Enemy> enemies;
+    std::vector<ClankerSim::Enemy> enemies;
     int enemySpawnCount = 0;
 
     void updateUI();

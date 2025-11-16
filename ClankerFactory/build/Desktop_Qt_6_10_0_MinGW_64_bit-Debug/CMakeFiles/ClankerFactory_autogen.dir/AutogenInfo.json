@@ -323,9 +323,15 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/clankerfactory.h",
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/clanker.h",
 			"MU",
-			"EWIEGA46WW/moc_clankerfactory.cpp",
+			"EWIEGA46WW/moc_clanker.cpp",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/defender.h",
+			"MU",
+			"EWIEGA46WW/moc_defender.cpp",
 			null
 		],
 		[
@@ -335,9 +341,39 @@
 			null
 		],
 		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/entity.h",
+			"MU",
+			"EWIEGA46WW/moc_entity.cpp",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/factory.h",
+			"MU",
+			"EWIEGA46WW/moc_factory.cpp",
+			null
+		],
+		[
 			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/scout.h",
+			"MU",
+			"EWIEGA46WW/moc_scout.cpp",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/util.h",
+			"MU",
+			"EWIEGA46WW/moc_util.cpp",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/worker.h",
+			"MU",
+			"EWIEGA46WW/moc_worker.cpp",
 			null
 		]
 	],
@@ -413,12 +449,42 @@
 	"SOURCES" : 
 	[
 		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/clanker.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/defender.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/enemy.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/factory.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/main.cpp",
 			"MU",
 			null
 		],
 		[
 			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/scout.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/worker.cpp",
 			"MU",
 			null
 		]
