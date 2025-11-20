@@ -3,17 +3,7 @@
 
 namespace ClankerSim {
 
-ScoutClanker::ScoutClanker()
-    : ScoutClanker("Scout", 0) {}
-
-ScoutClanker::ScoutClanker(std::string name, unsigned char id)
-    : Clanker(std::move(name), id, 80, 60), factoryRef(nullptr) {}
-
-ScoutClanker::ScoutClanker(unsigned char id)
-    : ScoutClanker("Scout", id) {}
-
-ScoutClanker::ScoutClanker(const ScoutClanker& other)
-    : Clanker(other), factoryRef(other.factoryRef) {}
+ScoutClanker::ScoutClanker(std::string name, unsigned char id) : Clanker(std::move(name), id, BASE_HP, BASE_ENERGY), factoryRef(nullptr) {}
 
 void ScoutClanker::setFactory(Factory& factory) {
     factoryRef = &factory;
@@ -24,7 +14,7 @@ void ScoutClanker::work() {
         return;
     }
 
-    if (energy <= 10) {
+    if (energy <= 15) {
         recharge(*factoryRef);
     }
 
@@ -36,6 +26,7 @@ void ScoutClanker::work() {
     if (energy < 0) {
         energy = 0;
     }
+
     factoryRef->addResources(10);
 }
 

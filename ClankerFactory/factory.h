@@ -4,86 +4,75 @@
 #include "clanker.h"
 #include "defender.h"
 #include "scout.h"
-#include "util.h"
 #include "worker.h"
 
-#include <vector>
-#include <string>
-#include <mutex>
-#include <thread>
-#include <iostream>
 #include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
 
 namespace ClankerSim {
 
 class Enemy;
 
-class FactoryInspector;
-
-class Factory : public Entity {
+// Coordinates clankers, resources, and defenses for the UI.
+class Factory {
 public:
     static constexpr int MAX_HEALTH = 500;
 
     Factory();
     explicit Factory(std::string name);
-    Factory(const Factory& other);
-    ~Factory() override;
+    Factory(const Factory& other) = delete;
+    ~Factory();
 
     Factory& operator=(const Factory&) = delete;
 
+    // Production & resources
     void produceClanker(Clanker* clankerPtr);
     bool safeProduceWorker();
     bool produceBattery(int count = 1);
 
     void updateAll(float dt = 1.0f);
-    void update(float dt) override {
-        updateAll(dt);
-    }
+    void update(float dt);
 
-    void takeDamage(int dmg) {
-        Entity::takeDamage(dmg); log("Factory damaged" );
-    }
+    // Health
+    void takeDamage(int dmg);
     void repair(int hp = 10);
 
+    // Resource queries
     void addResources(int delta = 0);
-    int getResources() const noexcept;
-    const std::vector<Clanker*>& getClankers() const noexcept;
-    int getBatteries() const noexcept;
+    int getResources() const;
+    const std::vector<Clanker*>& getClankers() const;
+    int getBatteries() const;
     void addBatteries(int diff);
 
-    void startProductionThread();
-    void shutdown();
-
+    // Combat
     std::string defendAgainst(Enemy& enemy);
 
-    const std::string& getLogPath() const noexcept {
-        return logPath;
-    }
-    const Clanker* getFirstActiveClanker() const noexcept {
-        return firstAlive(clankers);
-    }
-
-    friend class FactoryInspector;
+    const std::string& getName() const;
+    unsigned char getId() const;
+    int getHealth() const;
+    bool isDestroyed() const;
+    const std::string& getLogPath() const;
+    const Clanker* getFirstActiveClanker() const;
 
 private:
+    // Persist a timestamped message so the UI can inspect activity history.
     void log(const std::string& message) const;
 
+    // Identity & overall health
+    std::string name;
+    unsigned char id;
+    int health;
+
+    // Operational state
     std::vector<Clanker*> clankers;
-    mutable std::mutex mutex;
-    bool running;
-    bool defenseAlert;
-    bool maintenanceMode;
     bool loggingEnabled;
     int resources;
     int batteryStorage;
     unsigned char nextId;
     std::string logPath;
     mutable std::ofstream logFile;
-};
-
-class FactoryInspector {
-public:
-    static void dump(const Factory& factory);
 };
 
 }

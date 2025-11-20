@@ -3,13 +3,7 @@
 
 namespace ClankerSim {
 
-DefenderClanker::DefenderClanker() : DefenderClanker("Defender", 0) {}
-
-DefenderClanker::DefenderClanker(std::string name, unsigned char id) : Clanker(std::move(name), id, 150, 100), factoryRef(nullptr) {}
-
-DefenderClanker::DefenderClanker(unsigned char id) : DefenderClanker("Defender", id) {}
-
-DefenderClanker::DefenderClanker(const DefenderClanker& other) : Clanker(other), factoryRef(other.factoryRef) {}
+DefenderClanker::DefenderClanker(std::string name, unsigned char id) : Clanker(std::move(name), id, BASE_HP, BASE_ENERGY), factoryRef(nullptr) {}
 
 void DefenderClanker::setFactory(Factory& factory) {
     factoryRef = &factory;
@@ -20,7 +14,7 @@ void DefenderClanker::work() {
         return;
     }
 
-    if (energy <= 20) {
+    if (energy <= 15) {
         recharge(*factoryRef);
     }
 

@@ -10,12 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->logTextEdit->append("Factory online. Controls ready.");
 
+    // Squad table gives a quick overview per role.
     ui->clankerTableWidget->setHorizontalHeaderLabels({"Squad", "Active Units", "Avg Energy"});
     ui->clankerTableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
     ui->clankerTableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     ui->clankerTableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui->clankerTableWidget->verticalHeader()->setVisible(false);
 
+    // Detail table shows every clanker with energy status for debugging.
     ui->clankerDetailTableWidget->setHorizontalHeaderLabels({"ID", "Name", "Class", "Energy", "Status"});
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -28,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->factoryHealthBar->setMaximum(ClankerSim::Factory::MAX_HEALTH);
     ui->factoryHealthBar->setValue(factory.getHealth());
 
+    // Timers drive the game simulation and enemy spawns.
     gameTimer = new QTimer(this);
     connect(gameTimer, &QTimer::timeout, this, &MainWindow::gameLoop);
     gameTimer->start(1000);
@@ -41,7 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    factory.shutdown();
     delete ui;
 }
 
@@ -105,6 +107,7 @@ void MainWindow::on_damageButton_clicked()
     updateUI();
 }
 
+// Main simulation tick: advance clankers and resolve combat.
 void MainWindow::gameLoop()
 {
     factory.update(1.0f);
@@ -125,6 +128,7 @@ void MainWindow::gameLoop()
     updateUI();
 }
 
+// Spawns progressively tougher enemies on a timer.
 void MainWindow::spawnEnemy()
 {
     enemySpawnCount++;
@@ -138,6 +142,7 @@ void MainWindow::spawnEnemy()
     updateUI();
 }
 
+// Push the latest simulation state into every onscreen widget.
 void MainWindow::updateUI()
 {
     ui->factoryHealthBar->setValue(factory.getHealth());
@@ -202,6 +207,7 @@ void MainWindow::updateUI()
         });
     }
 
+    // Aggregate squad view summarises force readiness.
     ui->clankerTableWidget->clearContents();
     struct SquadRow {
         QString name;
@@ -226,6 +232,7 @@ void MainWindow::updateUI()
         ui->clankerTableWidget->setItem(row, 2, makeItem(QString("%1%" ).arg(avgEnergy)));
     }
 
+    // Per unit detail refresh adds/removes rows to match current roster.
     ui->clankerDetailTableWidget->clearContents();
     ui->clankerDetailTableWidget->setRowCount(static_cast<int>(unitRows.size()));
     for (int row = 0; row < static_cast<int>(unitRows.size()); ++row) {
@@ -236,10 +243,6 @@ void MainWindow::updateUI()
         ui->clankerDetailTableWidget->setItem(row, 3, makeItem(QString::number(entry.energy)));
         const QString statusText = entry.destroyed ? "Destroyed" : (entry.inactive ? "Inactive" : "Active");
         ui->clankerDetailTableWidget->setItem(row, 4, makeItem(statusText));
-    }
-
-    if (enemySpawnCount % 3 == 0) {
-        ClankerSim::FactoryInspector::dump(factory);
     }
 
     if (factory.isDestroyed()) {

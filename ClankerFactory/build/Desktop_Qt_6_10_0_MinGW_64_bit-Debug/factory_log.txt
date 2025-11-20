@@ -1252,3 +1252,2609 @@
 [1763335947570759300] First responder: Scout
 [1763335947570759500] Factory damaged
 [1763335948450784500] Factory destroyed
+[1763576070349515400] Factory constructed
+[1763576077357932100] Factory damaged
+[1763576078371970200] Factory damaged
+[1763576078453366100] Produced clanker: Scout
+[1763576079360774700] First responder: Scout
+[1763576079360778900] Factory damaged
+[1763576080267118000] Produced clanker: Defender
+[1763576080367836000] First responder: Scout
+[1763576080367839700] Defenders retaliated
+[1763576081362559500] First responder: Scout
+[1763576081362562300] Defenders retaliated
+[1763576081700214800] Produced clanker: Scout
+[1763576082376355900] First responder: Scout
+[1763576082376359300] Defenders retaliated
+[1763576083388914200] First responder: Scout
+[1763576083388918000] Defenders retaliated
+[1763576084401968700] First responder: Scout
+[1763576084401972700] Defenders retaliated
+[1763576084402162800] First responder: Scout
+[1763576084402163300] Defenders retaliated
+[1763576085398942700] First responder: Scout
+[1763576085398946300] Defenders retaliated
+[1763576086413747600] First responder: Scout
+[1763576086413751200] Defenders retaliated
+[1763576087412990900] First responder: Scout
+[1763576087412994700] Defenders retaliated
+[1763576088412380100] First responder: Scout
+[1763576088412385000] Defenders retaliated
+[1763576091432799300] First responder: Scout
+[1763576091432801500] Defenders retaliated
+[1763576092435413500] First responder: Scout
+[1763576092435417900] Defenders retaliated
+[1763576093421336700] First responder: Scout
+[1763576093421340400] Defenders retaliated
+[1763576094423112400] First responder: Scout
+[1763576094423115500] Defenders retaliated
+[1763576095429863800] First responder: Scout
+[1763576095429867400] Defenders retaliated
+[1763576096420938000] First responder: Scout
+[1763576096420941700] Defenders retaliated
+[1763576098430582800] First responder: Scout
+[1763576098430587000] Factory damaged
+[1763576099207649900] Produced clanker: Worker
+[1763576099428372400] Factory repaired by 15
+[1763576099428386800] First responder: Scout
+[1763576099428387800] Workers retaliated
+[1763576100427431800] Factory repaired by 15
+[1763576100427440500] First responder: Scout
+[1763576100427441300] Workers retaliated
+[1763576100781651200] Produced clanker: Worker
+[1763576101420878100] Factory repaired by 15
+[1763576101420881600] Factory repaired by 15
+[1763576101420884500] First responder: Scout
+[1763576101420884800] Workers retaliated
+[1763576102432253600] Factory repaired by 15
+[1763576102432258600] Factory repaired by 15
+[1763576102432262300] First responder: Scout
+[1763576102432262800] Workers retaliated
+[1763576103421029000] Factory repaired by 15
+[1763576103421034000] Factory repaired by 15
+[1763576103421038200] First responder: Scout
+[1763576103421038800] Workers retaliated
+[1763576104423520200] Factory repaired by 15
+[1763576104423523900] Factory repaired by 15
+[1763576104423527100] First responder: Scout
+[1763576104423527500] Workers retaliated
+[1763576105423435900] Factory repaired by 15
+[1763576105423440600] Factory repaired by 15
+[1763576105423444800] First responder: Scout
+[1763576105423445300] Workers retaliated
+[1763576105423733500] First responder: Scout
+[1763576105423734000] Workers retaliated
+[1763576106427518900] Factory repaired by 15
+[1763576106427523100] Factory repaired by 15
+[1763576106427526400] First responder: Scout
+[1763576106427526800] Workers retaliated
+[1763576107423134100] Factory repaired by 15
+[1763576107423138800] Factory repaired by 15
+[1763576107423142900] First responder: Scout
+[1763576107423143400] Workers retaliated
+[1763576108426794300] Factory repaired by 15
+[1763576108426799400] Factory repaired by 15
+[1763576108426803900] First responder: Scout
+[1763576108426804400] Workers retaliated
+[1763576109427309200] Factory repaired by 15
+[1763576109427317800] First responder: Scout
+[1763576109427318300] Workers retaliated
+[1763576110422388100] First responder: Scout
+[1763576110422392400] Workers retaliated
+[1763576111434438800] First responder: Scout
+[1763576111434442900] Workers retaliated
+[1763576112433175600] First responder: Scout
+[1763576112433180000] Workers retaliated
+[1763576113430289300] First responder: Scout
+[1763576113430435000] Workers retaliated
+[1763576114428438400] First responder: Scout
+[1763576114428442700] Workers retaliated
+[1763576115442787600] First responder: Scout
+[1763576115442792000] Workers retaliated
+[1763576116443465200] First responder: Scout
+[1763576116443470000] Factory damaged
+[1763576117446509500] First responder: Scout
+[1763576117446513600] Factory damaged
+[1763576118456925400] First responder: Scout
+[1763576118456929900] Factory damaged
+[1763576119470372900] First responder: Scout
+[1763576119470377300] Factory damaged
+[1763576119470638600] First responder: Scout
+[1763576119470639000] Factory damaged
+[1763576120490168400] First responder: Scout
+[1763576120490173200] Factory damaged
+[1763576120490437100] First responder: Scout
+[1763576120490437400] Factory damaged
+[1763576121483120900] First responder: Scout
+[1763576121483124500] Factory damaged
+[1763576121483241700] First responder: Scout
+[1763576121483241900] Factory damaged
+[1763576122483010700] First responder: Scout
+[1763576122483014000] Factory damaged
+[1763576122483144600] First responder: Scout
+[1763576122483144800] Factory damaged
+[1763576123485872700] First responder: Scout
+[1763576123485877100] Factory damaged
+[1763576123486094800] First responder: Scout
+[1763576123486095000] Factory damaged
+[1763576124484037700] First responder: Scout
+[1763576124484041300] Factory damaged
+[1763576124484310800] First responder: Scout
+[1763576124484313600] Factory damaged
+[1763576125494872300] First responder: Scout
+[1763576125494876300] Factory damaged
+[1763576125495103600] First responder: Scout
+[1763576125495103900] Factory damaged
+[1763576126508439200] First responder: Scout
+[1763576126508443300] Factory damaged
+[1763576126508688700] First responder: Scout
+[1763576126508688900] Factory damaged
+[1763576126508743000] First responder: Scout
+[1763576126508743200] Factory damaged
+[1763576127516880500] First responder: Scout
+[1763576127516885000] Factory damaged
+[1763576127517135000] First responder: Scout
+[1763576127517135500] Factory damaged
+[1763576127517193800] First responder: Scout
+[1763576127517194000] Factory damaged
+[1763576128517084400] First responder: Scout
+[1763576128517089000] Factory damaged
+[1763576128517326200] First responder: Scout
+[1763576128517326500] Factory damaged
+[1763576128517370200] First responder: Scout
+[1763576128517370300] Factory damaged
+[1763576129515136500] First responder: Scout
+[1763576129515140900] Factory damaged
+[1763576129515414800] First responder: Scout
+[1763576129515415100] Factory damaged
+[1763576129515457300] First responder: Scout
+[1763576129515457400] Factory damaged
+[1763576130532187400] First responder: Scout
+[1763576130532191900] Factory damaged
+[1763576130532470500] First responder: Scout
+[1763576130532472100] Factory damaged
+[1763576130532541200] First responder: Scout
+[1763576130532541300] Factory damaged
+[1763576131530396200] First responder: Scout
+[1763576131530400800] Factory damaged
+[1763576131530733000] First responder: Scout
+[1763576131530736000] Factory damaged
+[1763576131530888500] First responder: Scout
+[1763576131530888800] Factory damaged
+[1763576132535317000] First responder: Scout
+[1763576132535320700] Factory damaged
+[1763576132535579800] First responder: Scout
+[1763576132535581100] Factory damaged
+[1763576132535658600] First responder: Scout
+[1763576132535658800] Factory damaged
+[1763576133536799700] First responder: Scout
+[1763576133536804500] Factory damaged
+[1763576133537129800] First responder: Scout
+[1763576133537131500] Factory damaged
+[1763576133537220700] First responder: Scout
+[1763576133537220900] Factory damaged
+[1763576133537260200] First responder: Scout
+[1763576133537260300] Factory damaged
+[1763576134533281400] First responder: Scout
+[1763576134533285800] Factory damaged
+[1763576134533602300] First responder: Scout
+[1763576134533602700] Factory damaged
+[1763576134533667600] First responder: Scout
+[1763576134533667700] Factory damaged
+[1763576134533710000] First responder: Scout
+[1763576134533710100] Factory damaged
+[1763576135533616600] First responder: Scout
+[1763576135533621000] Factory damaged
+[1763576135534012800] First responder: Scout
+[1763576135534014600] Factory damaged
+[1763576135534127100] First responder: Scout
+[1763576135534127300] Factory damaged
+[1763576135534187600] First responder: Scout
+[1763576135534187800] Factory damaged
+[1763576136080426700] Factory destroyed
+[1763593828627146500] Factory constructed
+[1763593831762847500] Produced clanker: Scout
+[1763593833562884900] Produced clanker: Defender
+[1763593835608012200] Produced clanker: Worker
+[1763593835667895600] Factory repaired by 15
+[1763593835667900200] First responder: Scout
+[1763593835667900700] Defenders retaliated
+[1763593836662888300] Factory repaired by 15
+[1763593836662897300] First responder: Scout
+[1763593836662898000] Defenders retaliated
+[1763593837660527400] Factory repaired by 15
+[1763593837660533700] First responder: Scout
+[1763593837660534200] Defenders retaliated
+[1763593838658022000] Factory repaired by 15
+[1763593838658028900] First responder: Scout
+[1763593838658029400] Defenders retaliated
+[1763593839670607400] Factory repaired by 15
+[1763593839670615900] First responder: Scout
+[1763593839670616700] Defenders retaliated
+[1763593840681151900] Factory repaired by 15
+[1763593841679780500] Factory repaired by 15
+[1763593842674093000] Factory repaired by 15
+[1763593842674098800] First responder: Scout
+[1763593842674099300] Defenders retaliated
+[1763593843068646500] Produced clanker: Scout
+[1763593843682969700] Factory repaired by 15
+[1763593843682979000] First responder: Scout
+[1763593843682979800] Defenders retaliated
+[1763593844693313100] Factory repaired by 15
+[1763593844693319700] First responder: Scout
+[1763593844693320300] Defenders retaliated
+[1763593845690130200] Factory repaired by 15
+[1763593845690138000] First responder: Scout
+[1763593845690138500] Defenders retaliated
+[1763593846690159200] Factory repaired by 15
+[1763593846690165000] First responder: Scout
+[1763593846690165400] Defenders retaliated
+[1763593847691117300] Factory repaired by 15
+[1763593848701092700] Factory repaired by 15
+[1763593849690751900] Factory repaired by 15
+[1763593849690757800] First responder: Scout
+[1763593849690758200] Defenders retaliated
+[1763593850702358400] Factory repaired by 15
+[1763593850702366300] First responder: Scout
+[1763593850702366900] Factory damaged for 6
+[1763593851702106400] First responder: Scout
+[1763593851702110700] Factory damaged for 6
+[1763593852700763000] First responder: Scout
+[1763593852700767900] Factory damaged for 6
+[1763593853689150200] First responder: Scout
+[1763593853689154300] Factory damaged for 6
+[1763593854707860800] First responder: Scout
+[1763593854707866500] Factory damaged for 6
+[1763593855526789200] Produced 1 battery
+[1763593855705092800] First responder: Scout
+[1763593855705096200] Defenders retaliated
+[1763593856719079600] First responder: Scout
+[1763593856719082800] Defenders retaliated
+[1763593856719214300] First responder: Scout
+[1763593856719214500] Defenders retaliated
+[1763593857713751600] First responder: Scout
+[1763593857713755900] Defenders retaliated
+[1763593857714003100] First responder: Scout
+[1763593857714003500] Defenders retaliated
+[1763593858713118300] First responder: Scout
+[1763593858713122700] Defenders retaliated
+[1763593858713363300] First responder: Scout
+[1763593858713363700] Defenders retaliated
+[1763593859726138400] First responder: Scout
+[1763593859726141600] Defenders retaliated
+[1763593859726352600] First responder: Scout
+[1763593859726352900] Defenders retaliated
+[1763593860165611700] Produced 1 battery
+[1763593860737911700] First responder: Scout
+[1763593860737916300] Defenders retaliated
+[1763593861078968300] Produced 1 battery
+[1763593861752724000] Factory repaired by 15
+[1763593861752733800] First responder: Scout
+[1763593861752734600] Defenders retaliated
+[1763593862781702400] Factory repaired by 15
+[1763593863778643200] Factory repaired by 15
+[1763593863778652200] First responder: Scout
+[1763593863778652900] Defenders retaliated
+[1763593864772993100] First responder: Scout
+[1763593864772997100] Workers retaliated
+[1763593865767882000] First responder: Scout
+[1763593865767887600] Workers retaliated
+[1763593866793782700] First responder: Scout
+[1763593866793788300] Workers retaliated
+[1763593867792185800] First responder: Scout
+[1763593867792189500] Workers retaliated
+[1763593868797713400] First responder: Scout
+[1763593868797717000] Workers retaliated
+[1763593869812192900] First responder: Scout
+[1763593869812198200] Workers retaliated
+[1763593870807734300] First responder: Scout
+[1763593870807738000] Workers retaliated
+[1763593870807884500] First responder: Scout
+[1763593870807884800] Workers retaliated
+[1763593871809592700] First responder: Scout
+[1763593871809596500] Workers retaliated
+[1763593871809779300] First responder: Scout
+[1763593871809779500] Workers retaliated
+[1763593872803840100] First responder: Scout
+[1763593872803845100] Workers retaliated
+[1763593872804097400] First responder: Scout
+[1763593872804097900] Workers retaliated
+[1763593873817888900] First responder: Scout
+[1763593873817893400] Workers retaliated
+[1763593873818120100] First responder: Scout
+[1763593873818120500] Workers retaliated
+[1763593874828026200] First responder: Scout
+[1763593874828029800] Workers retaliated
+[1763593874828275700] First responder: Scout
+[1763593874828276300] Workers retaliated
+[1763593875825758000] First responder: Scout
+[1763593875825762000] Workers retaliated
+[1763593876825748800] First responder: Scout
+[1763593876825753700] Workers retaliated
+[1763593877822763400] First responder: Scout
+[1763593877822768400] Workers retaliated
+[1763593877823035700] First responder: Scout
+[1763593877823036200] Workers retaliated
+[1763593878820002600] First responder: Scout
+[1763593878820007500] Workers retaliated
+[1763593878820348200] First responder: Scout
+[1763593878820350900] Workers retaliated
+[1763593879815116600] First responder: Scout
+[1763593879815123700] Workers retaliated
+[1763593879815391000] First responder: Scout
+[1763593879815391300] Workers retaliated
+[1763593880827428700] First responder: Scout
+[1763593880827434200] Factory damaged for 8
+[1763593880827699400] First responder: Scout
+[1763593880827700100] Factory damaged for 8
+[1763593881837008400] First responder: Scout
+[1763593881837014400] Factory damaged for 8
+[1763593881837283500] First responder: Scout
+[1763593881837284100] Factory damaged for 8
+[1763593882849267900] First responder: Scout
+[1763593882849272000] Factory damaged for 8
+[1763593882849471900] First responder: Scout
+[1763593882849472400] Factory damaged for 8
+[1763593883874621300] First responder: Scout
+[1763593883874625500] Factory damaged for 8
+[1763593883874946800] First responder: Scout
+[1763593883874947800] Factory damaged for 8
+[1763593884861193300] First responder: Scout
+[1763593884861197100] Factory damaged for 8
+[1763593884861329000] First responder: Scout
+[1763593884861329300] Factory damaged for 8
+[1763593884861368000] First responder: Scout
+[1763593884861368100] Factory damaged for 9
+[1763593885824818900] Factory damaged for 50
+[1763593885867850000] First responder: Scout
+[1763593885867854100] Factory damaged for 8
+[1763593885867991300] First responder: Scout
+[1763593885867991600] Factory damaged for 8
+[1763593885868032400] First responder: Scout
+[1763593885868032600] Factory damaged for 9
+[1763593885991723100] Factory damaged for 50
+[1763593886126489200] Factory damaged for 50
+[1763593886268385200] Factory damaged for 50
+[1763593886861018200] First responder: Scout
+[1763593886861022300] Factory damaged for 8
+[1763593886861202100] First responder: Scout
+[1763593886861202400] Factory damaged for 8
+[1763593886861243400] First responder: Scout
+[1763593886861243600] Factory damaged for 9
+[1763593887868975600] First responder: Scout
+[1763593887868980100] Factory damaged for 8
+[1763593887869178800] First responder: Scout
+[1763593887869179100] Factory damaged for 8
+[1763593887869221200] First responder: Scout
+[1763593887869221400] Factory damaged for 9
+[1763593888885600000] First responder: Scout
+[1763593888885605300] Factory damaged for 8
+[1763593888885876300] First responder: Scout
+[1763593888885876800] Factory damaged for 8
+[1763593888885948700] First responder: Scout
+[1763593888885948800] Factory damaged for 9
+[1763593889392876100] Factory destroyed
+[1763594495159575700] Factory constructed
+[1763594498042607500] Produced 1 battery
+[1763594500096659200] Produced clanker: Scout
+[1763594500567503600] Produced clanker: Scout
+[1763594502161598600] First responder: Scout
+[1763594502161602800] Factory damaged for 5
+[1763594502749477000] Produced clanker: Defender
+[1763594503149880100] First responder: Scout
+[1763594503149883200] Defenders retaliated
+[1763594504149879100] First responder: Scout
+[1763594504149882400] Defenders retaliated
+[1763594505149923100] First responder: Scout
+[1763594505149926300] Defenders retaliated
+[1763594506176012200] First responder: Scout
+[1763594506176015400] Defenders retaliated
+[1763594507169934200] First responder: Scout
+[1763594507169937400] Defenders retaliated
+[1763594508402448700] Produced clanker: Scout
+[1763594508875704700] Produced clanker: Scout
+[1763594509165270700] First responder: Scout
+[1763594509165273300] Defenders retaliated
+[1763594509331512600] Produced clanker: Scout
+[1763594510186648300] First responder: Scout
+[1763594510186652200] Defenders retaliated
+[1763594511181927800] First responder: Scout
+[1763594511181931100] Defenders retaliated
+[1763594512189536300] First responder: Scout
+[1763594512189539500] Defenders retaliated
+[1763594513200505500] First responder: Scout
+[1763594513200509700] Defenders retaliated
+[1763594516197690700] First responder: Scout
+[1763594516197694700] Defenders retaliated
+[1763594517215754900] First responder: Scout
+[1763594517215758000] Defenders retaliated
+[1763594518237433700] First responder: Scout
+[1763594518237437600] Defenders retaliated
+[1763594519249518900] First responder: Scout
+[1763594519249522100] Defenders retaliated
+[1763594520255115000] First responder: Scout
+[1763594520255118300] Factory damaged for 6
+[1763594521262693900] First responder: Scout
+[1763594521262698700] Factory damaged for 6
+[1763594522274715800] First responder: Scout
+[1763594522274720300] Factory damaged for 6
+[1763594523283594900] First responder: Scout
+[1763594523283601200] Factory damaged for 6
+[1763594523283777300] First responder: Scout
+[1763594523283777600] Factory damaged for 7
+[1763594524299576100] First responder: Scout
+[1763594524299580300] Factory damaged for 6
+[1763594524299761700] First responder: Scout
+[1763594524299762000] Factory damaged for 7
+[1763594525307432800] First responder: Scout
+[1763594525307437200] Factory damaged for 6
+[1763594525307640700] First responder: Scout
+[1763594525307641500] Factory damaged for 7
+[1763594526323676300] First responder: Scout
+[1763594526323680800] Factory damaged for 6
+[1763594526323937300] First responder: Scout
+[1763594526323937700] Factory damaged for 7
+[1763594526863437200] Produced 1 battery
+[1763594527326663300] First responder: Scout
+[1763594527326666300] Defenders retaliated
+[1763594527326968000] First responder: Scout
+[1763594527326969600] Defenders retaliated
+[1763594528322618600] First responder: Scout
+[1763594528322621900] Defenders retaliated
+[1763594528322781400] First responder: Scout
+[1763594528322781600] Defenders retaliated
+[1763594529324187200] First responder: Scout
+[1763594529324191400] Defenders retaliated
+[1763594530338003900] First responder: Scout
+[1763594530338007100] Defenders retaliated
+[1763594530338129100] First responder: Scout
+[1763594530338129300] Defenders retaliated
+[1763594531352923800] First responder: Scout
+[1763594531352927000] Defenders retaliated
+[1763594531353132900] First responder: Scout
+[1763594531353134500] Defenders retaliated
+[1763594531869306500] Produced 1 battery
+[1763594532022285000] Produced 1 battery
+[1763594532168618600] Produced 1 battery
+[1763594532314511300] Produced 1 battery
+[1763594532365695600] First responder: Scout
+[1763594532365699500] Defenders retaliated
+[1763594532365955000] First responder: Scout
+[1763594532365955500] Defenders retaliated
+[1763594532467395500] Produced 1 battery
+[1763594532607381500] Produced 1 battery
+[1763594532746297800] Produced 1 battery
+[1763594533304735000] Produced 1 battery
+[1763594533370980200] First responder: Scout
+[1763594533370983600] Defenders retaliated
+[1763594533440295300] Produced 1 battery
+[1763594533578315000] Produced 1 battery
+[1763594533723367200] Produced 1 battery
+[1763594533918685300] Produced 1 battery
+[1763594534044443300] Produced 1 battery
+[1763594534182420300] Produced 1 battery
+[1763594534377121900] First responder: Scout
+[1763594534377125000] Defenders retaliated
+[1763594534957497800] Produced clanker: Scout
+[1763594535371896000] First responder: Scout
+[1763594535371899100] Defenders retaliated
+[1763594536381212600] First responder: Scout
+[1763594536381215800] Defenders retaliated
+[1763594537072312200] Produced clanker: Worker
+[1763594537371960600] Factory repaired by 15
+[1763594537371968400] First responder: Scout
+[1763594537371969200] Defenders retaliated
+[1763594537779400700] Produced clanker: Worker
+[1763594538367895100] Factory repaired by 15
+[1763594538367897800] Factory repaired by 15
+[1763594538367900800] First responder: Scout
+[1763594538367901100] Defenders retaliated
+[1763594539369000700] Factory repaired by 15
+[1763594539369003300] Factory repaired by 15
+[1763594539369006500] First responder: Scout
+[1763594539369006900] Defenders retaliated
+[1763594540369997200] Factory repaired by 15
+[1763594540370000300] Factory repaired by 15
+[1763594540370003300] First responder: Scout
+[1763594540370004000] Defenders retaliated
+[1763594541378749200] Factory repaired by 15
+[1763594541378753200] Factory repaired by 15
+[1763594541378757600] First responder: Scout
+[1763594541378758300] Defenders retaliated
+[1763594542001437500] Factory damaged for 50
+[1763594542135366800] Factory damaged for 50
+[1763594542272258400] Factory damaged for 50
+[1763594542370454300] Factory repaired by 15
+[1763594542370456900] Factory repaired by 15
+[1763594542370459700] First responder: Scout
+[1763594542370460300] Defenders retaliated
+[1763594542415439300] Factory damaged for 50
+[1763594542542235900] Factory damaged for 50
+[1763594542676429300] Factory damaged for 50
+[1763594542805452000] Factory damaged for 50
+[1763594542932587700] Factory damaged for 50
+[1763594543063462600] Factory damaged for 50
+[1763594543176346800] Factory damaged for 50
+[1763594543298543000] Factory damaged for 50
+[1763594547379222300] Produced clanker: Worker
+[1763594548089645600] Produced clanker: Worker
+[1763594548547273300] Produced clanker: Worker
+[1763594548738408200] Produced clanker: Worker
+[1763594548932624500] Produced clanker: Worker
+[1763594549114304200] Produced clanker: Worker
+[1763594549298398700] Produced clanker: Worker
+[1763594552028875100] Factory destroyed
+[1763594553418380900] Factory constructed
+[1763594554702355900] Produced clanker: Worker
+[1763594555426450200] Factory repaired by 15
+[1763594556414938900] Factory repaired by 15
+[1763594556911335300] Produced 1 battery
+[1763594557283613300] Produced 1 battery
+[1763594557414762800] Factory repaired by 15
+[1763594558416597200] Factory repaired by 15
+[1763594559418697300] Factory repaired by 15
+[1763594560421216300] First responder: Worker
+[1763594560421219500] Workers retaliated
+[1763594561422941000] First responder: Worker
+[1763594561422944800] Workers retaliated
+[1763594562426526400] Factory repaired by 15
+[1763594562426534900] First responder: Worker
+[1763594562426535700] Workers retaliated
+[1763594563436438400] First responder: Worker
+[1763594563436442300] Workers retaliated
+[1763594564432947700] First responder: Worker
+[1763594564432952500] Workers retaliated
+[1763594565430780500] Factory repaired by 15
+[1763594565430786700] First responder: Worker
+[1763594565430787300] Workers retaliated
+[1763594566441572400] First responder: Worker
+[1763594566441577900] Workers retaliated
+[1763594567430725900] First responder: Worker
+[1763594567430729400] Workers retaliated
+[1763594567431168300] First responder: Worker
+[1763594567431168900] Workers retaliated
+[1763594568223150000] Factory destroyed
+[1763594569536476900] Factory constructed
+[1763594573256231400] Produced 1 battery
+[1763594574968611100] Produced clanker: Scout
+[1763594576553470100] First responder: Scout
+[1763594576553475900] Factory damaged for 5
+[1763594577549390500] First responder: Scout
+[1763594577549395000] Factory damaged for 5
+[1763594578543404200] First responder: Scout
+[1763594578543408900] Factory damaged for 5
+[1763594580076252700] First responder: Scout
+[1763594580076257400] Factory damaged for 5
+[1763594580086860200] Factory destroyed
+[1763595009855690600] Factory constructed
+[1763595012630144400] Produced 1 battery
+[1763595013344196900] Produced clanker: Scout
+[1763595014775363800] Produced clanker: Worker
+[1763595014863471900] Factory repaired by 15
+[1763595015863199800] Factory repaired by 15
+[1763595016800154400] Produced clanker: Scout
+[1763595016869303700] Factory repaired by 15
+[1763595016869310700] First responder: Scout
+[1763595016869311200] Workers retaliated
+[1763595017864511500] Factory repaired by 15
+[1763595017864522600] First responder: Scout
+[1763595017864523700] Workers retaliated
+[1763595018862144500] Factory repaired by 15
+[1763595018862154400] First responder: Scout
+[1763595018862155300] Workers retaliated
+[1763595019864560300] Factory repaired by 15
+[1763595019864568500] First responder: Scout
+[1763595019864569100] Workers retaliated
+[1763595020863426700] Factory repaired by 15
+[1763595020863433800] First responder: Scout
+[1763595020863434200] Workers retaliated
+[1763595021155154400] Produced clanker: Defender
+[1763595021864463700] Factory repaired by 15
+[1763595021864484900] First responder: Scout
+[1763595021864485500] Defenders retaliated
+[1763595022863005800] Factory repaired by 15
+[1763595022863015700] First responder: Scout
+[1763595022863016200] Defenders retaliated
+[1763595023869132700] Factory repaired by 15
+[1763595023869143500] First responder: Scout
+[1763595023869144500] Defenders retaliated
+[1763595024889124100] Factory repaired by 15
+[1763595024889135600] First responder: Scout
+[1763595024889136200] Defenders retaliated
+[1763595025893425400] Factory repaired by 15
+[1763595025893438600] First responder: Scout
+[1763595025893439400] Defenders retaliated
+[1763595026893338900] Factory repaired by 15
+[1763595026893347600] First responder: Scout
+[1763595026893348000] Defenders retaliated
+[1763595027893313000] Factory repaired by 15
+[1763595027893325900] First responder: Scout
+[1763595027893326800] Defenders retaliated
+[1763595028918105200] Factory repaired by 15
+[1763595029908397900] Factory repaired by 15
+[1763595030915040200] Factory repaired by 15
+[1763595030915048800] First responder: Scout
+[1763595030915049200] Defenders retaliated
+[1763595031916419500] First responder: Scout
+[1763595031916422700] Defenders retaliated
+[1763595032931590800] First responder: Scout
+[1763595032931594800] Defenders retaliated
+[1763595033938689600] First responder: Scout
+[1763595033938693200] Defenders retaliated
+[1763595034933273800] First responder: Scout
+[1763595034933278600] Defenders retaliated
+[1763595035925267200] First responder: Scout
+[1763595035925270500] Defenders retaliated
+[1763595037927971100] First responder: Scout
+[1763595037927974500] Defenders retaliated
+[1763595038933308800] First responder: Scout
+[1763595038933313200] Workers retaliated
+[1763595039942723300] First responder: Scout
+[1763595039942728100] Workers retaliated
+[1763595040963108300] First responder: Scout
+[1763595040963113400] Workers retaliated
+[1763595041969939400] First responder: Scout
+[1763595041969943900] Workers retaliated
+[1763595042307135900] Factory destroyed
+[1763596347442245600] Factory constructed
+[1763596350139740600] Produced 1 battery
+[1763596351342372200] Produced clanker: Scout
+[1763596351513448000] Produced clanker: Scout
+[1763596353145671300] Produced clanker: Defender
+[1763596354463696500] First responder: Scout
+[1763596354463702600] Defenders retaliated
+[1763596354463707800] Defender takes 5 damage (145 HP left)
+[1763596355456913500] First responder: Scout
+[1763596355456917000] Defenders retaliated
+[1763596355456921000] Defender takes 5 damage (140 HP left)
+[1763596356465923300] First responder: Scout
+[1763596356465927000] Defenders retaliated
+[1763596356465932400] Defender takes 5 damage (135 HP left)
+[1763596357454866700] First responder: Scout
+[1763596357454870100] Defenders retaliated
+[1763596357454874000] Defender takes 5 damage (130 HP left)
+[1763596358460766100] First responder: Scout
+[1763596358460770900] Defenders retaliated
+[1763596361471192200] First responder: Scout
+[1763596361471195700] Defenders retaliated
+[1763596361471199500] Defender takes 6 damage (124 HP left)
+[1763596362474716100] First responder: Scout
+[1763596362474721000] Defenders retaliated
+[1763596362474727400] Defender takes 6 damage (118 HP left)
+[1763596363482431500] First responder: Scout
+[1763596363482434900] Defenders retaliated
+[1763596363482439200] Defender takes 6 damage (112 HP left)
+[1763596364484030400] First responder: Scout
+[1763596364484034200] Defenders retaliated
+[1763596364484038200] Defender takes 6 damage (106 HP left)
+[1763596365486115900] First responder: Scout
+[1763596365486119600] Defenders retaliated
+[1763596368485518900] First responder: Scout
+[1763596368485522700] Defenders retaliated
+[1763596368485526700] Defender takes 6 damage (100 HP left)
+[1763596368643622800] Produced clanker: Worker
+[1763596369494469700] Factory repaired by 15
+[1763596369494478900] First responder: Scout
+[1763596369494479700] Defenders retaliated
+[1763596369494483500] Defender takes 6 damage (94 HP left)
+[1763596370500023500] Factory repaired by 15
+[1763596370500036000] First responder: Scout
+[1763596370500037200] Defenders retaliated
+[1763596370500043600] Defender takes 6 damage (88 HP left)
+[1763596371488569100] Factory repaired by 15
+[1763596371488578100] First responder: Scout
+[1763596371488579000] Workers retaliated
+[1763596371488583200] Defender takes 6 damage (82 HP left)
+[1763596372500625900] Factory repaired by 15
+[1763596372500638100] First responder: Scout
+[1763596372500639200] Workers retaliated
+[1763596372500644200] Defender takes 6 damage (76 HP left)
+[1763596373494463600] Factory repaired by 15
+[1763596373494478200] First responder: Scout
+[1763596373494479500] Workers retaliated
+[1763596373494486000] Defender takes 6 damage (70 HP left)
+[1763596374499617400] Factory repaired by 15
+[1763596374499630100] First responder: Scout
+[1763596374499631200] Workers retaliated
+[1763596374499636100] Defender takes 6 damage (64 HP left)
+[1763596375491476700] Factory repaired by 15
+[1763596375491490500] First responder: Scout
+[1763596375491491700] Workers retaliated
+[1763596375491738200] First responder: Scout
+[1763596375491738800] Workers retaliated
+[1763596375491742300] Defender takes 7 damage (57 HP left)
+[1763596376493609800] Factory repaired by 15
+[1763596376493624700] First responder: Scout
+[1763596376493625900] Workers retaliated
+[1763596376493632400] Defender takes 7 damage (50 HP left)
+[1763596377498577600] Factory repaired by 15
+[1763596377498592200] First responder: Scout
+[1763596377498593400] Workers retaliated
+[1763596377498599400] Defender takes 7 damage (43 HP left)
+[1763596378494441500] Factory repaired by 15
+[1763596378494451500] First responder: Scout
+[1763596378494452400] Workers retaliated
+[1763596378494456300] Defender takes 7 damage (36 HP left)
+[1763596379493778000] Factory repaired by 15
+[1763596379493788100] First responder: Scout
+[1763596379493788900] Workers retaliated
+[1763596379493793200] Defender takes 7 damage (29 HP left)
+[1763596380485564500] Factory repaired by 15
+[1763596380485574000] First responder: Scout
+[1763596380485574800] Workers retaliated
+[1763596380485578500] Defender takes 7 damage (22 HP left)
+[1763596381495612100] Factory repaired by 15
+[1763596381495622300] First responder: Scout
+[1763596381495623100] Workers retaliated
+[1763596381495627200] Defender takes 7 damage (15 HP left)
+[1763596382491169200] Factory repaired by 15
+[1763596382491181800] First responder: Scout
+[1763596382491183100] Workers retaliated
+[1763596382491189000] Defender takes 7 damage (8 HP left)
+[1763596382491415100] First responder: Scout
+[1763596382491415500] Workers retaliated
+[1763596382491417600] Defender takes 7 damage (1 HP left)
+[1763596383489886200] Factory repaired by 15
+[1763596383489896600] First responder: Scout
+[1763596383489897600] Workers retaliated
+[1763596383489902300] Defender takes 1 damage (0 HP left)
+[1763596383489905700] Worker takes 6 damage (94 HP left)
+[1763596383490145700] First responder: Scout
+[1763596383490146000] Workers retaliated
+[1763596383490147400] Worker takes 7 damage (87 HP left)
+[1763596384500694200] Factory repaired by 15
+[1763596384500703800] First responder: Scout
+[1763596384500704600] Workers retaliated
+[1763596384500708600] Worker takes 7 damage (80 HP left)
+[1763596384500926800] First responder: Scout
+[1763596384500927100] Workers retaliated
+[1763596384500928400] Worker takes 7 damage (73 HP left)
+[1763596385508194800] Factory repaired by 15
+[1763596385508208000] First responder: Scout
+[1763596385508209300] Workers retaliated
+[1763596385508216000] Worker takes 7 damage (66 HP left)
+[1763596385508534500] First responder: Scout
+[1763596385508535200] Workers retaliated
+[1763596385508537800] Worker takes 7 damage (59 HP left)
+[1763596386519538700] First responder: Scout
+[1763596386519544500] Workers retaliated
+[1763596386520002900] First responder: Scout
+[1763596386520005800] Workers retaliated
+[1763596386520012600] Worker takes 7 damage (52 HP left)
+[1763596387542920100] First responder: Scout
+[1763596387542924400] Workers retaliated
+[1763596387542929800] Worker takes 7 damage (45 HP left)
+[1763596388553575900] First responder: Scout
+[1763596388553585400] Worker takes 7 damage (38 HP left)
+[1763596389548264100] First responder: Scout
+[1763596389548271600] Worker takes 7 damage (31 HP left)
+[1763596389548410500] First responder: Scout
+[1763596389548411500] Worker takes 8 damage (23 HP left)
+[1763596390548417800] First responder: Scout
+[1763596390548425700] Worker takes 7 damage (16 HP left)
+[1763596390548630200] First responder: Scout
+[1763596390548631200] Worker takes 8 damage (8 HP left)
+[1763596391548719900] First responder: Scout
+[1763596391548726700] Worker takes 7 damage (1 HP left)
+[1763596391548866900] First responder: Scout
+[1763596391548867800] Worker takes 1 damage (0 HP left)
+[1763596391548868800] Factory damaged for 7
+[1763596392555708100] First responder: Scout
+[1763596392555715700] Factory damaged for 7
+[1763596392556144200] First responder: Scout
+[1763596392556145700] Factory damaged for 8
+[1763596393554475200] First responder: Scout
+[1763596393554482300] Factory damaged for 7
+[1763596393554695600] First responder: Scout
+[1763596393554696200] Factory damaged for 8
+[1763596394549764500] First responder: Scout
+[1763596394549771900] Factory damaged for 7
+[1763596394550052000] First responder: Scout
+[1763596394550052700] Factory damaged for 8
+[1763596395550909700] First responder: Scout
+[1763596395550914800] Factory damaged for 7
+[1763596395551047400] First responder: Scout
+[1763596395551047800] Factory damaged for 8
+[1763596396553308700] First responder: Scout
+[1763596396553314100] Factory damaged for 7
+[1763596396553464500] First responder: Scout
+[1763596396553464900] Factory damaged for 8
+[1763596396553522300] First responder: Scout
+[1763596396553522600] Factory damaged for 8
+[1763596397547543500] First responder: Scout
+[1763596397547549600] Factory damaged for 7
+[1763596397547753400] First responder: Scout
+[1763596397547753900] Factory damaged for 8
+[1763596397547932700] First responder: Scout
+[1763596397547933100] Factory damaged for 8
+[1763596398572317500] First responder: Scout
+[1763596398572324600] Factory damaged for 7
+[1763596398572565400] First responder: Scout
+[1763596398572664900] Factory damaged for 8
+[1763596398572748100] First responder: Scout
+[1763596398572748500] Factory damaged for 8
+[1763596399580467000] First responder: Scout
+[1763596399580474500] Factory damaged for 7
+[1763596399580754600] First responder: Scout
+[1763596399580755400] Factory damaged for 8
+[1763596399580808500] First responder: Scout
+[1763596399580808800] Factory damaged for 8
+[1763596400590651000] First responder: Scout
+[1763596400590658400] Factory damaged for 7
+[1763596400590902800] First responder: Scout
+[1763596400590903300] Factory damaged for 8
+[1763596400590953500] First responder: Scout
+[1763596400590953700] Factory damaged for 8
+[1763596401603630100] First responder: Scout
+[1763596401603637000] Factory damaged for 7
+[1763596401603838700] First responder: Scout
+[1763596401603839400] Factory damaged for 8
+[1763596401603890800] First responder: Scout
+[1763596401603891000] Factory damaged for 8
+[1763596402603511400] First responder: Scout
+[1763596402603516700] Factory damaged for 7
+[1763596402603710000] First responder: Scout
+[1763596402603710400] Factory damaged for 8
+[1763596402603761600] First responder: Scout
+[1763596402603761900] Factory damaged for 8
+[1763596403600359700] First responder: Scout
+[1763596403600367000] Factory damaged for 7
+[1763596403600620100] First responder: Scout
+[1763596403600620900] Factory damaged for 8
+[1763596403600727100] First responder: Scout
+[1763596403600727600] Factory damaged for 8
+[1763596403600819400] First responder: Scout
+[1763596403600819800] Factory damaged for 9
+[1763596404614599300] First responder: Scout
+[1763596404614607500] Factory damaged for 7
+[1763596404614961400] First responder: Scout
+[1763596404614962300] Factory damaged for 8
+[1763596404615042300] First responder: Scout
+[1763596404615042500] Factory damaged for 8
+[1763596404615146100] First responder: Scout
+[1763596404615148600] Factory damaged for 9
+[1763596405613623900] First responder: Scout
+[1763596405613630500] Factory damaged for 7
+[1763596405613883300] First responder: Scout
+[1763596405613884000] Factory damaged for 8
+[1763596405613962500] First responder: Scout
+[1763596405613962800] Factory damaged for 8
+[1763596405614029400] First responder: Scout
+[1763596405614029700] Factory damaged for 9
+[1763596406611915300] First responder: Scout
+[1763596406611924000] Factory damaged for 7
+[1763596406612221200] First responder: Scout
+[1763596406612221800] Factory damaged for 8
+[1763596406612303300] First responder: Scout
+[1763596406612303700] Factory damaged for 8
+[1763596406612372000] First responder: Scout
+[1763596406612372300] Factory damaged for 9
+[1763596407621106700] First responder: Scout
+[1763596407621115100] Factory damaged for 7
+[1763596407621373100] First responder: Scout
+[1763596407621373700] Factory damaged for 8
+[1763596407621432800] First responder: Scout
+[1763596407621433100] Factory damaged for 8
+[1763596407621481900] First responder: Scout
+[1763596407621482200] Factory damaged for 9
+[1763596408615032800] First responder: Scout
+[1763596408615039300] Factory damaged for 7
+[1763596408615235700] First responder: Scout
+[1763596408615236400] Factory damaged for 8
+[1763596408615315700] First responder: Scout
+[1763596408615315900] Factory damaged for 8
+[1763596408615367400] First responder: Scout
+[1763596408615367700] Factory damaged for 9
+[1763596409612983100] First responder: Scout
+[1763596409612989100] Factory damaged for 7
+[1763596409613224600] First responder: Scout
+[1763596409613225300] Factory damaged for 8
+[1763596409613308500] First responder: Scout
+[1763596409613309000] Factory damaged for 8
+[1763596409613371700] First responder: Scout
+[1763596409613371900] Factory damaged for 9
+[1763596410625520300] First responder: Scout
+[1763596410625525800] Factory damaged for 7
+[1763596410625714500] First responder: Scout
+[1763596410625715200] Factory damaged for 8
+[1763596410625776100] First responder: Scout
+[1763596410625776400] Factory damaged for 8
+[1763596410625827200] First responder: Scout
+[1763596410625827400] Factory damaged for 9
+[1763596410625875600] First responder: Scout
+[1763596410625922200] Factory damaged for 9
+[1763596411629807100] First responder: Scout
+[1763596411629814500] Factory damaged for 7
+[1763596411630160800] First responder: Scout
+[1763596411630162000] Factory damaged for 8
+[1763596411630283400] First responder: Scout
+[1763596411630283900] Factory damaged for 8
+[1763596411630347600] First responder: Scout
+[1763596411630347900] Factory damaged for 9
+[1763596411630380600] First responder: Scout
+[1763596411630380800] Factory damaged for 9
+[1763596425093237400] Factory destroyed
+[1763596426526222600] Factory constructed
+[1763596431706189200] Produced clanker: Scout
+[1763596433206950100] Produced clanker: Defender
+[1763596433575549800] First responder: Scout
+[1763596433575554000] Defenders retaliated
+[1763596433575560300] Defender takes 5 damage (145 HP left)
+[1763596434572110700] First responder: Scout
+[1763596434572115400] Defenders retaliated
+[1763596434572122700] Defender takes 5 damage (140 HP left)
+[1763596435569780900] First responder: Scout
+[1763596435569785100] Defenders retaliated
+[1763596435569790700] Defender takes 5 damage (135 HP left)
+[1763596436245388400] Produced clanker: Worker
+[1763596436562720800] Factory repaired by 15
+[1763596436562730300] First responder: Scout
+[1763596436562731100] Defenders retaliated
+[1763596436562734900] Defender takes 5 damage (130 HP left)
+[1763596437568547000] Factory repaired by 15
+[1763596437568559400] First responder: Scout
+[1763596437568560800] Defenders retaliated
+[1763596438593007300] Factory repaired by 15
+[1763596439578592800] Factory repaired by 15
+[1763596440606291800] Factory repaired by 15
+[1763596440606300800] First responder: Scout
+[1763596440606301800] Defenders retaliated
+[1763596440606305800] Defender takes 6 damage (124 HP left)
+[1763596441597543600] Factory repaired by 15
+[1763596441597554600] First responder: Scout
+[1763596441597556000] Defenders retaliated
+[1763596441597561400] Defender takes 6 damage (118 HP left)
+[1763596442604186400] Factory repaired by 15
+[1763596442604197000] First responder: Scout
+[1763596442604198300] Defenders retaliated
+[1763596442604203300] Defender takes 6 damage (112 HP left)
+[1763596443600759900] Factory repaired by 15
+[1763596443600768200] First responder: Scout
+[1763596443600769000] Defenders retaliated
+[1763596443600772800] Defender takes 6 damage (106 HP left)
+[1763596444618561700] Factory repaired by 15
+[1763596444618574800] First responder: Scout
+[1763596444618576000] Defenders retaliated
+[1763596445614241700] Factory repaired by 15
+[1763596446615121200] Factory repaired by 15
+[1763596447619615300] Factory repaired by 15
+[1763596447619626500] First responder: Scout
+[1763596447619627900] Defenders retaliated
+[1763596447619633400] Defender takes 6 damage (100 HP left)
+[1763596448614507900] Factory repaired by 15
+[1763596448614518900] First responder: Scout
+[1763596448614520200] Defenders retaliated
+[1763596448614525400] Defender takes 6 damage (94 HP left)
+[1763596449610720300] Factory repaired by 15
+[1763596449610731100] First responder: Scout
+[1763596449610732100] Defenders retaliated
+[1763596449610737100] Defender takes 6 damage (88 HP left)
+[1763596450621767700] Factory repaired by 15
+[1763596450621778500] First responder: Scout
+[1763596450621779600] Defenders retaliated
+[1763596450621784400] Defender takes 6 damage (82 HP left)
+[1763596451623629400] Factory repaired by 15
+[1763596451623640700] First responder: Scout
+[1763596451623641700] Workers retaliated
+[1763596451623646600] Defender takes 6 damage (76 HP left)
+[1763596452614044100] Factory repaired by 15
+[1763596452614057600] First responder: Scout
+[1763596452614058800] Workers retaliated
+[1763596452614065300] Defender takes 6 damage (70 HP left)
+[1763596453619752700] First responder: Scout
+[1763596453619757900] Workers retaliated
+[1763596454616473600] First responder: Scout
+[1763596454616478500] Workers retaliated
+[1763596454616484900] Defender takes 7 damage (63 HP left)
+[1763596455619506100] First responder: Scout
+[1763596455619517900] Defender takes 7 damage (56 HP left)
+[1763596456619897700] First responder: Scout
+[1763596456619908400] Defender takes 7 damage (49 HP left)
+[1763596457611647800] First responder: Scout
+[1763596457611655000] Defender takes 7 damage (42 HP left)
+[1763596458609400400] First responder: Scout
+[1763596458609408800] Defender takes 7 damage (35 HP left)
+[1763596459609595300] First responder: Scout
+[1763596459609602200] Defender takes 7 damage (28 HP left)
+[1763596460627085900] First responder: Scout
+[1763596460627096800] Defender takes 7 damage (21 HP left)
+[1763596461625136200] First responder: Scout
+[1763596461625145300] Defender takes 7 damage (14 HP left)
+[1763596461625556300] First responder: Scout
+[1763596461625558000] Defender takes 7 damage (7 HP left)
+[1763596462640552700] First responder: Scout
+[1763596462640564900] Defender takes 7 damage (0 HP left)
+[1763596462640850500] First responder: Scout
+[1763596462640853300] Worker takes 7 damage (93 HP left)
+[1763596463640509400] First responder: Scout
+[1763596463640516300] Worker takes 7 damage (86 HP left)
+[1763596463640649100] First responder: Scout
+[1763596463640650100] Worker takes 7 damage (79 HP left)
+[1763596464640694800] First responder: Scout
+[1763596464640703600] Worker takes 7 damage (72 HP left)
+[1763596464640833500] First responder: Scout
+[1763596464640834600] Worker takes 7 damage (65 HP left)
+[1763596465663117200] First responder: Scout
+[1763596465663126600] Worker takes 7 damage (58 HP left)
+[1763596465663353900] First responder: Scout
+[1763596465663355300] Worker takes 7 damage (51 HP left)
+[1763596466657758100] First responder: Scout
+[1763596466657764900] Worker takes 7 damage (44 HP left)
+[1763596466657890100] First responder: Scout
+[1763596466657890900] Worker takes 7 damage (37 HP left)
+[1763596467668058800] First responder: Scout
+[1763596467668068300] Worker takes 7 damage (30 HP left)
+[1763596467668300200] First responder: Scout
+[1763596467668301500] Worker takes 7 damage (23 HP left)
+[1763596468669738300] First responder: Scout
+[1763596468669748400] Worker takes 7 damage (16 HP left)
+[1763596468669982100] First responder: Scout
+[1763596468669983300] Worker takes 7 damage (9 HP left)
+[1763596468670047300] First responder: Scout
+[1763596468670047800] Worker takes 8 damage (1 HP left)
+[1763596469681412700] First responder: Scout
+[1763596469681423200] Worker takes 1 damage (0 HP left)
+[1763596469681425500] Factory damaged for 6
+[1763596469681680900] First responder: Scout
+[1763596469681681400] Factory damaged for 7
+[1763596469681767600] First responder: Scout
+[1763596469681767900] Factory damaged for 8
+[1763596470679198200] First responder: Scout
+[1763596470679204500] Factory damaged for 7
+[1763596470679366100] First responder: Scout
+[1763596470679366700] Factory damaged for 7
+[1763596470679432700] First responder: Scout
+[1763596470679433100] Factory damaged for 8
+[1763596471677650100] First responder: Scout
+[1763596471677655700] Factory damaged for 7
+[1763596471677794500] First responder: Scout
+[1763596471677795000] Factory damaged for 7
+[1763596471677842900] First responder: Scout
+[1763596471677843200] Factory damaged for 8
+[1763596472672454500] First responder: Scout
+[1763596472672460000] Factory damaged for 7
+[1763596472672597700] First responder: Scout
+[1763596472672598300] Factory damaged for 7
+[1763596472672644800] First responder: Scout
+[1763596472672645100] Factory damaged for 8
+[1763596473679579600] First responder: Scout
+[1763596473679586400] Factory damaged for 7
+[1763596473679786900] First responder: Scout
+[1763596473679787500] Factory damaged for 7
+[1763596473679858800] First responder: Scout
+[1763596473679859200] Factory damaged for 8
+[1763596474693013700] First responder: Scout
+[1763596474693022200] Factory damaged for 7
+[1763596474693278500] First responder: Scout
+[1763596474693279000] Factory damaged for 7
+[1763596474693333900] First responder: Scout
+[1763596474693334100] Factory damaged for 8
+[1763596475709741000] First responder: Scout
+[1763596475709747500] Factory damaged for 7
+[1763596475710010400] First responder: Scout
+[1763596475710011000] Factory damaged for 7
+[1763596475710082900] First responder: Scout
+[1763596475710083200] Factory damaged for 8
+[1763596475710144100] First responder: Scout
+[1763596475710144400] Factory damaged for 8
+[1763596476708524600] First responder: Scout
+[1763596476708531600] Factory damaged for 7
+[1763596476708793200] First responder: Scout
+[1763596476708793700] Factory damaged for 7
+[1763596476708868100] First responder: Scout
+[1763596476708868500] Factory damaged for 8
+[1763596476708930900] First responder: Scout
+[1763596476708931300] Factory damaged for 8
+[1763596477711437500] First responder: Scout
+[1763596477711444600] Factory damaged for 7
+[1763596477711856900] First responder: Scout
+[1763596477711857800] Factory damaged for 7
+[1763596477711978100] First responder: Scout
+[1763596477711978700] Factory damaged for 8
+[1763596477712066200] First responder: Scout
+[1763596477712066700] Factory damaged for 8
+[1763596478708558200] First responder: Scout
+[1763596478708564700] Factory damaged for 7
+[1763596478708822400] First responder: Scout
+[1763596478708822900] Factory damaged for 7
+[1763596478708898400] First responder: Scout
+[1763596478708898700] Factory damaged for 8
+[1763596478708962900] First responder: Scout
+[1763596478708963200] Factory damaged for 8
+[1763596479698681200] Factory destroyed
+[1763596518142590600] Factory constructed
+[1763596521207150700] Produced clanker: Worker
+[1763596522159063100] Factory repaired by 15
+[1763596522838228600] Produced clanker: Scout
+[1763596523167438200] Factory repaired by 15
+[1763596524165480700] Factory repaired by 15
+[1763596524486033800] Produced 1 battery
+[1763596525158315200] Factory repaired by 15
+[1763596525158327800] First responder: Worker
+[1763596525158328500] Workers retaliated
+[1763596525158332200] Worker takes 5 damage (95 HP left)
+[1763596526165874600] Factory repaired by 15
+[1763596526165887300] First responder: Worker
+[1763596526165888500] Workers retaliated
+[1763596526165895900] Worker takes 5 damage (90 HP left)
+[1763596527162412500] Factory repaired by 15
+[1763596527162423700] First responder: Worker
+[1763596527162424700] Workers retaliated
+[1763596527162429800] Worker takes 5 damage (85 HP left)
+[1763596528156557100] Factory repaired by 15
+[1763596528156569600] First responder: Worker
+[1763596528156570700] Workers retaliated
+[1763596528156577400] Worker takes 5 damage (80 HP left)
+[1763596529155592200] Factory repaired by 15
+[1763596529155603500] First responder: Worker
+[1763596529155604400] Workers retaliated
+[1763596529155609500] Worker takes 5 damage (75 HP left)
+[1763596530156660200] Factory repaired by 15
+[1763596530156668700] First responder: Worker
+[1763596530156669700] Workers retaliated
+[1763596530156673600] Worker takes 5 damage (70 HP left)
+[1763596531184591700] Factory repaired by 15
+[1763596531184604400] First responder: Worker
+[1763596531184605600] Workers retaliated
+[1763596531184611300] Worker takes 5 damage (65 HP left)
+[1763596532171970200] Factory repaired by 15
+[1763596532171977500] First responder: Worker
+[1763596532171978100] Workers retaliated
+[1763596532171981400] Worker takes 5 damage (60 HP left)
+[1763596532172048200] First responder: Worker
+[1763596532172048400] Workers retaliated
+[1763596532172049400] Worker takes 6 damage (54 HP left)
+[1763596533188975900] Factory repaired by 15
+[1763596533188985900] First responder: Worker
+[1763596533188986700] Workers retaliated
+[1763596533189183800] First responder: Worker
+[1763596533189184000] Workers retaliated
+[1763596533189186200] Worker takes 6 damage (48 HP left)
+[1763596534217446400] Factory repaired by 15
+[1763596534217456100] First responder: Worker
+[1763596534217457000] Workers retaliated
+[1763596534217461500] Worker takes 6 damage (42 HP left)
+[1763596535215770900] Factory repaired by 15
+[1763596535215782900] First responder: Worker
+[1763596535215783800] Workers retaliated
+[1763596535215789800] Worker takes 6 damage (36 HP left)
+[1763596536222935400] Factory repaired by 15
+[1763596536222947300] First responder: Worker
+[1763596536222948300] Workers retaliated
+[1763596536222954100] Worker takes 6 damage (30 HP left)
+[1763596537224969900] Factory repaired by 15
+[1763596537224982900] First responder: Worker
+[1763596537224984100] Workers retaliated
+[1763596537224992600] Worker takes 6 damage (24 HP left)
+[1763596538224686600] Factory repaired by 15
+[1763596538224698700] First responder: Worker
+[1763596538224699500] Workers retaliated
+[1763596538224704100] Worker takes 6 damage (18 HP left)
+[1763596539243432900] First responder: Worker
+[1763596539243437500] Workers retaliated
+[1763596539243442700] Worker takes 6 damage (12 HP left)
+[1763596539243802500] First responder: Worker
+[1763596539243804500] Workers retaliated
+[1763596539243808600] Worker takes 6 damage (6 HP left)
+[1763596540239039600] First responder: Worker
+[1763596540239044900] Workers retaliated
+[1763596540239052100] Worker takes 6 damage (0 HP left)
+[1763596540239311300] First responder: Scout
+[1763596540239313100] Workers retaliated
+[1763596540239315500] Factory damaged for 6
+[1763596541238311500] First responder: Scout
+[1763596541238316400] Workers retaliated
+[1763596541238618900] First responder: Scout
+[1763596541238621200] Workers retaliated
+[1763596541238624800] Factory damaged for 6
+[1763596542239532000] First responder: Scout
+[1763596542239537300] Workers retaliated
+[1763596542239542300] Factory damaged for 6
+[1763596543240395500] First responder: Scout
+[1763596543240584400] Workers retaliated
+[1763596543240590700] Factory damaged for 6
+[1763596544243630700] First responder: Scout
+[1763596544243636200] Workers retaliated
+[1763596544243641000] Factory damaged for 6
+[1763596545249567400] First responder: Scout
+[1763596545249573000] Workers retaliated
+[1763596545249577900] Factory damaged for 6
+[1763596546248974900] First responder: Scout
+[1763596546248979300] Workers retaliated
+[1763596546248982700] Factory damaged for 6
+[1763596546249234000] First responder: Scout
+[1763596546249236500] Workers retaliated
+[1763596546249239500] Factory damaged for 7
+[1763596547249513700] First responder: Scout
+[1763596547249518600] Workers retaliated
+[1763596547249522600] Factory damaged for 6
+[1763596547249740100] First responder: Scout
+[1763596547249740300] Workers retaliated
+[1763596547249740800] Factory damaged for 7
+[1763596548264962500] First responder: Scout
+[1763596548264967100] Workers retaliated
+[1763596548264970800] Factory damaged for 6
+[1763596548265228200] First responder: Scout
+[1763596548265228500] Workers retaliated
+[1763596548265229300] Factory damaged for 7
+[1763596549278452800] First responder: Scout
+[1763596549278457400] Workers retaliated
+[1763596549278780000] First responder: Scout
+[1763596549278780300] Workers retaliated
+[1763596549278781900] Factory damaged for 7
+[1763596550279061600] First responder: Scout
+[1763596550279066100] Workers retaliated
+[1763596550279069000] Factory damaged for 7
+[1763596551266225300] First responder: Scout
+[1763596551266231500] Workers retaliated
+[1763596551266235300] Factory damaged for 7
+[1763596552278969600] First responder: Scout
+[1763596552278974800] Workers retaliated
+[1763596552278980400] Factory damaged for 7
+[1763596553275725800] First responder: Scout
+[1763596553275730400] Workers retaliated
+[1763596553275734000] Factory damaged for 7
+[1763596553275980700] First responder: Scout
+[1763596553275983200] Workers retaliated
+[1763596553275986900] Factory damaged for 7
+[1763596554272948500] First responder: Scout
+[1763596554272952900] Workers retaliated
+[1763596554272955800] Factory damaged for 7
+[1763596554273064500] First responder: Scout
+[1763596554273064700] Workers retaliated
+[1763596554273065300] Factory damaged for 7
+[1763596555270380200] First responder: Scout
+[1763596555270385100] Workers retaliated
+[1763596555270388600] Factory damaged for 7
+[1763596555270691500] First responder: Scout
+[1763596555270691900] Workers retaliated
+[1763596555270692800] Factory damaged for 7
+[1763596556266373100] First responder: Scout
+[1763596556266377600] Workers retaliated
+[1763596556266381100] Factory damaged for 7
+[1763596556266608000] First responder: Scout
+[1763596556266608600] Workers retaliated
+[1763596556266609600] Factory damaged for 7
+[1763596556790266000] Factory destroyed
+[1763597591334641000] Factory constructed
+[1763597596151773300] Produced clanker: Scout
+[1763597598002931900] Produced clanker: Defender
+[1763597598352326800] First responder: Scout
+[1763597598352331600] Defenders deal 10 damage.
+[1763597598352335200] Defender takes 5 damage (145 HP left)
+[1763597599349245700] First responder: Scout
+[1763597599349250400] Defenders deal 10 damage.
+[1763597599349254000] Defender takes 5 damage (140 HP left)
+[1763597600373326800] First responder: Scout
+[1763597600373331600] Defenders deal 10 damage.
+[1763597600373335300] Defender takes 5 damage (135 HP left)
+[1763597601362010800] First responder: Scout
+[1763597601362015200] Defenders deal 10 damage.
+[1763597601362018200] Defender takes 5 damage (130 HP left)
+[1763597602369172800] First responder: Scout
+[1763597602369177400] Defenders deal 10 damage.
+[1763597603445483400] Produced clanker: Worker
+[1763597604360986600] Factory repaired by 15
+[1763597605370454400] Factory repaired by 15
+[1763597605370462600] First responder: Scout
+[1763597605370463900] Defenders deal 10 damage.
+[1763597605370467200] Defender takes 6 damage (124 HP left)
+[1763597606364678000] Factory repaired by 15
+[1763597606364687300] First responder: Scout
+[1763597606364688400] Defenders deal 10 damage.
+[1763597606364691900] Defender takes 6 damage (118 HP left)
+[1763597607360979100] Factory repaired by 15
+[1763597607360988400] First responder: Scout
+[1763597607360989500] Defenders deal 10 damage.
+[1763597607360993200] Defender takes 6 damage (112 HP left)
+[1763597608386673300] Factory repaired by 15
+[1763597608386686500] First responder: Scout
+[1763597608386688100] Defenders deal 10 damage.
+[1763597608386694000] Defender takes 6 damage (106 HP left)
+[1763597609384753900] Factory repaired by 15
+[1763597609384763000] First responder: Scout
+[1763597609384764300] Defenders deal 10 damage.
+[1763597610389974600] Factory repaired by 15
+[1763597611379739400] Factory repaired by 15
+[1763597612405706500] Factory repaired by 15
+[1763597612405716600] First responder: Scout
+[1763597612405717900] Defenders deal 10 damage.
+[1763597612405721900] Defender takes 6 damage (100 HP left)
+[1763597613403519000] Factory repaired by 15
+[1763597613403531200] First responder: Scout
+[1763597613403532900] Defenders deal 10 damage.
+[1763597613403538500] Defender takes 6 damage (94 HP left)
+[1763597614418825200] Factory repaired by 15
+[1763597614418834400] First responder: Scout
+[1763597614418835700] Defenders deal 10 damage.
+[1763597614418839400] Defender takes 6 damage (88 HP left)
+[1763597615435908500] Factory repaired by 15
+[1763597615435917700] First responder: Scout
+[1763597615435919000] Defenders deal 10 damage.
+[1763597615435922900] Defender takes 6 damage (82 HP left)
+[1763597616446079300] Factory repaired by 15
+[1763597616446088400] First responder: Scout
+[1763597616446089800] Workers deal 5 damage.
+[1763597616446093600] Defender takes 6 damage (76 HP left)
+[1763597617440639600] Factory repaired by 15
+[1763597617440650200] First responder: Scout
+[1763597617440651700] Workers deal 5 damage.
+[1763597617440655500] Defender takes 6 damage (70 HP left)
+[1763597618450049400] Factory repaired by 15
+[1763597618450060300] First responder: Scout
+[1763597618450061500] Workers deal 5 damage.
+[1763597619448120400] Factory repaired by 15
+[1763597619448130300] First responder: Scout
+[1763597619448131400] Workers deal 5 damage.
+[1763597619448134900] Defender takes 7 damage (63 HP left)
+[1763597620447508800] Factory repaired by 15
+[1763597620447523100] First responder: Scout
+[1763597620447525300] Workers deal 5 damage.
+[1763597620447531000] Defender takes 7 damage (56 HP left)
+[1763597621444867700] First responder: Scout
+[1763597621444872800] Workers deal 5 damage.
+[1763597621444876600] Defender takes 7 damage (49 HP left)
+[1763597622439811200] First responder: Scout
+[1763597622439816800] Workers deal 5 damage.
+[1763597622439820600] Defender takes 7 damage (42 HP left)
+[1763597623451886200] First responder: Scout
+[1763597623451893900] Defender takes 7 damage (35 HP left)
+[1763597624442916200] First responder: Scout
+[1763597624443109300] Defender takes 7 damage (28 HP left)
+[1763597625439938600] First responder: Scout
+[1763597625439947900] Defender takes 7 damage (21 HP left)
+[1763597626449758800] First responder: Scout
+[1763597626449767700] Defender takes 7 damage (14 HP left)
+[1763597626450209300] First responder: Scout
+[1763597626450212400] Defender takes 7 damage (7 HP left)
+[1763597627449762800] First responder: Scout
+[1763597627449770600] Defender takes 7 damage (0 HP left)
+[1763597627450128400] First responder: Scout
+[1763597627450133600] Worker takes 7 damage (93 HP left)
+[1763597628447131900] First responder: Scout
+[1763597628447142100] Worker takes 7 damage (86 HP left)
+[1763597628447391200] First responder: Scout
+[1763597628447392700] Worker takes 7 damage (79 HP left)
+[1763597629459480500] First responder: Scout
+[1763597629459490800] Worker takes 7 damage (72 HP left)
+[1763597629459793100] First responder: Scout
+[1763597629459799300] Worker takes 7 damage (65 HP left)
+[1763597630472993800] First responder: Scout
+[1763597630473002400] Worker takes 7 damage (58 HP left)
+[1763597630473201600] First responder: Scout
+[1763597630473202900] Worker takes 7 damage (51 HP left)
+[1763597631481871200] First responder: Scout
+[1763597631481881000] Worker takes 7 damage (44 HP left)
+[1763597631482099300] First responder: Scout
+[1763597631482100600] Worker takes 7 damage (37 HP left)
+[1763597632480860000] First responder: Scout
+[1763597632480872200] Worker takes 7 damage (30 HP left)
+[1763597632481130900] First responder: Scout
+[1763597632481132400] Worker takes 7 damage (23 HP left)
+[1763597633475255200] First responder: Scout
+[1763597633475262700] Worker takes 7 damage (16 HP left)
+[1763597633475363800] First responder: Scout
+[1763597633475364700] Worker takes 7 damage (9 HP left)
+[1763597633475414100] First responder: Scout
+[1763597633475414600] Worker takes 8 damage (1 HP left)
+[1763597634487675000] First responder: Scout
+[1763597634487682700] Worker takes 1 damage (0 HP left)
+[1763597634487684500] Factory damaged for 6
+[1763597634487918300] First responder: Scout
+[1763597634487921100] Factory damaged for 7
+[1763597634488023400] First responder: Scout
+[1763597634488023700] Factory damaged for 8
+[1763597635495813600] First responder: Scout
+[1763597635495819200] Factory damaged for 7
+[1763597635496003000] First responder: Scout
+[1763597635496003500] Factory damaged for 7
+[1763597635496049900] First responder: Scout
+[1763597635496050100] Factory damaged for 8
+[1763597636495829900] First responder: Scout
+[1763597636495835500] Factory damaged for 7
+[1763597636496096200] First responder: Scout
+[1763597636496096800] Factory damaged for 7
+[1763597636496145300] First responder: Scout
+[1763597636496145600] Factory damaged for 8
+[1763597637493019800] First responder: Scout
+[1763597637493025700] Factory damaged for 7
+[1763597637493342500] First responder: Scout
+[1763597637493345600] Factory damaged for 7
+[1763597637493436200] First responder: Scout
+[1763597637493436600] Factory damaged for 8
+[1763597638491845900] First responder: Scout
+[1763597638491852900] Factory damaged for 7
+[1763597638492144800] First responder: Scout
+[1763597638492145600] Factory damaged for 7
+[1763597638492198200] First responder: Scout
+[1763597638492198500] Factory damaged for 8
+[1763597639487758200] First responder: Scout
+[1763597639487763600] Factory damaged for 7
+[1763597639488000700] First responder: Scout
+[1763597639488001500] Factory damaged for 7
+[1763597639488057000] First responder: Scout
+[1763597639488057200] Factory damaged for 8
+[1763597640514747200] First responder: Scout
+[1763597640514754100] Factory damaged for 7
+[1763597640515008000] First responder: Scout
+[1763597640515009100] Factory damaged for 7
+[1763597640515086300] First responder: Scout
+[1763597640515086600] Factory damaged for 8
+[1763597640515148700] First responder: Scout
+[1763597640515149100] Factory damaged for 8
+[1763597641530817300] First responder: Scout
+[1763597641530824700] Factory damaged for 7
+[1763597641531112800] First responder: Scout
+[1763597641531113900] Factory damaged for 7
+[1763597641531217800] First responder: Scout
+[1763597641531313100] Factory damaged for 8
+[1763597641531364700] First responder: Scout
+[1763597641531365000] Factory damaged for 8
+[1763597642525203300] First responder: Scout
+[1763597642525208900] Factory damaged for 7
+[1763597642525439800] First responder: Scout
+[1763597642525440600] Factory damaged for 7
+[1763597642525496500] First responder: Scout
+[1763597642525496800] Factory damaged for 8
+[1763597642525540900] First responder: Scout
+[1763597642525541200] Factory damaged for 8
+[1763597643518739200] First responder: Scout
+[1763597643518744500] Factory damaged for 7
+[1763597643518982100] First responder: Scout
+[1763597643518982800] Factory damaged for 7
+[1763597643519039100] First responder: Scout
+[1763597643519039400] Factory damaged for 8
+[1763597643519085900] First responder: Scout
+[1763597643519086100] Factory damaged for 8
+[1763597644543647000] First responder: Scout
+[1763597644543652500] Factory damaged for 7
+[1763597644543882600] First responder: Scout
+[1763597644543883200] Factory damaged for 7
+[1763597644543937400] First responder: Scout
+[1763597644543937600] Factory damaged for 8
+[1763597644543982000] First responder: Scout
+[1763597644543982300] Factory damaged for 8
+[1763597645537724900] First responder: Scout
+[1763597645537730900] Factory damaged for 7
+[1763597645537923300] First responder: Scout
+[1763597645537923800] Factory damaged for 7
+[1763597645537976600] First responder: Scout
+[1763597645537976900] Factory damaged for 8
+[1763597645538022200] First responder: Scout
+[1763597645538022400] Factory damaged for 8
+[1763597646551826200] First responder: Scout
+[1763597646551832000] Factory damaged for 7
+[1763597646552116200] First responder: Scout
+[1763597646552116800] Factory damaged for 7
+[1763597646552173500] First responder: Scout
+[1763597646552173700] Factory damaged for 8
+[1763597646552219900] First responder: Scout
+[1763597646552220100] Factory damaged for 8
+[1763597647566864700] First responder: Scout
+[1763597647566872100] Factory damaged for 7
+[1763597647567111800] First responder: Scout
+[1763597647567114700] Factory damaged for 7
+[1763597647567253000] First responder: Scout
+[1763597647567255200] Factory damaged for 8
+[1763597647567335400] First responder: Scout
+[1763597647567335800] Factory damaged for 8
+[1763597647567386600] First responder: Scout
+[1763597647567386900] Factory damaged for 9
+[1763597648577770600] First responder: Scout
+[1763597648577776000] Factory damaged for 7
+[1763597648577951500] First responder: Scout
+[1763597648577952000] Factory damaged for 7
+[1763597648578006200] First responder: Scout
+[1763597648578006500] Factory damaged for 8
+[1763597648578057900] First responder: Scout
+[1763597648578058100] Factory damaged for 8
+[1763597648578105000] First responder: Scout
+[1763597648578105300] Factory damaged for 9
+[1763597649566910900] First responder: Scout
+[1763597649566918500] Factory damaged for 7
+[1763597649567278400] First responder: Scout
+[1763597649567283000] Factory damaged for 7
+[1763597649567467000] First responder: Scout
+[1763597649567467800] Factory damaged for 8
+[1763597649567576100] First responder: Scout
+[1763597649567576600] Factory damaged for 8
+[1763597649567672400] First responder: Scout
+[1763597649567672800] Factory damaged for 9
+[1763597650565850800] First responder: Scout
+[1763597650565856500] Factory damaged for 7
+[1763597650566226300] First responder: Scout
+[1763597650566229900] Factory damaged for 7
+[1763597650566326400] First responder: Scout
+[1763597650566326900] Factory damaged for 8
+[1763597650566380100] First responder: Scout
+[1763597650566380300] Factory damaged for 8
+[1763597650566445500] First responder: Scout
+[1763597650566445800] Factory damaged for 9
+[1763597651563977100] First responder: Scout
+[1763597651563982900] Factory damaged for 7
+[1763597651564167800] First responder: Scout
+[1763597651564168600] Factory damaged for 7
+[1763597651564226200] First responder: Scout
+[1763597651564226400] Factory damaged for 8
+[1763597651564275100] First responder: Scout
+[1763597651564275400] Factory damaged for 8
+[1763597651564321700] First responder: Scout
+[1763597651564365500] Factory damaged for 9
+[1763597664508301800] Factory destroyed
+[1763598374270333800] Factory constructed
+[1763598376299056000] Factory destroyed
+[1763598386208952200] Factory constructed
+[1763598389303137900] Produced 1 battery
+[1763598390132023500] Produced clanker: Scout
+[1763598390844063300] Produced clanker: Scout
+[1763598392474939500] Produced clanker: Worker
+[1763598393212212900] Factory repaired by 15
+[1763598393212232500] First responder: Scout
+[1763598393212233500] Workers deal 5 damage.
+[1763598393212236700] Worker takes 5 damage (95 HP left)
+[1763598394221199400] Factory repaired by 15
+[1763598394221211900] First responder: Scout
+[1763598394221213700] Workers deal 5 damage.
+[1763598394221220000] Worker takes 5 damage (90 HP left)
+[1763598394334050500] Produced clanker: Worker
+[1763598395212409400] Factory repaired by 15
+[1763598395212413900] Factory repaired by 15
+[1763598395212420400] First responder: Scout
+[1763598395212422100] Workers deal 10 damage.
+[1763598395212426800] Worker takes 5 damage (85 HP left)
+[1763598396214155200] Factory repaired by 15
+[1763598396214159000] Factory repaired by 15
+[1763598396214164900] First responder: Scout
+[1763598396214166000] Workers deal 10 damage.
+[1763598396214170100] Worker takes 5 damage (80 HP left)
+[1763598397213230800] Factory repaired by 15
+[1763598397213235400] Factory repaired by 15
+[1763598397213242000] First responder: Scout
+[1763598397213243300] Workers deal 10 damage.
+[1763598397213247600] Worker takes 5 damage (75 HP left)
+[1763598398218266100] Factory repaired by 15
+[1763598398218269900] Factory repaired by 15
+[1763598398218275500] First responder: Scout
+[1763598398218276900] Workers deal 10 damage.
+[1763598399224133300] Factory repaired by 15
+[1763598399224137300] Factory repaired by 15
+[1763598400220198300] Factory repaired by 15
+[1763598400220202000] Factory repaired by 15
+[1763598400220206000] First responder: Scout
+[1763598400220207300] Workers deal 10 damage.
+[1763598400220210200] Worker takes 6 damage (69 HP left)
+[1763598401211356400] Factory repaired by 15
+[1763598401211359900] Factory repaired by 15
+[1763598401211365100] First responder: Scout
+[1763598401211366400] Workers deal 10 damage.
+[1763598401211369500] Worker takes 6 damage (63 HP left)
+[1763598402211397000] Factory repaired by 15
+[1763598402211405400] First responder: Scout
+[1763598402211406500] Workers deal 10 damage.
+[1763598402211409900] Worker takes 6 damage (57 HP left)
+[1763598403212407400] First responder: Scout
+[1763598403212412300] Workers deal 10 damage.
+[1763598403212415900] Worker takes 6 damage (51 HP left)
+[1763598404226286500] First responder: Scout
+[1763598404226291300] Workers deal 10 damage.
+[1763598407218518100] First responder: Scout
+[1763598407218522900] Workers deal 10 damage.
+[1763598407218526600] Worker takes 6 damage (45 HP left)
+[1763598408218380000] First responder: Scout
+[1763598408218385300] Workers deal 10 damage.
+[1763598408218389500] Worker takes 6 damage (39 HP left)
+[1763598409223095600] First responder: Scout
+[1763598409223101000] Workers deal 10 damage.
+[1763598409223104800] Worker takes 6 damage (33 HP left)
+[1763598410236176600] First responder: Scout
+[1763598410236184200] Workers deal 10 damage.
+[1763598410236190400] Worker takes 6 damage (27 HP left)
+[1763598411244291300] First responder: Scout
+[1763598411244296500] Workers deal 10 damage.
+[1763598411244300300] Worker takes 6 damage (21 HP left)
+[1763598412253811300] First responder: Scout
+[1763598412253817600] Workers deal 10 damage.
+[1763598414271178100] First responder: Scout
+[1763598414271183300] Workers deal 5 damage.
+[1763598414271187200] Worker takes 7 damage (14 HP left)
+[1763598415264982800] First responder: Scout
+[1763598415264990200] Workers deal 5 damage.
+[1763598415264995200] Worker takes 7 damage (7 HP left)
+[1763598416274384500] First responder: Scout
+[1763598416274391500] Workers deal 5 damage.
+[1763598416274397300] Worker takes 7 damage (0 HP left)
+[1763598417301104000] First responder: Scout
+[1763598417301111000] Workers deal 5 damage.
+[1763598417301115900] Worker takes 7 damage (93 HP left)
+[1763598418295182200] First responder: Scout
+[1763598418295189100] Workers deal 5 damage.
+[1763598418295195600] Worker takes 7 damage (86 HP left)
+[1763598419305427400] First responder: Scout
+[1763598419305434100] Workers deal 5 damage.
+[1763598419305440400] Worker takes 7 damage (79 HP left)
+[1763598420310138500] First responder: Scout
+[1763598420310143500] Workers deal 5 damage.
+[1763598420310148000] Worker takes 7 damage (72 HP left)
+[1763598421318101900] First responder: Scout
+[1763598421318107300] Workers deal 5 damage.
+[1763598421318111800] Worker takes 7 damage (65 HP left)
+[1763598421318283700] First responder: Scout
+[1763598421318285900] Workers deal 5 damage.
+[1763598421318288400] Worker takes 7 damage (58 HP left)
+[1763598422311316600] First responder: Scout
+[1763598422311322000] Workers deal 5 damage.
+[1763598422311326700] Worker takes 7 damage (51 HP left)
+[1763598422311591300] First responder: Scout
+[1763598422311592600] Workers deal 5 damage.
+[1763598422311595000] Worker takes 7 damage (44 HP left)
+[1763598423319594400] First responder: Scout
+[1763598423319602600] Workers deal 5 damage.
+[1763598423319606900] Worker takes 7 damage (37 HP left)
+[1763598423319818100] First responder: Scout
+[1763598423319818600] Workers deal 5 damage.
+[1763598423319819800] Worker takes 7 damage (30 HP left)
+[1763598424327048700] First responder: Scout
+[1763598424327053800] Workers deal 5 damage.
+[1763598424327058100] Worker takes 7 damage (23 HP left)
+[1763598424327276100] First responder: Scout
+[1763598424327276600] Workers deal 5 damage.
+[1763598424327277700] Worker takes 7 damage (16 HP left)
+[1763598425986852800] First responder: Scout
+[1763598425986857800] Workers deal 5 damage.
+[1763598425987105500] First responder: Scout
+[1763598425987106700] Workers deal 5 damage.
+[1763598425987109100] Worker takes 7 damage (9 HP left)
+[1763598426320433400] First responder: Scout
+[1763598426320438700] Workers deal 5 damage.
+[1763598426320442200] Worker takes 7 damage (2 HP left)
+[1763598427320347300] First responder: Scout
+[1763598427320352200] Workers deal 5 damage.
+[1763598427320355700] Worker takes 2 damage (0 HP left)
+[1763598427320356800] Factory damaged for 5
+[1763598428077411800] Factory destroyed
+[1763598479111790400] Factory constructed
+[1763598479987231400] Factory destroyed
+[1763598485917217400] Factory constructed
+[1763598487492949500] Factory destroyed
+[1763600418257123300] Factory constructed
+[1763600421244587900] Produced clanker: Scout
+[1763600421455186700] Produced clanker: Scout
+[1763600422745101500] Produced clanker: Worker
+[1763600422974707900] Produced clanker: Worker
+[1763600423265675200] Factory repaired by 15
+[1763600423265678400] Factory repaired by 15
+[1763600424265688100] Factory repaired by 15
+[1763600424265691800] Factory repaired by 15
+[1763600425266799200] Factory repaired by 15
+[1763600425266802600] Factory repaired by 15
+[1763600425266806200] First responder: Scout
+[1763600425266807200] Workers deal 10 damage.
+[1763600425266810200] Worker takes 5 damage (95 HP left)
+[1763600426267114900] Factory repaired by 15
+[1763600426267119000] Factory repaired by 15
+[1763600426267125200] First responder: Scout
+[1763600426267126800] Workers deal 10 damage.
+[1763600426267131600] Worker takes 5 damage (90 HP left)
+[1763600427267145600] Factory repaired by 15
+[1763600427267151100] Factory repaired by 15
+[1763600427267160100] First responder: Scout
+[1763600427267162500] Workers deal 10 damage.
+[1763600427267170500] Worker takes 5 damage (85 HP left)
+[1763600428265679400] Factory repaired by 15
+[1763600428265682800] Factory repaired by 15
+[1763600428265687600] First responder: Scout
+[1763600428265688900] Workers deal 10 damage.
+[1763600428265692100] Worker takes 5 damage (80 HP left)
+[1763600429272365000] Factory repaired by 15
+[1763600429272369300] Factory repaired by 15
+[1763600429272375800] First responder: Scout
+[1763600429272377200] Workers deal 10 damage.
+[1763600430281598100] Factory repaired by 15
+[1763600430281602800] Factory repaired by 15
+[1763600431284729700] Factory repaired by 15
+[1763600432283620200] First responder: Scout
+[1763600432283626500] Workers deal 10 damage.
+[1763600432283632000] Worker takes 6 damage (74 HP left)
+[1763600432737635100] Produced clanker: Defender
+[1763600433283756900] First responder: Scout
+[1763600433283762700] Defenders deal 10 damage.
+[1763600433283768200] Defender takes 6 damage (144 HP left)
+[1763600434283049200] First responder: Scout
+[1763600434283054500] Defenders deal 10 damage.
+[1763600434283059000] Defender takes 6 damage (138 HP left)
+[1763600435285179500] First responder: Scout
+[1763600435285185100] Defenders deal 10 damage.
+[1763600435285189600] Defender takes 6 damage (132 HP left)
+[1763600436282032000] First responder: Scout
+[1763600436282037900] Defenders deal 10 damage.
+[1763600439282683400] First responder: Scout
+[1763600439282687400] Defenders deal 10 damage.
+[1763600439282690800] Defender takes 6 damage (126 HP left)
+[1763600440294633200] First responder: Scout
+[1763600440294638800] Defenders deal 10 damage.
+[1763600440294643200] Defender takes 6 damage (120 HP left)
+[1763600441281957300] First responder: Scout
+[1763600441281961600] Defenders deal 10 damage.
+[1763600441281964800] Defender takes 6 damage (114 HP left)
+[1763600442286090900] First responder: Scout
+[1763600442286098900] Defender takes 6 damage (108 HP left)
+[1763600443289670100] First responder: Scout
+[1763600443289677200] Defender takes 6 damage (102 HP left)
+[1763600443420573700] Produced clanker: Worker
+[1763600443844276900] Produced clanker: Worker
+[1763600444282508600] First responder: Scout
+[1763600444282515500] Workers deal 10 damage.
+[1763600444282518900] Defender takes 6 damage (96 HP left)
+[1763600445282429700] First responder: Scout
+[1763600445282436300] Workers deal 10 damage.
+[1763600445282440800] Defender takes 6 damage (90 HP left)
+[1763600446296738800] First responder: Scout
+[1763600446296743700] Workers deal 10 damage.
+[1763600446296836400] First responder: Scout
+[1763600446296836700] Workers deal 10 damage.
+[1763600446296838700] Defender takes 7 damage (83 HP left)
+[1763600447281424500] First responder: Scout
+[1763600447281431000] Workers deal 10 damage.
+[1763600447281436600] Defender takes 7 damage (76 HP left)
+[1763600448296771200] First responder: Scout
+[1763600448296776400] Workers deal 10 damage.
+[1763600448296779900] Defender takes 7 damage (69 HP left)
+[1763600449300394400] First responder: Scout
+[1763600449300401500] Workers deal 10 damage.
+[1763600449300592900] Defender takes 7 damage (62 HP left)
+[1763600450301163100] First responder: Scout
+[1763600450301169200] Workers deal 10 damage.
+[1763600450301173400] Defender takes 7 damage (55 HP left)
+[1763600451320675800] First responder: Scout
+[1763600451320682900] Workers deal 10 damage.
+[1763600453317830900] First responder: Scout
+[1763600453317836700] Workers deal 10 damage.
+[1763600453317840700] Defender takes 7 damage (48 HP left)
+[1763600454314431800] First responder: Scout
+[1763600454314438300] Workers deal 10 damage.
+[1763600454314442500] Defender takes 7 damage (41 HP left)
+[1763600455318372100] First responder: Scout
+[1763600455318377600] Workers deal 10 damage.
+[1763600455318381000] Defender takes 7 damage (34 HP left)
+[1763600456315526400] First responder: Scout
+[1763600456315535600] Workers deal 10 damage.
+[1763600456315542000] Defender takes 7 damage (27 HP left)
+[1763600457324873000] First responder: Scout
+[1763600457324879900] Workers deal 10 damage.
+[1763600457324885500] Defender takes 7 damage (20 HP left)
+[1763600458313103800] First responder: Scout
+[1763600458313109700] Workers deal 10 damage.
+[1763600458313114300] Defender takes 7 damage (13 HP left)
+[1763600459313826300] First responder: Scout
+[1763600459313832800] Workers deal 10 damage.
+[1763600459470182400] Factory damaged for 50
+[1763600460317087900] Factory repaired by 15
+[1763600460317092900] Factory repaired by 15
+[1763600460317101300] First responder: Scout
+[1763600460317103100] Workers deal 10 damage.
+[1763600460317108300] Defender takes 8 damage (5 HP left)
+[1763600460657270700] Factory damaged for 50
+[1763600461312738700] Factory repaired by 15
+[1763600461312742400] Factory repaired by 15
+[1763600461312748400] First responder: Scout
+[1763600461312749700] Workers deal 10 damage.
+[1763600461312752700] Defender takes 5 damage (0 HP left)
+[1763600461312754200] Worker takes 3 damage (71 HP left)
+[1763600462312476400] Factory repaired by 15
+[1763600462312480400] Factory repaired by 15
+[1763600462312486100] First responder: Scout
+[1763600462312487400] Workers deal 10 damage.
+[1763600462312490300] Worker takes 8 damage (63 HP left)
+[1763600463328385200] Factory repaired by 15
+[1763600463328397600] First responder: Scout
+[1763600463328403300] Worker takes 8 damage (55 HP left)
+[1763600464333865000] First responder: Scout
+[1763600464333874300] Worker takes 8 damage (47 HP left)
+[1763600465327613800] First responder: Scout
+[1763600465327620800] Worker takes 8 damage (39 HP left)
+[1763600466328640900] First responder: Scout
+[1763600466328648400] Worker takes 8 damage (31 HP left)
+[1763600467335588400] First responder: Scout
+[1763600467335598600] Worker takes 8 damage (23 HP left)
+[1763600467335788900] First responder: Scout
+[1763600467335790700] Worker takes 8 damage (15 HP left)
+[1763600468333018500] First responder: Scout
+[1763600468333030000] Worker takes 8 damage (7 HP left)
+[1763600468333337500] First responder: Scout
+[1763600468333339100] Worker takes 7 damage (0 HP left)
+[1763600468333340400] Worker takes 1 damage (99 HP left)
+[1763600469332924300] First responder: Scout
+[1763600469332931800] Worker takes 8 damage (91 HP left)
+[1763600469333158400] First responder: Scout
+[1763600469333159400] Worker takes 8 damage (83 HP left)
+[1763600470333064800] First responder: Scout
+[1763600470333074300] Worker takes 8 damage (75 HP left)
+[1763600470333328200] First responder: Scout
+[1763600470333329300] Worker takes 8 damage (67 HP left)
+[1763600471347565100] First responder: Scout
+[1763600471347573400] Worker takes 8 damage (59 HP left)
+[1763600471347792700] First responder: Scout
+[1763600471347794000] Worker takes 8 damage (51 HP left)
+[1763600472348021800] First responder: Scout
+[1763600472348031400] Worker takes 8 damage (43 HP left)
+[1763600472348294700] First responder: Scout
+[1763600472348296200] Worker takes 8 damage (35 HP left)
+[1763600473361045500] First responder: Scout
+[1763600473361056900] Worker takes 8 damage (27 HP left)
+[1763600473361314400] First responder: Scout
+[1763600473361315800] Worker takes 8 damage (19 HP left)
+[1763600474359765700] First responder: Scout
+[1763600474359774300] Worker takes 8 damage (11 HP left)
+[1763600474359930500] First responder: Scout
+[1763600474359931800] Worker takes 8 damage (3 HP left)
+[1763600474360012000] First responder: Scout
+[1763600474360012700] Worker takes 3 damage (0 HP left)
+[1763600474360013500] Worker takes 6 damage (94 HP left)
+[1763600475372261100] First responder: Scout
+[1763600475372269900] Worker takes 8 damage (86 HP left)
+[1763600475372495000] First responder: Scout
+[1763600475372496400] Worker takes 8 damage (78 HP left)
+[1763600475372570300] First responder: Scout
+[1763600475372570900] Worker takes 9 damage (69 HP left)
+[1763600476371487200] First responder: Scout
+[1763600476371496200] Worker takes 8 damage (61 HP left)
+[1763600476371715100] First responder: Scout
+[1763600476371716500] Worker takes 8 damage (53 HP left)
+[1763600476371799900] First responder: Scout
+[1763600476371800700] Worker takes 9 damage (44 HP left)
+[1763600477370842800] First responder: Scout
+[1763600477370853100] Worker takes 8 damage (36 HP left)
+[1763600477371128800] First responder: Scout
+[1763600477371130400] Worker takes 8 damage (28 HP left)
+[1763600477371242500] First responder: Scout
+[1763600477371243600] Worker takes 9 damage (19 HP left)
+[1763600478363755500] First responder: Scout
+[1763600478363762800] Worker takes 8 damage (11 HP left)
+[1763600478363914800] First responder: Scout
+[1763600478363915800] Worker takes 8 damage (3 HP left)
+[1763600478363973600] First responder: Scout
+[1763600478363974200] Worker takes 3 damage (0 HP left)
+[1763600478363974600] Worker takes 6 damage (94 HP left)
+[1763600479382780000] First responder: Scout
+[1763600479382791500] Worker takes 8 damage (86 HP left)
+[1763600479383119300] First responder: Scout
+[1763600479383121100] Worker takes 8 damage (78 HP left)
+[1763600479383236300] First responder: Scout
+[1763600479383237400] Worker takes 9 damage (69 HP left)
+[1763600480383945400] First responder: Scout
+[1763600480383954800] Worker takes 8 damage (61 HP left)
+[1763600480384233900] First responder: Scout
+[1763600480384235500] Worker takes 8 damage (53 HP left)
+[1763600480384319500] First responder: Scout
+[1763600480384320200] Worker takes 9 damage (44 HP left)
+[1763600481387238500] First responder: Scout
+[1763600481387248800] Worker takes 8 damage (36 HP left)
+[1763600481387457700] First responder: Scout
+[1763600481387459400] Worker takes 8 damage (28 HP left)
+[1763600481387576700] First responder: Scout
+[1763600481387577800] Worker takes 9 damage (19 HP left)
+[1763600481387676400] First responder: Scout
+[1763600481387676900] Worker takes 9 damage (10 HP left)
+[1763600482387778400] First responder: Scout
+[1763600482387787900] Worker takes 8 damage (2 HP left)
+[1763600482388064900] First responder: Scout
+[1763600482388066100] Worker takes 2 damage (0 HP left)
+[1763600482388067300] Factory damaged for 6
+[1763600482388176700] First responder: Scout
+[1763600482388177300] Factory damaged for 9
+[1763600482388269800] First responder: Scout
+[1763600482388270300] Factory damaged for 9
+[1763600483404226000] First responder: Scout
+[1763600483404233200] Factory damaged for 8
+[1763600483404553600] First responder: Scout
+[1763600483404554400] Factory damaged for 8
+[1763600483404664300] First responder: Scout
+[1763600483404664800] Factory damaged for 9
+[1763600483404895300] First responder: Scout
+[1763600483404899900] Factory damaged for 9
+[1763600484413660300] First responder: Scout
+[1763600484413667200] Factory damaged for 8
+[1763600484413940400] First responder: Scout
+[1763600484413940900] Factory damaged for 8
+[1763600484414003200] First responder: Scout
+[1763600484414003500] Factory damaged for 9
+[1763600484414055100] First responder: Scout
+[1763600484414055300] Factory damaged for 9
+[1763600485411196400] First responder: Scout
+[1763600485411203100] Factory damaged for 8
+[1763600485411479200] First responder: Scout
+[1763600485411479800] Factory damaged for 8
+[1763600485411563200] First responder: Scout
+[1763600485411563600] Factory damaged for 9
+[1763600485411653300] First responder: Scout
+[1763600485411716300] Factory damaged for 9
+[1763600486410798300] First responder: Scout
+[1763600486410806200] Factory damaged for 8
+[1763600486411070700] First responder: Scout
+[1763600486411071100] Factory damaged for 8
+[1763600486411131200] First responder: Scout
+[1763600486411131400] Factory damaged for 9
+[1763600486411182300] First responder: Scout
+[1763600486411182500] Factory damaged for 9
+[1763600487410197400] First responder: Scout
+[1763600487410204100] Factory damaged for 8
+[1763600487410494000] First responder: Scout
+[1763600487410494600] Factory damaged for 8
+[1763600487410581100] First responder: Scout
+[1763600487410581500] Factory damaged for 9
+[1763600487410778600] First responder: Scout
+[1763600487410782600] Factory damaged for 9
+[1763600488424115600] First responder: Scout
+[1763600488424122200] Factory damaged for 8
+[1763600488424425300] First responder: Scout
+[1763600488424426100] Factory damaged for 8
+[1763600488424571400] First responder: Scout
+[1763600488424572000] Factory damaged for 9
+[1763600488424650600] First responder: Scout
+[1763600488424651100] Factory damaged for 9
+[1763600488424714400] First responder: Scout
+[1763600488424715000] Factory damaged for 10
+[1763600489428147500] First responder: Scout
+[1763600489428155900] Factory damaged for 8
+[1763600489428376200] First responder: Scout
+[1763600489428376800] Factory damaged for 8
+[1763600489428432300] First responder: Scout
+[1763600489428432600] Factory damaged for 9
+[1763600489428481900] First responder: Scout
+[1763600489428482300] Factory damaged for 9
+[1763600489428530600] First responder: Scout
+[1763600489428531100] Factory damaged for 10
+[1763600490425812500] First responder: Scout
+[1763600490425818700] Factory damaged for 8
+[1763600490426044400] First responder: Scout
+[1763600490426045200] Factory damaged for 8
+[1763600490426102800] First responder: Scout
+[1763600490426103100] Factory damaged for 9
+[1763600490426175000] First responder: Scout
+[1763600490426175300] Factory damaged for 9
+[1763600490426216800] First responder: Scout
+[1763600490426217100] Factory damaged for 10
+[1763600491430033100] First responder: Scout
+[1763600491430038400] Factory damaged for 8
+[1763600491430190600] First responder: Scout
+[1763600491430191000] Factory damaged for 8
+[1763600491430232100] First responder: Scout
+[1763600491430232300] Factory damaged for 9
+[1763600491430267500] First responder: Scout
+[1763600491430267700] Factory damaged for 9
+[1763600491430302400] First responder: Scout
+[1763600491430302700] Factory damaged for 10
+[1763600492431361400] First responder: Scout
+[1763600492431368000] Factory damaged for 8
+[1763600492431604100] First responder: Scout
+[1763600492431604700] Factory damaged for 8
+[1763600492431664100] First responder: Scout
+[1763600492431664400] Factory damaged for 9
+[1763600492431716800] First responder: Scout
+[1763600492431717200] Factory damaged for 9
+[1763600492431767400] First responder: Scout
+[1763600492431767800] Factory damaged for 10
+[1763600493425921700] First responder: Scout
+[1763600493425929000] Factory damaged for 8
+[1763600493426124300] First responder: Scout
+[1763600493426125200] Factory damaged for 8
+[1763600493426204200] First responder: Scout
+[1763600493426204600] Factory damaged for 9
+[1763600493426247700] First responder: Scout
+[1763600493426247900] Factory damaged for 9
+[1763600493426281500] First responder: Scout
+[1763600493426281800] Factory damaged for 10
+[1763600494430165500] First responder: Scout
+[1763600494430171800] Factory damaged for 8
+[1763600494430429300] First responder: Scout
+[1763600494430430000] Factory damaged for 8
+[1763600494430514100] First responder: Scout
+[1763600494430514600] Factory damaged for 9
+[1763600494430590000] First responder: Scout
+[1763600494430590400] Factory damaged for 9
+[1763600494430683700] First responder: Scout
+[1763600494430684300] Factory damaged for 10
+[1763600499993607700] Factory damaged for 50
+[1763600500135596100] Factory damaged for 50
+[1763600500307586700] Factory damaged for 50
+[1763600500465688700] Factory damaged for 50
+[1763600500606962200] Factory damaged for 50
+[1763600500750526300] Factory damaged for 50
+[1763600500922841800] Factory damaged for 50
+[1763600501064495100] Factory damaged for 50
+[1763600501209782500] Factory damaged for 50
+[1763600502231791000] Produced clanker: Worker
+[1763600504016480100] Produced clanker: Worker
+[1763600504333679200] Produced clanker: Worker
+[1763600505818107600] Produced clanker: Scout
+[1763600505978445700] Produced clanker: Scout
+[1763600507857612600] Produced clanker: Defender
+[1763600508026252200] Produced clanker: Defender
+[1763600508179173400] Produced clanker: Defender
+[1763600508352516700] Produced clanker: Defender
+[1763600508508526800] Produced clanker: Defender
+[1763600508674482900] Produced clanker: Defender
+[1763600508831641600] Produced clanker: Defender
+[1763600510494456900] Factory damaged for 50
+[1763600510637509300] Factory damaged for 50
+[1763600510789739100] Factory damaged for 50
+[1763600510936498300] Factory damaged for 50
+[1763600520321406200] Factory destroyed
+[1763643079900403400] Factory constructed
+[1763643082429581400] Produced clanker: Scout
+[1763643083763451900] Produced clanker: Defender
+[1763643085545805300] Produced clanker: Worker
+[1763643085903844600] Factory repaired by 15
+[1763643086806965300] Produced clanker: Scout
+[1763643086911778800] Factory repaired by 15
+[1763643086911785300] First responder: Scout
+[1763643086911786100] Defenders deal 10 damage.
+[1763643086911788900] Defender takes 5 damage (145 HP left)
+[1763643087906293900] Factory repaired by 15
+[1763643087906306600] First responder: Scout
+[1763643087906308200] Defenders deal 10 damage.
+[1763643087906313800] Defender takes 5 damage (140 HP left)
+[1763643088914248700] Factory repaired by 15
+[1763643088914259300] First responder: Scout
+[1763643088914260600] Defenders deal 10 damage.
+[1763643088914265000] Defender takes 5 damage (135 HP left)
+[1763643089906788000] Factory repaired by 15
+[1763643089906797300] First responder: Scout
+[1763643089906798300] Defenders deal 10 damage.
+[1763643089906801500] Defender takes 5 damage (130 HP left)
+[1763643090915052200] Factory repaired by 15
+[1763643090915065000] First responder: Scout
+[1763643090915066400] Defenders deal 10 damage.
+[1763643091912695500] Factory repaired by 15
+[1763643092907532800] Factory repaired by 15
+[1763643093914329400] Factory repaired by 15
+[1763643093914336000] First responder: Scout
+[1763643093914337000] Defenders deal 10 damage.
+[1763643093914339800] Defender takes 6 damage (124 HP left)
+[1763643094921818300] Factory repaired by 15
+[1763643094921828000] First responder: Scout
+[1763643094921829000] Defenders deal 10 damage.
+[1763643094921832400] Defender takes 6 damage (118 HP left)
+[1763643095921572500] Factory repaired by 15
+[1763643095921585600] First responder: Scout
+[1763643095921587100] Defenders deal 10 damage.
+[1763643095921591800] Defender takes 6 damage (112 HP left)
+[1763643096926558200] Factory repaired by 15
+[1763643096926569500] First responder: Scout
+[1763643096926571300] Defenders deal 10 damage.
+[1763643096926575700] Defender takes 6 damage (106 HP left)
+[1763643097919891100] Factory repaired by 15
+[1763643097919899700] First responder: Scout
+[1763643097919900900] Defenders deal 10 damage.
+[1763643098926241000] Factory repaired by 15
+[1763643099924185100] Factory repaired by 15
+[1763643100922265000] Factory repaired by 15
+[1763643100922271800] First responder: Scout
+[1763643100922272800] Defenders deal 10 damage.
+[1763643100922275700] Defender takes 6 damage (100 HP left)
+[1763643101923043500] Factory repaired by 15
+[1763643101923054600] First responder: Scout
+[1763643101923056200] Workers deal 5 damage.
+[1763643101923060700] Defender takes 6 damage (94 HP left)
+[1763643102922001700] First responder: Scout
+[1763643102922008400] Workers deal 5 damage.
+[1763643102922014300] Defender takes 6 damage (88 HP left)
+[1763643103931360800] First responder: Scout
+[1763643103931368000] Workers deal 5 damage.
+[1763643103931374000] Defender takes 6 damage (82 HP left)
+[1763643104924513000] First responder: Scout
+[1763643104924522000] Defender takes 6 damage (76 HP left)
+[1763643105932034400] First responder: Scout
+[1763643105932042300] Defender takes 6 damage (70 HP left)
+[1763643106931890500] First responder: Scout
+[1763643106931901400] Defender takes 6 damage (64 HP left)
+[1763643107931224700] First responder: Scout
+[1763643107931230800] Defender takes 6 damage (58 HP left)
+[1763643107931285100] First responder: Scout
+[1763643107931285900] Defender takes 7 damage (51 HP left)
+[1763643108926402900] First responder: Scout
+[1763643108926409800] Defender takes 6 damage (45 HP left)
+[1763643108926542300] First responder: Scout
+[1763643108926543300] Defender takes 7 damage (38 HP left)
+[1763643109923364500] First responder: Scout
+[1763643109923372000] Defender takes 6 damage (32 HP left)
+[1763643109923576400] First responder: Scout
+[1763643109923577300] Defender takes 7 damage (25 HP left)
+[1763643110932352700] First responder: Scout
+[1763643110932362200] Defender takes 6 damage (19 HP left)
+[1763643110932572600] First responder: Scout
+[1763643110932573700] Defender takes 7 damage (12 HP left)
+[1763643111930963500] First responder: Scout
+[1763643111930972700] Defender takes 6 damage (6 HP left)
+[1763643111931220100] First responder: Scout
+[1763643111931221400] Defender takes 6 damage (0 HP left)
+[1763643111931223900] Worker takes 1 damage (99 HP left)
+[1763643112926341900] First responder: Scout
+[1763643112926351200] Worker takes 6 damage (93 HP left)
+[1763643112926658500] First responder: Scout
+[1763643112926660400] Worker takes 7 damage (86 HP left)
+[1763643113948560200] First responder: Scout
+[1763643113948568000] Worker takes 6 damage (80 HP left)
+[1763643113948766400] First responder: Scout
+[1763643113948767400] Worker takes 7 damage (73 HP left)
+[1763643114938723100] First responder: Scout
+[1763643114938731300] Worker takes 6 damage (67 HP left)
+[1763643114938849100] First responder: Scout
+[1763643114938850100] Worker takes 7 damage (60 HP left)
+[1763643114938899800] First responder: Scout
+[1763643114938900300] Worker takes 7 damage (53 HP left)
+[1763643115937024700] First responder: Scout
+[1763643115937034700] Worker takes 6 damage (47 HP left)
+[1763643115937287800] First responder: Scout
+[1763643115937289200] Worker takes 7 damage (40 HP left)
+[1763643115937362900] First responder: Scout
+[1763643115937363900] Worker takes 7 damage (33 HP left)
+[1763643116943806400] First responder: Scout
+[1763643116943816800] Worker takes 6 damage (27 HP left)
+[1763643116943979700] First responder: Scout
+[1763643116943980700] Worker takes 7 damage (20 HP left)
+[1763643116944032600] First responder: Scout
+[1763643116944033200] Worker takes 7 damage (13 HP left)
+[1763643117935769000] First responder: Scout
+[1763643117935779900] Worker takes 6 damage (7 HP left)
+[1763643117936026500] First responder: Scout
+[1763643117936027800] Worker takes 7 damage (0 HP left)
+[1763643117936101300] First responder: Scout
+[1763643117936102300] Factory damaged for 7
+[1763643118942640000] First responder: Scout
+[1763643118942646700] Factory damaged for 6
+[1763643118942890400] First responder: Scout
+[1763643118942891000] Factory damaged for 7
+[1763643118942957300] First responder: Scout
+[1763643118942957600] Factory damaged for 7
+[1763643119950709500] First responder: Scout
+[1763643119950716100] Factory damaged for 6
+[1763643119950947400] First responder: Scout
+[1763643119950947800] Factory damaged for 7
+[1763643119950994600] First responder: Scout
+[1763643119950994900] Factory damaged for 7
+[1763643120961709100] First responder: Scout
+[1763643120961717500] Factory damaged for 6
+[1763643120961962400] First responder: Scout
+[1763643120961962900] Factory damaged for 7
+[1763643120962009900] First responder: Scout
+[1763643120962010400] Factory damaged for 7
+[1763643121965029500] First responder: Scout
+[1763643121965036500] Factory damaged for 6
+[1763643121965231000] First responder: Scout
+[1763643121965231900] Factory damaged for 7
+[1763643121965327600] First responder: Scout
+[1763643121965328000] Factory damaged for 7
+[1763643121965410400] First responder: Scout
+[1763643121965410900] Factory damaged for 8
+[1763643122957468800] First responder: Scout
+[1763643122957475000] Factory damaged for 6
+[1763643122957733300] First responder: Scout
+[1763643122957733900] Factory damaged for 7
+[1763643122957806000] First responder: Scout
+[1763643122957806400] Factory damaged for 7
+[1763643122957867900] First responder: Scout
+[1763643122957868200] Factory damaged for 8
+[1763643123950282800] First responder: Scout
+[1763643123950289100] Factory damaged for 6
+[1763643123950497000] First responder: Scout
+[1763643123950497600] Factory damaged for 7
+[1763643123950569500] First responder: Scout
+[1763643123950569900] Factory damaged for 7
+[1763643123950631400] First responder: Scout
+[1763643123950631700] Factory damaged for 8
+[1763643124955326100] First responder: Scout
+[1763643124955331000] Factory damaged for 6
+[1763643124955477600] First responder: Scout
+[1763643124955478000] Factory damaged for 7
+[1763643124955528600] First responder: Scout
+[1763643124955528900] Factory damaged for 7
+[1763643124955572600] First responder: Scout
+[1763643124955650800] Factory damaged for 8
+[1763643125971077900] First responder: Scout
+[1763643125971085400] Factory damaged for 6
+[1763643125971346500] First responder: Scout
+[1763643125971347500] Factory damaged for 7
+[1763643125971421200] First responder: Scout
+[1763643125971421600] Factory damaged for 7
+[1763643125971484800] First responder: Scout
+[1763643125971485100] Factory damaged for 8
+[1763643126979596900] First responder: Scout
+[1763643126979603500] Factory damaged for 6
+[1763643126979862800] First responder: Scout
+[1763643126979863400] Factory damaged for 7
+[1763643126979940600] First responder: Scout
+[1763643126979941000] Factory damaged for 7
+[1763643126980006900] First responder: Scout
+[1763643126980007200] Factory damaged for 8
+[1763643127971530800] First responder: Scout
+[1763643127971537600] Factory damaged for 6
+[1763643127971798200] First responder: Scout
+[1763643127971798800] Factory damaged for 7
+[1763643127971874400] First responder: Scout
+[1763643127971874700] Factory damaged for 7
+[1763643127971939100] First responder: Scout
+[1763643127971939400] Factory damaged for 8
+[1763643128969100100] First responder: Scout
+[1763643128969106200] Factory damaged for 6
+[1763643128969258800] First responder: Scout
+[1763643128969259400] Factory damaged for 7
+[1763643128969336400] First responder: Scout
+[1763643128969336800] Factory damaged for 7
+[1763643128969402800] First responder: Scout
+[1763643128969403100] Factory damaged for 8
+[1763643128969466600] First responder: Scout
+[1763643128969467000] Factory damaged for 8
+[1763643129976989700] First responder: Scout
+[1763643129976996200] Factory damaged for 6
+[1763643129977262300] First responder: Scout
+[1763643129977263000] Factory damaged for 7
+[1763643129977339700] First responder: Scout
+[1763643129977340100] Factory damaged for 7
+[1763643129977407900] First responder: Scout
+[1763643129977408300] Factory damaged for 8
+[1763643129977460500] First responder: Scout
+[1763643129977460700] Factory damaged for 8
+[1763643130970226700] First responder: Scout
+[1763643130970233800] Factory damaged for 6
+[1763643130970456400] First responder: Scout
+[1763643130970457000] Factory damaged for 7
+[1763643130970537400] First responder: Scout
+[1763643130970537800] Factory damaged for 7
+[1763643130970608300] First responder: Scout
+[1763643130970608700] Factory damaged for 8
+[1763643130970675000] First responder: Scout
+[1763643130970675300] Factory damaged for 8
+[1763643131968422600] First responder: Scout
+[1763643131968429700] Factory damaged for 6
+[1763643131968704500] First responder: Scout
+[1763643131968705200] Factory damaged for 7
+[1763643131968788400] First responder: Scout
+[1763643131968788800] Factory damaged for 7
+[1763643131968859300] First responder: Scout
+[1763643131968859700] Factory damaged for 8
+[1763643131968929900] First responder: Scout
+[1763643131968930300] Factory damaged for 8
+[1763643132977284100] First responder: Scout
+[1763643132977289200] Factory damaged for 6
+[1763643132977515600] First responder: Scout
+[1763643132977516000] Factory damaged for 7
+[1763643132977629000] First responder: Scout
+[1763643132977631800] Factory damaged for 7
+[1763643132977732200] First responder: Scout
+[1763643132977732600] Factory damaged for 8
+[1763643132977789700] First responder: Scout
+[1763643132977790000] Factory damaged for 8
+[1763643133986916300] First responder: Scout
+[1763643133986921600] Factory damaged for 6
+[1763643133987150100] First responder: Scout
+[1763643133987150600] Factory damaged for 7
+[1763643133987211100] First responder: Scout
+[1763643133987211500] Factory damaged for 7
+[1763643133987262600] First responder: Scout
+[1763643133987262900] Factory damaged for 8
+[1763643133987312500] First responder: Scout
+[1763643133987312800] Factory damaged for 8
+[1763643135004679900] First responder: Scout
+[1763643135004687200] Factory damaged for 6
+[1763643135005020100] First responder: Scout
+[1763643135005021000] Factory damaged for 7
+[1763643135005137900] First responder: Scout
+[1763643135005138400] Factory damaged for 7
+[1763643135005240800] First responder: Scout
+[1763643135005241300] Factory damaged for 8
+[1763643135005368800] First responder: Scout
+[1763643135005369400] Factory damaged for 8
+[1763643143640885800] First responder: Scout
+[1763643143640892500] Factory damaged for 6
+[1763643143641060700] First responder: Scout
+[1763643143641061300] Factory damaged for 7
+[1763643143641116000] First responder: Scout
+[1763643143641116400] Factory damaged for 7
+[1763643143641163600] First responder: Scout
+[1763643143641163900] Factory damaged for 8
+[1763643143641200000] First responder: Scout
+[1763643143641200200] Factory damaged for 8
+[1763643144963200800] First responder: Scout
+[1763643144963206700] Factory damaged for 6
+[1763643144963425000] First responder: Scout
+[1763643144963425600] Factory damaged for 7
+[1763643144963482600] First responder: Scout
+[1763643144963483000] Factory damaged for 7
+[1763643144963533100] First responder: Scout
+[1763643144963533400] Factory damaged for 8
+[1763643144963581800] First responder: Scout
+[1763643144963582100] Factory damaged for 8
+[1763643147684828500] First responder: Scout
+[1763643147684834800] Factory damaged for 6
+[1763643147685125400] First responder: Scout
+[1763643147685126100] Factory damaged for 7
+[1763643147685186900] First responder: Scout
+[1763643147685187300] Factory damaged for 7
+[1763643147685238400] First responder: Scout
+[1763643147685238700] Factory damaged for 8
+[1763643147685287500] First responder: Scout
+[1763643147685287900] Factory damaged for 8
+[1763643149679405200] First responder: Scout
+[1763643149679412700] Factory damaged for 6
+[1763643149679640600] First responder: Scout
+[1763643149679641100] Factory damaged for 7
+[1763643149679702700] First responder: Scout
+[1763643149679703100] Factory damaged for 7
+[1763643149679756400] First responder: Scout
+[1763643149679756700] Factory damaged for 8
+[1763643149679806900] First responder: Scout
+[1763643149679807200] Factory damaged for 8
+[1763643151375913200] Factory destroyed
+[1763643153279693600] Factory constructed
+[1763643174282746900] Factory destroyed
+[1763645762054473000] Factory constructed
+[1763645765329355100] Factory destroyed
+[1763646602735029600] Factory constructed
+[1763646605664729000] Produced clanker: Scout
+[1763646607069608300] Produced clanker: Defender
+[1763646608229799400] Produced clanker: Worker
+[1763646608745016900] Factory repaired by 15
+[1763646609742887600] Factory repaired by 15
+[1763646609742895300] First responder: Scout
+[1763646609742896300] Defenders deal 10 damage.
+[1763646609742899300] Defender takes 5 damage (145 HP left)
+[1763646610746212700] Factory repaired by 15
+[1763646610746220800] First responder: Scout
+[1763646610746222000] Defenders deal 10 damage.
+[1763646610746225100] Defender takes 5 damage (140 HP left)
+[1763646611742299700] Factory repaired by 15
+[1763646611742308000] First responder: Scout
+[1763646611742309100] Defenders deal 10 damage.
+[1763646611742312400] Defender takes 5 damage (135 HP left)
+[1763646612768475100] Factory repaired by 15
+[1763646612768486300] First responder: Scout
+[1763646612768487600] Defenders deal 10 damage.
+[1763646612768491600] Defender takes 5 damage (130 HP left)
+[1763646613764261700] Factory repaired by 15
+[1763646613764275900] First responder: Scout
+[1763646613764277900] Defenders deal 10 damage.
+[1763646614761972200] Factory repaired by 15
+[1763646615761338400] Factory repaired by 15
+[1763646616772328500] Factory repaired by 15
+[1763646616772339200] First responder: Scout
+[1763646616772340800] Defenders deal 10 damage.
+[1763646616772345800] Defender takes 6 damage (124 HP left)
+[1763646617761116000] Factory repaired by 15
+[1763646617761128200] First responder: Scout
+[1763646617761129800] Defenders deal 10 damage.
+[1763646617761135300] Defender takes 6 damage (118 HP left)
+[1763646618773977400] Factory repaired by 15
+[1763646618773989200] First responder: Scout
+[1763646618773990900] Defenders deal 10 damage.
+[1763646618773996300] Defender takes 6 damage (112 HP left)
+[1763646619773460900] Factory repaired by 15
+[1763646619773468600] First responder: Scout
+[1763646619773469800] Defenders deal 10 damage.
+[1763646619773472800] Defender takes 6 damage (106 HP left)
+[1763646620781976100] Factory repaired by 15
+[1763646620781984300] First responder: Scout
+[1763646620781985200] Defenders deal 10 damage.
+[1763646621788299900] Factory repaired by 15
+[1763646622792506300] Factory repaired by 15
+[1763646623790162900] Factory repaired by 15
+[1763646623790172400] First responder: Scout
+[1763646623790173700] Defenders deal 10 damage.
+[1763646623790177600] Defender takes 6 damage (100 HP left)
+[1763646624803111800] Factory repaired by 15
+[1763646624803120000] First responder: Scout
+[1763646624803121000] Defenders deal 10 damage.
+[1763646624803124300] Defender takes 6 damage (94 HP left)
+[1763646625814003300] First responder: Scout
+[1763646625814007400] Workers deal 5 damage.
+[1763646625814011100] Defender takes 6 damage (88 HP left)
+[1763646626828264700] First responder: Scout
+[1763646626828270200] Workers deal 5 damage.
+[1763646626828274600] Defender takes 6 damage (82 HP left)
+[1763646627844536800] First responder: Scout
+[1763646627844547100] Defender takes 6 damage (76 HP left)
+[1763646628840748400] First responder: Scout
+[1763646628840756400] Defender takes 6 damage (70 HP left)
+[1763646629855362700] First responder: Scout
+[1763646629855373200] Defender takes 6 damage (64 HP left)
+[1763646630867344700] First responder: Scout
+[1763646630867356900] Defender takes 6 damage (58 HP left)
+[1763646630867648400] First responder: Scout
+[1763646630867652300] Defender takes 7 damage (51 HP left)
+[1763646631897402100] First responder: Scout
+[1763646631897411000] Defender takes 6 damage (45 HP left)
+[1763646631897638200] First responder: Scout
+[1763646631897640800] Defender takes 7 damage (38 HP left)
+[1763646632895424700] First responder: Scout
+[1763646632895433400] Defender takes 6 damage (32 HP left)
+[1763646632895696000] First responder: Scout
+[1763646632895700400] Defender takes 7 damage (25 HP left)
+[1763646633895038700] First responder: Scout
+[1763646633895046300] Defender takes 6 damage (19 HP left)
+[1763646633895340300] First responder: Scout
+[1763646633895344900] Defender takes 7 damage (12 HP left)
+[1763646634889841500] First responder: Scout
+[1763646634889848500] Defender takes 6 damage (6 HP left)
+[1763646634890020500] First responder: Scout
+[1763646634890021800] Defender takes 6 damage (0 HP left)
+[1763646634890023500] Worker takes 1 damage (99 HP left)
+[1763646635895207400] First responder: Scout
+[1763646635895216900] Worker takes 6 damage (93 HP left)
+[1763646635895577000] First responder: Scout
+[1763646635895582100] Worker takes 7 damage (86 HP left)
+[1763646636893790100] First responder: Scout
+[1763646636893798300] Worker takes 6 damage (80 HP left)
+[1763646636894000100] First responder: Scout
+[1763646636894002800] Worker takes 7 damage (73 HP left)
+[1763646637887705900] First responder: Scout
+[1763646637887716200] Worker takes 6 damage (67 HP left)
+[1763646637887962500] First responder: Scout
+[1763646637887963700] Worker takes 7 damage (60 HP left)
+[1763646637888020600] First responder: Scout
+[1763646637888021200] Worker takes 7 damage (53 HP left)
+[1763646638886440400] First responder: Scout
+[1763646638886449900] Worker takes 6 damage (47 HP left)
+[1763646638886790300] First responder: Scout
+[1763646638886796100] Worker takes 7 damage (40 HP left)
+[1763646638886938200] First responder: Scout
+[1763646638886939400] Worker takes 7 damage (33 HP left)
+[1763646639885509800] First responder: Scout
+[1763646639885518900] Worker takes 6 damage (27 HP left)
+[1763646639885808700] First responder: Scout
+[1763646639885814200] Worker takes 7 damage (20 HP left)
+[1763646639885943600] First responder: Scout
+[1763646639885945100] Worker takes 7 damage (13 HP left)
+[1763646640898282800] First responder: Scout
+[1763646640898290700] Worker takes 6 damage (7 HP left)
+[1763646640898587100] First responder: Scout
+[1763646640898589600] Worker takes 7 damage (0 HP left)
+[1763646640898652200] First responder: Scout
+[1763646640898652900] Factory damaged for 7
+[1763646641900507400] First responder: Scout
+[1763646641900514400] Factory damaged for 6
+[1763646641900800100] First responder: Scout
+[1763646641900801200] Factory damaged for 7
+[1763646641900900500] First responder: Scout
+[1763646641900901000] Factory damaged for 7
+[1763646642928383500] First responder: Scout
+[1763646642928390100] Factory damaged for 6
+[1763646642928651500] First responder: Scout
+[1763646642928652300] Factory damaged for 7
+[1763646642928723900] First responder: Scout
+[1763646642928724300] Factory damaged for 7
+[1763646643941806000] First responder: Scout
+[1763646643941811900] Factory damaged for 6
+[1763646643942147900] First responder: Scout
+[1763646643942151000] Factory damaged for 7
+[1763646643942273100] First responder: Scout
+[1763646643942273600] Factory damaged for 7
+[1763646644941325400] First responder: Scout
+[1763646644941332100] Factory damaged for 6
+[1763646644941581100] First responder: Scout
+[1763646644941584700] Factory damaged for 7
+[1763646644941709700] First responder: Scout
+[1763646644941710300] Factory damaged for 7
+[1763646644941777400] First responder: Scout
+[1763646644941777700] Factory damaged for 8
+[1763646645940503300] First responder: Scout
+[1763646645940509500] Factory damaged for 6
+[1763646645940797000] First responder: Scout
+[1763646645940797700] Factory damaged for 7
+[1763646645940870500] First responder: Scout
+[1763646645940870800] Factory damaged for 7
+[1763646645940934800] First responder: Scout
+[1763646645940935100] Factory damaged for 8
+[1763646646945563700] First responder: Scout
+[1763646646945570700] Factory damaged for 6
+[1763646646945896000] First responder: Scout
+[1763646646945897100] Factory damaged for 7
+[1763646646946001300] First responder: Scout
+[1763646646946001800] Factory damaged for 7
+[1763646646946089300] First responder: Scout
+[1763646646946089800] Factory damaged for 8
+[1763646647956367500] First responder: Scout
+[1763646647956373600] Factory damaged for 6
+[1763646647956616100] First responder: Scout
+[1763646647956616700] Factory damaged for 7
+[1763646647956693300] First responder: Scout
+[1763646647956693700] Factory damaged for 7
+[1763646647956743500] First responder: Scout
+[1763646647956743800] Factory damaged for 8
+[1763646648960848200] First responder: Scout
+[1763646648960854200] Factory damaged for 6
+[1763646648961142800] First responder: Scout
+[1763646648961143600] Factory damaged for 7
+[1763646648961223000] First responder: Scout
+[1763646648961223300] Factory damaged for 7
+[1763646648961288700] First responder: Scout
+[1763646648961289000] Factory damaged for 8
+[1763646649970650800] First responder: Scout
+[1763646649970657000] Factory damaged for 6
+[1763646649970866100] First responder: Scout
+[1763646649970866600] Factory damaged for 7
+[1763646649970921200] First responder: Scout
+[1763646649970921400] Factory damaged for 7
+[1763646649970969100] First responder: Scout
+[1763646649970969300] Factory damaged for 8
+[1763646650973361400] First responder: Scout
+[1763646650973369500] Factory damaged for 6
+[1763646650973674500] First responder: Scout
+[1763646650973675500] Factory damaged for 7
+[1763646650973748600] First responder: Scout
+[1763646650973748900] Factory damaged for 7
+[1763646650973793100] First responder: Scout
+[1763646650973793300] Factory damaged for 8
+[1763646651970531500] First responder: Scout
+[1763646651970539200] Factory damaged for 6
+[1763646651970833900] First responder: Scout
+[1763646651970834800] Factory damaged for 7
+[1763646651970895300] First responder: Scout
+[1763646651970895600] Factory damaged for 7
+[1763646651970941000] First responder: Scout
+[1763646651970941200] Factory damaged for 8
+[1763646651970984200] First responder: Scout
+[1763646651970984400] Factory damaged for 8
+[1763646652965796200] First responder: Scout
+[1763646652965801700] Factory damaged for 6
+[1763646652966078000] First responder: Scout
+[1763646652966078900] Factory damaged for 7
+[1763646652966187400] First responder: Scout
+[1763646652966188000] Factory damaged for 7
+[1763646652966280400] First responder: Scout
+[1763646652966280800] Factory damaged for 8
+[1763646652966373100] First responder: Scout
+[1763646652966373600] Factory damaged for 8
+[1763646653964269800] First responder: Scout
+[1763646653964275500] Factory damaged for 6
+[1763646653964509100] First responder: Scout
+[1763646653964511300] Factory damaged for 7
+[1763646653964576900] First responder: Scout
+[1763646653964577100] Factory damaged for 7
+[1763646653964626200] First responder: Scout
+[1763646653964626400] Factory damaged for 8
+[1763646653964675300] First responder: Scout
+[1763646653964675500] Factory damaged for 8
+[1763646654975206500] First responder: Scout
+[1763646654975213500] Factory damaged for 6
+[1763646654975523500] First responder: Scout
+[1763646654975524200] Factory damaged for 7
+[1763646654975639200] First responder: Scout
+[1763646654975639700] Factory damaged for 7
+[1763646654975739900] First responder: Scout
+[1763646654975740400] Factory damaged for 8
+[1763646654975833400] First responder: Scout
+[1763646654975833800] Factory damaged for 8
+[1763646655961680100] First responder: Scout
+[1763646655961687400] Factory damaged for 6
+[1763646655962006300] First responder: Scout
+[1763646655962007100] Factory damaged for 7
+[1763646655962082900] First responder: Scout
+[1763646655962083100] Factory damaged for 7
+[1763646655962132100] First responder: Scout
+[1763646655962132400] Factory damaged for 8
+[1763646655962179700] First responder: Scout
+[1763646655962179900] Factory damaged for 8
+[1763646656967592400] First responder: Scout
+[1763646656967598100] Factory damaged for 6
+[1763646656967945900] First responder: Scout
+[1763646656967947500] Factory damaged for 7
+[1763646656968038300] First responder: Scout
+[1763646656968038600] Factory damaged for 7
+[1763646656968090000] First responder: Scout
+[1763646656968090300] Factory damaged for 8
+[1763646656968140400] First responder: Scout
+[1763646656968140700] Factory damaged for 8
+[1763646657982339000] First responder: Scout
+[1763646657982345600] Factory damaged for 6
+[1763646657982670300] First responder: Scout
+[1763646657982672200] Factory damaged for 7
+[1763646657982817400] First responder: Scout
+[1763646657982818500] Factory damaged for 7
+[1763646657982938500] First responder: Scout
+[1763646657982939300] Factory damaged for 8
+[1763646657983061000] First responder: Scout
+[1763646657983101800] Factory damaged for 8
+[1763646663369371700] Factory damaged for 50
+[1763646663664973200] Factory damaged for 50
+[1763646663870329800] Factory damaged for 50
+[1763646669359638500] Factory destroyed

@@ -7,12 +7,13 @@ namespace ClankerSim {
 
 class Factory;
 
+// Scout unit that scouts and funnels resources back home.
 class ScoutClanker final : public Clanker {
 public:
-    ScoutClanker();
-    ScoutClanker(std::string name, unsigned char id);
-    explicit ScoutClanker(unsigned char id);
-    ScoutClanker(const ScoutClanker& other);
+    static constexpr int BASE_HP = 80;
+    static constexpr int BASE_ENERGY = 100;
+
+    explicit ScoutClanker(std::string name = "Scout", unsigned char id = 0);
     ~ScoutClanker() override = default;
 
     void setFactory(Factory& factory);

@@ -10,6 +10,7 @@ Enemy::Enemy(const Enemy& other) : hp(other.hp), attack(other.attack), alive(oth
 
 Enemy::~Enemy() = default;
 
+// Called by the factory when defenders retaliate.
 void Enemy::takeDamage(int dmg) {
     if (dmg <= 0 || !alive) {
         return;
@@ -21,9 +22,17 @@ void Enemy::takeDamage(int dmg) {
     }
 }
 
-int Enemy::getHP() const noexcept { return hp; }
-int Enemy::getAttack() const noexcept { return attack; }
-const std::string& Enemy::getName() const noexcept { return name; }
-bool Enemy::isAlive() const noexcept { return alive; }
+int Enemy::getHP() const {
+    return hp;
+}
+int Enemy::getAttack() const {
+    return attack;
+}
+const std::string& Enemy::getName() const {
+    return name;
+}
+bool Enemy::isAlive() const {
+    return alive;
+}
 
 }

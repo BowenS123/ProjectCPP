@@ -7,12 +7,14 @@ namespace ClankerSim {
 
 class Factory;
 
+// defender units that focuses on front-line defense.
 class DefenderClanker final : public Clanker {
 public:
-    DefenderClanker();
-    DefenderClanker(std::string name, unsigned char id);
-    explicit DefenderClanker(unsigned char id);
-    DefenderClanker(const DefenderClanker& other);
+    static constexpr int BASE_HP = 150;
+    static constexpr int BASE_ENERGY = 100;
+    static constexpr int RETALIATION_DAMAGE = 10;
+
+    explicit DefenderClanker(std::string name = "Defender", unsigned char id = 0);
     ~DefenderClanker() override = default;
 
     void setFactory(Factory& factory);

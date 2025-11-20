@@ -341,12 +341,6 @@
 			null
 		],
 		[
-			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/entity.h",
-			"MU",
-			"EWIEGA46WW/moc_entity.cpp",
-			null
-		],
-		[
 			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/factory.h",
 			"MU",
 			"EWIEGA46WW/moc_factory.cpp",
@@ -362,12 +356,6 @@
 			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/scout.h",
 			"MU",
 			"EWIEGA46WW/moc_scout.cpp",
-			null
-		],
-		[
-			"C:/Users/bowen/OneDrive/Documenten/ClankerFactory/util.h",
-			"MU",
-			"EWIEGA46WW/moc_util.cpp",
 			null
 		],
 		[

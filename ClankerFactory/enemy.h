@@ -5,6 +5,7 @@
 
 namespace ClankerSim {
 
+// opponent used by the UI wave spawner.
 class Enemy {
 public:
     Enemy();
@@ -14,10 +15,11 @@ public:
 
     void takeDamage(int dmg);
 
-    int getHP() const noexcept;
-    int getAttack() const noexcept;
-    const std::string& getName() const noexcept;
-    bool isAlive() const noexcept;
+    // Read only accessors used by the UI and factory combat loop.
+    int getHP() const;
+    int getAttack() const;
+    const std::string& getName() const;
+    bool isAlive() const;
 
 private:
     int hp;

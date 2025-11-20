@@ -1,21 +1,27 @@
 #include "factory.h"
 #include "enemy.h"
 
+#include <algorithm>
+#include <chrono>
+#include <stdexcept>
+#include <utility>
+
 namespace ClankerSim {
 
+// Default factory bootstraps with a placeholder name.
 Factory::Factory() : Factory("Unnamed Factory") {}
 
-Factory::Factory(std::string name)
-    : Entity(std::move(name), 255, MAX_HEALTH / 2),
-      running(false),
-      defenseAlert(false),
-      maintenanceMode(false),
-      loggingEnabled(true),
-      resources(100),
-      batteryStorage(2),
-      nextId(1),
-      logPath("factory_log.txt"),
-      logFile(logPath, std::ios::app)
+Factory::Factory(std::string nameValue)
+        : name(std::move(nameValue)),
+            id(255),
+            health(MAX_HEALTH / 2),
+            clankers(),
+            loggingEnabled(true),
+            resources(100),
+            batteryStorage(2),
+            nextId(1),
+            logPath("factory_log.txt"),
+            logFile(logPath, std::ios::app)
 {
     if (!logFile) {
         loggingEnabled = false;
@@ -24,23 +30,7 @@ Factory::Factory(std::string name)
     }
 }
 
-Factory::Factory(const Factory& other)
-    : Entity(other),
-      running(false),
-      defenseAlert(other.defenseAlert),
-      maintenanceMode(other.maintenanceMode),
-      loggingEnabled(other.loggingEnabled),
-      resources(other.resources),
-      batteryStorage(other.batteryStorage),
-      nextId(other.nextId),
-      logPath(other.logPath),
-      logFile(logPath, std::ios::app)
-{
-    log("Factory copied");
-}
-
 Factory::~Factory() {
-    shutdown();
     for (auto* clanker : clankers) {
         delete clanker;
     }
@@ -50,14 +40,29 @@ Factory::~Factory() {
     }
 }
 
+const std::string& Factory::getName() const {
+    return name;
+}
+unsigned char Factory::getId() const {
+    return id;
+}
+int Factory::getHealth() const {
+    return health;
+}
+bool Factory::isDestroyed() const {
+    return health <= 0;
+}
+const std::string& Factory::getLogPath() const {
+    return logPath;
+}
+
+// Central entry point that wires a freshly built clanker into the roster.
 void Factory::produceClanker(Clanker* clankerPtr) {
     if (!clankerPtr) {
         return;
     }
 
-    std::lock_guard<std::mutex> guard(mutex);
     clankers.push_back(clankerPtr);
-    clankerPtr->setOwner(this);
     if (auto* worker = dynamic_cast<WorkerClanker*>(clankerPtr)) {
         worker->setFactory(*this);
     } else if (auto* scout = dynamic_cast<ScoutClanker*>(clankerPtr)) {
@@ -68,18 +73,15 @@ void Factory::produceClanker(Clanker* clankerPtr) {
     log("Produced clanker: " + clankerPtr->getName());
 }
 
+// Factory managed worker production that refunds resources on failure.
 bool Factory::safeProduceWorker() {
     try {
-        unsigned char idToUse = 0;
-        {
-            std::lock_guard<std::mutex> guard(mutex);
-            if (resources < 15) {
-                throw std::runtime_error("Insufficient resources");
-            }
-            resources -= 15;
-            idToUse = nextId++;
+        if (resources < 15) {
+            throw std::runtime_error("Insufficient resources");
         }
-        auto* worker = new WorkerClanker(idToUse);
+        resources -= 15;
+        const unsigned char idToUse = nextId++;
+        auto* worker = new WorkerClanker("Worker", idToUse);
         worker->setFactory(*this);
         produceClanker(worker);
         return true;
@@ -89,10 +91,12 @@ bool Factory::safeProduceWorker() {
     }
 }
 
+// Converts resources into rechargeable batteries for clankers.
 bool Factory::produceBattery(int count) {
     if (count <= 0) {
         return false;
     }
+
     const int cost = 15 * count;
     if (resources < cost) {
         return false;
@@ -103,132 +107,222 @@ bool Factory::produceBattery(int count) {
     return true;
 }
 
+// Runs every clanker once per tick to advance their behavior.
 void Factory::updateAll(float dt) {
-    std::vector<Clanker*> snapshot;
-    {
-        std::lock_guard<std::mutex> guard(mutex);
-        snapshot = clankers;
-    }
+    std::vector<Clanker*> snapshot = clankers;
 
     for (auto* clanker : snapshot) {
         if (clanker && !clanker->isDestroyed()) {
-            clanker->update(dt);
+            clanker->doWork(dt);
         }
     }
-
-    std::lock_guard<std::mutex> guard(mutex);
-    maintenanceMode = resources < 20;
-    defenseAlert = countAlive(clankers) < 2;
 }
 
-void Factory::repair(int hp) {
-    std::lock_guard<std::mutex> guard(mutex);
-    health += hp;
+void Factory::update(float dt) {
+    updateAll(dt);
+}
+
+// Apply direct damage from enemies when no defenders remain.
+void Factory::takeDamage(int dmg) {
+    if (dmg <= 0) {
+        return;
+    }
+
+    health -= dmg;
+    if (health < 0) {
+        health = 0;
+    }
+    log("Factory damaged for " + std::to_string(dmg));
+}
+
+// Clamp health when maintenance crews heal the structure.
+void Factory::repair(int hpValue) {
+    health += hpValue;
     if (health > MAX_HEALTH) {
         health = MAX_HEALTH;
     }
-    active = health > 0;
-    log("Factory repaired by " + std::to_string(hp));
+    log("Factory repaired by " + std::to_string(hpValue));
 }
 
+// Thread-safe resource adjustment (used by clankers and UI buttons).
 void Factory::addResources(int delta) {
-    std::lock_guard<std::mutex> guard(mutex);
     resources += delta;
     if (resources < 0) {
         resources = 0;
     }
 }
 
-int Factory::getResources() const noexcept {
-    std::lock_guard<std::mutex> guard(mutex);
+int Factory::getResources() const {
     return resources;
 }
 
-const std::vector<Clanker*>& Factory::getClankers() const noexcept {
+const std::vector<Clanker*>& Factory::getClankers() const {
     return clankers;
 }
 
-int Factory::getBatteries() const noexcept {
-    std::lock_guard<std::mutex> guard(mutex);
+int Factory::getBatteries() const {
     return batteryStorage;
 }
 
 void Factory::addBatteries(int diff) {
-    std::lock_guard<std::mutex> guard(mutex);
     batteryStorage += diff;
     if (batteryStorage < 0) {
         batteryStorage = 0;
     }
 }
 
-void Factory::startProductionThread() {
-    if (running) {
-        return;
-    }
-    running = true;
-    std::thread([this]() {
-        while (running) {
-            safeProduceWorker();
-            std::this_thread::sleep_for(std::chrono::seconds(5));
-        }
-    }).detach();
-}
-
-void Factory::shutdown() {
-    running = false;
-}
-
+// Resolve an attack step by delegating to powered clankers first.
 std::string Factory::defendAgainst(Enemy& enemy) {
-    std::lock_guard<std::mutex> guard(mutex);
     if (!enemy.isAlive()) {
         return "Enemy already defeated";
     }
 
     int defenderCount = 0;
     int workerCount = 0;
+    const Clanker* firstResponder = nullptr;
+    std::vector<DefenderClanker*> defendersAlive;
+    std::vector<WorkerClanker*> workersAlive;
     for (auto* clanker : clankers) {
+        if (clanker && !clanker->isDestroyed() && !firstResponder) {
+            firstResponder = clanker;
+        }
         if (auto* defender = dynamic_cast<DefenderClanker*>(clanker)) {
+            if (!defender->isDestroyed()) {
+                defendersAlive.push_back(defender);
+            }
             if (defender->getEnergy() > 0) {
                 ++defenderCount;
             }
         } else if (auto* worker = dynamic_cast<WorkerClanker*>(clanker)) {
+            if (!worker->isDestroyed()) {
+                workersAlive.push_back(worker);
+            }
             if (worker->getEnergy() > 0) {
                 ++workerCount;
             }
         }
     }
-    if (const Clanker* first = getFirstActiveClanker()) {
-        log(std::string("First responder: ") + first->getName());
+
+    if (firstResponder) {
+        log(std::string("First responder: ") + firstResponder->getName());
     }
 
+    std::vector<std::string> narrative;
+    auto addMessage = [&](const std::string& msg) {
+        if (!msg.empty()) {
+            narrative.push_back(msg);
+        }
+    };
+
+    std::string outcome;
     if (defenderCount > 0) {
-        enemy.takeDamage(defenderCount * 10);
-        log("Defenders retaliated");
-        return "Defenders attack the enemy!";
-    }
-    if (workerCount > 0) {
-        enemy.takeDamage(workerCount * 5);
-        log("Workers retaliated");
-        return "Workers attack the enemy!";
+        const int retaliateDamage = defenderCount * DefenderClanker::RETALIATION_DAMAGE;
+        enemy.takeDamage(retaliateDamage);
+        outcome = "Defenders deal " + std::to_string(retaliateDamage) + " damage.";
+        log(outcome);
+        addMessage(outcome);
+    } else if (workerCount > 0) {
+        const int retaliateDamage = workerCount * WorkerClanker::RETALIATION_DAMAGE;
+        enemy.takeDamage(retaliateDamage);
+        outcome = "Workers deal " + std::to_string(retaliateDamage) + " damage.";
+        log(outcome);
+        addMessage(outcome);
     }
 
-    takeDamage(enemy.getAttack());
-    return "Enemy hits the factory!";
+    if (!enemy.isAlive()) {
+        if (outcome.empty()) {
+            addMessage("Enemy defeated before striking.");
+        }
+        std::string joined;
+        for (const auto& msg : narrative) {
+            if (!joined.empty()) {
+                joined += ' ';
+            }
+            joined += msg;
+        }
+        return joined;
+    }
+
+    int incomingDamage = enemy.getAttack();
+    std::string retaliation;
+    auto applyDamage = [&](auto& group, const char* label) {
+        bool hitSomeone = false;
+        for (auto* unit : group) {
+            if (!unit || unit->isDestroyed() || incomingDamage <= 0) {
+                continue;
+            }
+            const int before = unit->getHp();
+            const int dealt = std::min(before, incomingDamage);
+            unit->takeDamage(dealt);
+            incomingDamage -= dealt;
+            hitSomeone = true;
+            const int hpLeft = unit->getHp();
+            const std::string detail = unit->getName() + " takes " + std::to_string(dealt) +
+                " damage (" + std::to_string(hpLeft) + " HP left)";
+            addMessage(detail);
+            log(detail);
+        }
+        if (hitSomeone) {
+            if (!retaliation.empty()) {
+                retaliation += ' ';
+            }
+            retaliation += label;
+            addMessage(label);
+        }
+    };
+
+    applyDamage(defendersAlive, "Enemy strikes the defenders!");
+    if (incomingDamage > 0) {
+        applyDamage(workersAlive, "Enemy strikes the workers!");
+    }
+
+    if (incomingDamage > 0) {
+        const int remaining = incomingDamage;
+        takeDamage(remaining);
+        const int factoryHp = health;
+        std::string factoryHit = "Enemy hits the factory for " + std::to_string(remaining) +
+            " damage (" + std::to_string(factoryHp) + " HP left)";
+        addMessage(factoryHit);
+        retaliation += (retaliation.empty() ? factoryHit : " " + factoryHit);
+        std::string joined;
+        for (const auto& msg : narrative) {
+            if (!joined.empty()) {
+                joined += ' ';
+            }
+            joined += msg;
+        }
+        return joined.empty() ? retaliation : joined;
+    }
+
+    std::string joined;
+    for (const auto& msg : narrative) {
+        if (!joined.empty()) {
+            joined += ' ';
+        }
+        joined += msg;
+    }
+    if (joined.empty()) {
+        joined = retaliation;
+    }
+    return joined.empty() ? outcome : joined;
 }
 
 void Factory::log(const std::string& message) const {
     if (!loggingEnabled || !logFile.is_open()) {
         return;
     }
-    auto timestamp = std::chrono::system_clock::now().time_since_epoch().count();
+
+    const auto timestamp = std::chrono::system_clock::now().time_since_epoch().count();
     logFile << '[' << timestamp << "] " << message << '\n';
 }
 
-void FactoryInspector::dump(const Factory& factory) {
-    std::lock_guard<std::mutex> guard(factory.mutex);
-    std::cout << "Inspector -> Resources: " << factory.resources
-              << ", Batteries: " << factory.batteryStorage
-              << ", Clankers: " << factory.clankers.size() << '\n';
+const Clanker* Factory::getFirstActiveClanker() const {
+    for (auto* clanker : clankers) {
+        if (clanker && !clanker->isDestroyed()) {
+            return clanker;
+        }
+    }
+    return nullptr;
 }
 
-}
+} // namespace ClankerSim

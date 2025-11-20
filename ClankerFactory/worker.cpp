@@ -3,17 +3,7 @@
 
 namespace ClankerSim {
 
-WorkerClanker::WorkerClanker()
-    : WorkerClanker("Worker", 0) {}
-
-WorkerClanker::WorkerClanker(std::string name, unsigned char id)
-    : Clanker(std::move(name), id, 100, 80), factoryRef(nullptr) {}
-
-WorkerClanker::WorkerClanker(unsigned char id)
-    : WorkerClanker("Worker", id) {}
-
-WorkerClanker::WorkerClanker(const WorkerClanker& other)
-    : Clanker(other), factoryRef(other.factoryRef) {}
+WorkerClanker::WorkerClanker(std::string name, unsigned char id) : Clanker(std::move(name), id, BASE_HP, BASE_ENERGY), factoryRef(nullptr) {}
 
 void WorkerClanker::setFactory(Factory& factory) {
     factoryRef = &factory;
@@ -24,7 +14,7 @@ void WorkerClanker::work() {
         return;
     }
 
-    if (energy <= 20) {
+    if (energy <= 15) {
         recharge(*factoryRef);
     }
     if (energy <= 0) {
