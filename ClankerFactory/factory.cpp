@@ -11,17 +11,7 @@ namespace ClankerSim {
 // Default factory bootstraps with a placeholder name.
 Factory::Factory() : Factory("Unnamed Factory") {}
 
-Factory::Factory(std::string nameValue)
-        : name(std::move(nameValue)),
-            id(255),
-            health(MAX_HEALTH / 2),
-            clankers(),
-            loggingEnabled(true),
-            resources(100),
-            batteryStorage(2),
-            nextId(1),
-            logPath("factory_log.txt"),
-            logFile(logPath, std::ios::app)
+Factory::Factory(std::string nameValue) : name(std::move(nameValue)), id(255), health(MAX_HEALTH / 2), clankers(), loggingEnabled(true), resources(100), batteryStorage(2), nextId(1), logPath("factory_log.txt"), logFile(logPath, std::ios::app)
 {
     if (!logFile) {
         loggingEnabled = false;
@@ -135,7 +125,6 @@ void Factory::takeDamage(int dmg) {
     log("Factory damaged for " + std::to_string(dmg));
 }
 
-// Clamp health when maintenance crews heal the structure.
 void Factory::repair(int hpValue) {
     health += hpValue;
     if (health > MAX_HEALTH) {
@@ -144,7 +133,6 @@ void Factory::repair(int hpValue) {
     log("Factory repaired by " + std::to_string(hpValue));
 }
 
-// Thread-safe resource adjustment (used by clankers and UI buttons).
 void Factory::addResources(int delta) {
     resources += delta;
     if (resources < 0) {

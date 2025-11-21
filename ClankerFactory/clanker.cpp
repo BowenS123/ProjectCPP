@@ -35,7 +35,6 @@ int Clanker::getEnergy() const {
     return energy;
 }
 
-// Simple wrapper so external callers can pass delta-time without exposing work().
 void Clanker::doWork(float dt) {
     (void)dt;
     work();

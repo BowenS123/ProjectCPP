@@ -68,3 +68,16 @@
 676	2468	7853498001009651	CMakeFiles/ClankerFactory.dir/main.cpp.obj	1394338d62c2473d
 680	2988	7853498001044778	CMakeFiles/ClankerFactory.dir/mainwindow.cpp.obj	ea2062c2fb9d5169
 2988	3174	7853498024131625	ClankerFactory.exe	b1cfe28b8fcf11eb
+32	448	7854587590234683	ClankerFactory_autogen/timestamp	f3bceee48b76cc5
+32	448	7854587590234683	ClankerFactory_autogen/mocs_compilation.cpp	f3bceee48b76cc5
+32	448	7854587590234683	C:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/timestamp	f3bceee48b76cc5
+32	448	7854587590234683	C:/Users/bowen/OneDrive/Documenten/ClankerFactory/build/Desktop_Qt_6_10_0_MinGW_64_bit-Debug/ClankerFactory_autogen/mocs_compilation.cpp	f3bceee48b76cc5
+464	874	7854587590843583	CMakeFiles/ClankerFactory.dir/defender.cpp.obj	b85b8f2913b6ad60
+462	875	7854587590813581	CMakeFiles/ClankerFactory.dir/scout.cpp.obj	799300593952485d
+459	875	7854587590793577	CMakeFiles/ClankerFactory.dir/worker.cpp.obj	7f8d37910cef5c8c
+457	876	7854587590763581	CMakeFiles/ClankerFactory.dir/clanker.cpp.obj	b2917b873021988c
+467	1024	7854587590873575	CMakeFiles/ClankerFactory.dir/factory.cpp.obj	ba30c44cc4960dd7
+452	1710	7854587590723568	CMakeFiles/ClankerFactory.dir/main.cpp.obj	1394338d62c2473d
+449	1715	7854587590693573	CMakeFiles/ClankerFactory.dir/ClankerFactory_autogen/mocs_compilation.cpp.obj	2de1b07d39e39af
+454	2222	7854587590743575	CMakeFiles/ClankerFactory.dir/mainwindow.cpp.obj	ea2062c2fb9d5169
+2222	2537	7854587608423111	ClankerFactory.exe	b1cfe28b8fcf11eb
