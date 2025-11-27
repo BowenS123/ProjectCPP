@@ -3,7 +3,6 @@
 
 #include <algorithm>
 #include <chrono>
-#include <stdexcept>
 #include <utility>
 
 namespace ClankerSim {
@@ -11,7 +10,7 @@ namespace ClankerSim {
 // Default factory bootstraps with a placeholder name.
 Factory::Factory() : Factory("Unnamed Factory") {}
 
-Factory::Factory(std::string nameValue) : name(std::move(nameValue)), id(255), health(MAX_HEALTH / 2), clankers(), loggingEnabled(true), resources(100), batteryStorage(2), nextId(1), logPath("factory_log.txt"), logFile(logPath, std::ios::app)
+Factory::Factory(std::string nameValue) : name(std::move(nameValue)), id(255), health(MAX_HEALTH / 2), clankers(), loggingEnabled(true), resources(100), batteryStorage(2), logPath("factory_log.txt"), logFile(logPath, std::ios::app)
 {
     if (!logFile) {
         loggingEnabled = false;
@@ -42,9 +41,6 @@ int Factory::getHealth() const {
 bool Factory::isDestroyed() const {
     return health <= 0;
 }
-const std::string& Factory::getLogPath() const {
-    return logPath;
-}
 
 // Central entry point that wires a freshly built clanker into the roster.
 void Factory::produceClanker(Clanker* clankerPtr) {
@@ -61,24 +57,6 @@ void Factory::produceClanker(Clanker* clankerPtr) {
         defender->setFactory(*this);
     }
     log("Produced clanker: " + clankerPtr->getName());
-}
-
-// Factory managed worker production that refunds resources on failure.
-bool Factory::safeProduceWorker() {
-    try {
-        if (resources < 15) {
-            throw std::runtime_error("Insufficient resources");
-        }
-        resources -= 15;
-        const unsigned char idToUse = nextId++;
-        auto* worker = new WorkerClanker("Worker", idToUse);
-        worker->setFactory(*this);
-        produceClanker(worker);
-        return true;
-    } catch (const std::exception& ex) {
-        log(std::string("safeProduceWorker failed: ") + ex.what());
-        return false;
-    }
 }
 
 // Converts resources into rechargeable batteries for clankers.
@@ -157,6 +135,67 @@ void Factory::addBatteries(int diff) {
     if (batteryStorage < 0) {
         batteryStorage = 0;
     }
+}
+
+// Manually assign a battery to a specific clanker by ID.
+bool Factory::giveBatteryTo(unsigned char targetId) {
+    if (batteryStorage <= 0) {
+        return false;
+    }
+    for (auto* clanker : clankers) {
+        if (!clanker || clanker->isDestroyed()) {
+            continue;
+        }
+        if (clanker->getId() == targetId) {
+            const int current = clanker->getEnergy();
+            if (current >= 100) {
+                return false;
+            }
+            const int needed = 100 - current;
+            clanker->takeDamage(0);
+            clanker->recharge(*this);
+            if (batteryStorage > 0) {
+            }
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Factory::produceWorker() {
+    if (resources < WORKER_COST) {
+        return false;
+    }
+    resources -= WORKER_COST;
+    auto* unit = new WorkerClanker("Worker", 0);
+    unit->setFactory(*this);
+    produceClanker(unit);
+    log("Produced Worker (ID=" + std::to_string(unit->getId()) + ")");
+    return true;
+}
+
+bool Factory::produceScout() {
+    if (resources < SCOUT_COST) {
+        return false;
+    }
+    resources -= SCOUT_COST;
+    auto* unit = new ScoutClanker("Scout", 0);
+    unit->setFactory(*this);
+    produceClanker(unit);
+    log("Produced Scout (ID=" + std::to_string(unit->getId()) + ")");
+    return true;
+}
+
+bool Factory::produceDefender() {
+    if (resources < DEFENDER_COST) {
+        return false;
+    }
+    resources -= DEFENDER_COST;
+    auto* unit = new DefenderClanker("Defender", 0);
+    unit->setFactory(*this);
+    produceClanker(unit);
+    log("Produced Defender (ID=" + std::to_string(unit->getId()) + ")");
+    return true;
 }
 
 // Resolve an attack step by delegating to powered clankers first.
@@ -302,15 +341,6 @@ void Factory::log(const std::string& message) const {
 
     const auto timestamp = std::chrono::system_clock::now().time_since_epoch().count();
     logFile << '[' << timestamp << "] " << message << '\n';
-}
-
-const Clanker* Factory::getFirstActiveClanker() const {
-    for (auto* clanker : clankers) {
-        if (clanker && !clanker->isDestroyed()) {
-            return clanker;
-        }
-    }
-    return nullptr;
 }
 
 } // namespace ClankerSim

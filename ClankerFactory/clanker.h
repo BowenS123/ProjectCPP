@@ -10,6 +10,8 @@ class Factory;
 class Clanker {
 public:
     Clanker(std::string name, unsigned char id, int hp, int energyValue);
+    static unsigned char nextAutoId;
+    static unsigned char allocateAutoId();
     virtual ~Clanker() = default;
 
     const std::string& getName() const;

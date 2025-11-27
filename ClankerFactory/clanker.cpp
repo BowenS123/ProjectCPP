@@ -3,7 +3,13 @@
 
 namespace ClankerSim {
 
-Clanker::Clanker(std::string nameValue, unsigned char identifier, int hpValue, int energyValue) : name(std::move(nameValue)), id(identifier), hp(hpValue), energy(energyValue) {}
+unsigned char Clanker::nextAutoId = 1;
+
+unsigned char Clanker::allocateAutoId() {
+    return nextAutoId++;
+}
+
+Clanker::Clanker(std::string nameValue, unsigned char identifier, int hpValue, int energyValue) : name(std::move(nameValue)), id(identifier ? identifier : allocateAutoId()), hp(hpValue), energy(energyValue) {}
 
 const std::string& Clanker::getName() const {
     return name;

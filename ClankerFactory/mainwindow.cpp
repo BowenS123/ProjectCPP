@@ -17,18 +17,33 @@ MainWindow::MainWindow(QWidget *parent)
     ui->clankerTableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui->clankerTableWidget->verticalHeader()->setVisible(false);
 
-    // Detail table shows every clanker with energy status for debugging.
-    ui->clankerDetailTableWidget->setHorizontalHeaderLabels({"ID", "Name", "Class", "Energy", "Status"});
+    // Detail table shows every clanker with full status for debugging.
+    ui->clankerDetailTableWidget->setColumnCount(7);
+    ui->clankerDetailTableWidget->setHorizontalHeaderLabels({"ID", "Name", "Class", "HP", "Energy", "ATK", "Status"});
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
+    ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(5, QHeaderView::ResizeToContents);
+    ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(6, QHeaderView::ResizeToContents);
     ui->clankerDetailTableWidget->verticalHeader()->setVisible(false);
 
     ui->factoryHealthBar->setMinimum(0);
     ui->factoryHealthBar->setMaximum(ClankerSim::Factory::MAX_HEALTH);
     ui->factoryHealthBar->setValue(factory.getHealth());
+    // Initial button state and helpful tooltip.
+    ui->giveBatteryButton->setEnabled(false);
+    ui->giveBatteryButton->setToolTip("Select a non-destroyed clanker with energy < 100 and ensure batteries > 0");
+    ui->clankerDetailTableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->clankerDetailTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+    // Show production costs in the type selector tooltip for quick reference.
+    ui->clankerTypeComboBox->setItemText(0, "Worker");
+    ui->clankerTypeComboBox->setItemText(1, "Scout");
+    ui->clankerTypeComboBox->setItemText(2, "Defender");
+    ui->clankerTypeComboBox->setItemData(0, QVariant(QString("Cost: %1 Resources").arg(ClankerSim::Factory::WORKER_COST)), Qt::ToolTipRole);
+    ui->clankerTypeComboBox->setItemData(1, QVariant(QString("Cost: %1 Resources").arg(ClankerSim::Factory::SCOUT_COST)), Qt::ToolTipRole);
+    ui->clankerTypeComboBox->setItemData(2, QVariant(QString("Cost: %1 Resources").arg(ClankerSim::Factory::DEFENDER_COST)), Qt::ToolTipRole);
 
     // Timers drive the game simulation and enemy spawns.
     gameTimer = new QTimer(this);
@@ -38,6 +53,8 @@ MainWindow::MainWindow(QWidget *parent)
     enemySpawnTimer = new QTimer(this);
     connect(enemySpawnTimer, &QTimer::timeout, this, &MainWindow::spawnEnemy);
     enemySpawnTimer->start(7000);
+
+    connect(ui->clankerDetailTableWidget->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::updateBatteryButtonState);
 
     updateUI();
 }
@@ -64,26 +81,17 @@ void MainWindow::on_produceButton_clicked()
 {
     QString type = ui->clankerTypeComboBox->currentText();
 
-    if (type == "Worker" && factory.getResources() >= 20) {
-        factory.addResources(-20);
-        auto w = new ClankerSim::WorkerClanker("Worker", 1);
-        w->setFactory(factory);
-        factory.produceClanker(w);
-        ui->logTextEdit->append("Produced Worker Clanker!");
+    bool ok = false;
+    if (type == "Worker") {
+        ok = factory.produceWorker();
+    } else if (type == "Scout") {
+        ok = factory.produceScout();
+    } else if (type == "Defender") {
+        ok = factory.produceDefender();
     }
-    else if (type == "Scout" && factory.getResources() >= 30) {
-        factory.addResources(-30);
-        auto s = new ClankerSim::ScoutClanker("Scout", 2);
-        s->setFactory(factory);
-        factory.produceClanker(s);
-        ui->logTextEdit->append("Produced Scout Clanker!");
-    }
-    else if (type == "Defender" && factory.getResources() >= 40) {
-        factory.addResources(-40);
-        auto d = new ClankerSim::DefenderClanker("Defender", 3);
-        d->setFactory(factory);
-        factory.produceClanker(d);
-        ui->logTextEdit->append("Produced Defender Clanker!");
+
+    if (ok) {
+        ui->logTextEdit->append(QString("Produced %1 Clanker!").arg(type));
     } else {
         ui->logTextEdit->append("Not enough resources to produce this Clanker!");
     }
@@ -99,6 +107,42 @@ void MainWindow::on_produceBatteryButton_clicked()
         ui->logTextEdit->append("Not enough resources to produce a battery!");
     }
     updateUI();
+}
+
+void MainWindow::on_giveBatteryButton_clicked()
+{
+    // Use selection from detail table to find clanker ID
+    auto* table = ui->clankerDetailTableWidget;
+    auto selected = table->selectedItems();
+    if (selected.isEmpty()) {
+        ui->logTextEdit->append("Select a clanker row first.");
+        return;
+    }
+    // First column holds ID
+    int row = selected.first()->row();
+    auto* idItem = table->item(row, 0);
+    if (!idItem) {
+        ui->logTextEdit->append("No ID in selected row.");
+        return;
+    }
+    bool ok = false;
+    unsigned char id = static_cast<unsigned char>(idItem->text().toUShort(&ok));
+    if (!ok) {
+        ui->logTextEdit->append("Invalid ID.");
+        return;
+    }
+    if (factory.getBatteries() <= 0) {
+        ui->logTextEdit->append("No batteries available.");
+        updateBatteryButtonState();
+        return;
+    }
+    if (factory.giveBatteryTo(id)) {
+        ui->logTextEdit->append(QString("Battery given to clanker ID %1").arg(id));
+    } else {
+        ui->logTextEdit->append("Battery not given (unit may be full or destroyed or missing).");
+    }
+    updateUI();
+    updateBatteryButtonState();
 }
 
 void MainWindow::on_damageButton_clicked()
@@ -160,7 +204,9 @@ void MainWindow::updateUI()
     struct UnitRow {
         QString name;
         QString type;
+        int hp;
         int energy;
+        int atk;
         bool destroyed;
         bool inactive;
         unsigned char id;
@@ -177,20 +223,24 @@ void MainWindow::updateUI()
         const int energyValue = c->getEnergy();
         const bool inactive = !destroyed && energyValue <= 0;
         QString typeLabel = "Unknown";
+        int attackValue = 0;
         if (auto* w = dynamic_cast<ClankerSim::WorkerClanker*>(c)) {
             typeLabel = "Worker";
+            attackValue = ClankerSim::WorkerClanker::RETALIATION_DAMAGE;
             if (!destroyed && !inactive) {
                 workerCount++;
                 workerEnergy += energyValue;
             }
         } else if (auto* s = dynamic_cast<ClankerSim::ScoutClanker*>(c)) {
             typeLabel = "Scout";
+            attackValue = 0;
             if (!destroyed && !inactive) {
                 scoutCount++;
                 scoutEnergy += energyValue;
             }
         } else if (auto* d = dynamic_cast<ClankerSim::DefenderClanker*>(c)) {
             typeLabel = "Defender";
+            attackValue = ClankerSim::DefenderClanker::RETALIATION_DAMAGE;
             if (!destroyed && !inactive) {
                 defenderCount++;
                 defenderEnergy += energyValue;
@@ -200,7 +250,9 @@ void MainWindow::updateUI()
         unitRows.push_back(UnitRow{
             QString::fromStdString(c->getName()),
             typeLabel,
+            c->getHp(),
             energyValue,
+            attackValue,
             destroyed,
             inactive,
             c->getId()
@@ -232,7 +284,21 @@ void MainWindow::updateUI()
         ui->clankerTableWidget->setItem(row, 2, makeItem(QString("%1%" ).arg(avgEnergy)));
     }
 
-    // Per unit detail refresh adds/removes rows to match current roster.
+    // Preserve current selection's ID before rebuilding the table.
+    if (auto* sel = ui->clankerDetailTableWidget->selectionModel(); sel && sel->hasSelection()) {
+        int row = sel->selectedIndexes().isEmpty() ? -1 : sel->selectedIndexes().first().row();
+        if (row >= 0) {
+            auto* idItem = ui->clankerDetailTableWidget->item(row, 0);
+            if (idItem) {
+                bool okId = false;
+                int idVal = idItem->text().toInt(&okId);
+                if (okId) {
+                    lastSelectedId = idVal;
+                }
+            }
+        }
+    }
+
     ui->clankerDetailTableWidget->clearContents();
     ui->clankerDetailTableWidget->setRowCount(static_cast<int>(unitRows.size()));
     for (int row = 0; row < static_cast<int>(unitRows.size()); ++row) {
@@ -240,14 +306,61 @@ void MainWindow::updateUI()
         ui->clankerDetailTableWidget->setItem(row, 0, makeItem(QString::number(entry.id)));
         ui->clankerDetailTableWidget->setItem(row, 1, makeItem(entry.name, Qt::AlignLeft | Qt::AlignVCenter));
         ui->clankerDetailTableWidget->setItem(row, 2, makeItem(entry.type));
-        ui->clankerDetailTableWidget->setItem(row, 3, makeItem(QString::number(entry.energy)));
+        ui->clankerDetailTableWidget->setItem(row, 3, makeItem(QString::number(entry.hp)));
+        ui->clankerDetailTableWidget->setItem(row, 4, makeItem(QString::number(entry.energy)));
         const QString statusText = entry.destroyed ? "Destroyed" : (entry.inactive ? "Inactive" : "Active");
-        ui->clankerDetailTableWidget->setItem(row, 4, makeItem(statusText));
+        ui->clankerDetailTableWidget->setItem(row, 5, makeItem(QString::number(entry.atk)));
+        ui->clankerDetailTableWidget->setItem(row, 6, makeItem(statusText));
     }
+
+    // Restore selection by ID if possible.
+    if (lastSelectedId != -1) {
+        for (int row = 0; row < ui->clankerDetailTableWidget->rowCount(); ++row) {
+            auto* idItem = ui->clankerDetailTableWidget->item(row, 0);
+            if (!idItem) continue;
+            bool ok = false;
+            int idVal = idItem->text().toInt(&ok);
+            if (ok && idVal == lastSelectedId) {
+                ui->clankerDetailTableWidget->setCurrentCell(row, 0);
+                ui->clankerDetailTableWidget->selectRow(row);
+                break;
+            }
+        }
+    }
+
+    updateBatteryButtonState();
 
     if (factory.isDestroyed()) {
         ui->logTextEdit->append("GAME OVER! Factory destroyed!");
         gameTimer->stop();
         enemySpawnTimer->stop();
     }
+}
+
+// Enable the Give Battery button only when selection is valid
+void MainWindow::updateBatteryButtonState()
+{
+    bool enable = false;
+    auto* table = ui->clankerDetailTableWidget;
+    auto selected = table->selectedItems();
+    if (!selected.isEmpty() && factory.getBatteries() > 0) {
+        int row = selected.first()->row();
+        auto* idItem = table->item(row, 0);
+        auto* energyItem = table->item(row, 4);
+        auto* statusItem = table->item(row, 6);
+        if (idItem && energyItem && statusItem) {
+            bool okEnergy = false;
+            int energy = energyItem->text().toInt(&okEnergy);
+            const QString status = statusItem->text();
+            if (okEnergy && status != "Destroyed" && energy < 100) {
+                enable = true;
+            }
+            bool okId = false;
+            int idVal = idItem->text().toInt(&okId);
+            if (okId) {
+                lastSelectedId = idVal;
+            }
+        }
+    }
+    ui->giveBatteryButton->setEnabled(enable);
 }

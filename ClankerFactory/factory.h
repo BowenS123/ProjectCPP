@@ -19,6 +19,9 @@ class Enemy;
 class Factory {
 public:
     static constexpr int MAX_HEALTH = 500;
+    static constexpr int WORKER_COST = 20;
+    static constexpr int SCOUT_COST = 30;
+    static constexpr int DEFENDER_COST = 40;
 
     Factory();
     explicit Factory(std::string name);
@@ -29,7 +32,6 @@ public:
 
     // Production & resources
     void produceClanker(Clanker* clankerPtr);
-    bool safeProduceWorker();
     bool produceBattery(int count = 1);
 
     void updateAll(float dt = 1.0f);
@@ -45,6 +47,12 @@ public:
     const std::vector<Clanker*>& getClankers() const;
     int getBatteries() const;
     void addBatteries(int diff);
+    bool giveBatteryTo(unsigned char id);
+
+    // Convenience production
+    bool produceWorker();
+    bool produceScout();
+    bool produceDefender();
 
     // Combat
     std::string defendAgainst(Enemy& enemy);
@@ -53,8 +61,6 @@ public:
     unsigned char getId() const;
     int getHealth() const;
     bool isDestroyed() const;
-    const std::string& getLogPath() const;
-    const Clanker* getFirstActiveClanker() const;
 
 private:
     // Persist a timestamped message so the UI can inspect activity history.
@@ -70,7 +76,6 @@ private:
     bool loggingEnabled;
     int resources;
     int batteryStorage;
-    unsigned char nextId;
     std::string logPath;
     mutable std::ofstream logFile;
 };

@@ -128,7 +128,7 @@
                  <set>QAbstractItemView::NoEditTriggers</set>
                 </property>
                 <property name="selectionMode">
-                 <enum>QAbstractItemView::NoSelection</enum>
+                 <enum>QAbstractItemView::SingleSelection</enum>
                 </property>
                 <property name="showGrid">
                  <bool>false</bool>
@@ -286,6 +286,13 @@
                     </widget>
                  </item>
                  <item row="4" column="0">
+                    <widget class="QPushButton" name="giveBatteryButton">
+                     <property name="text">
+                        <string>Give Battery to Selected</string>
+                     </property>
+                    </widget>
+                 </item>
+                 <item row="5" column="0">
                     <widget class="QPushButton" name="pauseButton">
                      <property name="text">
                         <string>Pause</string>

@@ -60,6 +60,7 @@ public:
     QComboBox *clankerTypeComboBox;
     QPushButton *produceButton;
     QPushButton *produceBatteryButton;
+    QPushButton *giveBatteryButton;
     QPushButton *pauseButton;
     QGroupBox *logGroupBox;
     QVBoxLayout *logLayout;
@@ -173,7 +174,7 @@ public:
         clankerTableWidget->setObjectName("clankerTableWidget");
         clankerTableWidget->setAlternatingRowColors(true);
         clankerTableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        clankerTableWidget->setSelectionMode(QAbstractItemView::NoSelection);
+        clankerTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         clankerTableWidget->setShowGrid(false);
         clankerTableWidget->setFocusPolicy(Qt::NoFocus);
         clankerTableWidget->setRowCount(3);
@@ -243,10 +244,15 @@ public:
 
         controlsGridLayout->addWidget(produceBatteryButton, 3, 0, 1, 1);
 
+        giveBatteryButton = new QPushButton(controlsGroupBox);
+        giveBatteryButton->setObjectName("giveBatteryButton");
+
+        controlsGridLayout->addWidget(giveBatteryButton, 4, 0, 1, 1);
+
         pauseButton = new QPushButton(controlsGroupBox);
         pauseButton->setObjectName("pauseButton");
 
-        controlsGridLayout->addWidget(pauseButton, 4, 0, 1, 1);
+        controlsGridLayout->addWidget(pauseButton, 5, 0, 1, 1);
 
 
         controlsAndLogLayout->addWidget(controlsGroupBox);
@@ -330,6 +336,7 @@ public:
 
         produceButton->setText(QCoreApplication::translate("MainWindow", "Produce Selected Clanker", nullptr));
         produceBatteryButton->setText(QCoreApplication::translate("MainWindow", "Produce Battery", nullptr));
+        giveBatteryButton->setText(QCoreApplication::translate("MainWindow", "Give Battery to Selected", nullptr));
         pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
         logGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Mission Log", nullptr));
         logHintLabel->setText(QCoreApplication::translate("MainWindow", "Latest events", nullptr));

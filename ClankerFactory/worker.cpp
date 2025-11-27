@@ -14,9 +14,6 @@ void WorkerClanker::work() {
         return;
     }
 
-    if (energy <= 15) {
-        recharge(*factoryRef);
-    }
     if (energy <= 0) {
         return;
     }

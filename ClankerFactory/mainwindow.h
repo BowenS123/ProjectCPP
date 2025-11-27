@@ -28,9 +28,11 @@ private slots:
     void on_pauseButton_clicked();
     void on_produceButton_clicked();
     void on_produceBatteryButton_clicked();
+    void on_giveBatteryButton_clicked();
     void on_damageButton_clicked();
     void gameLoop();
     void spawnEnemy();
+    void updateBatteryButtonState();
 
 private:
     Ui::MainWindow *ui;
@@ -39,6 +41,7 @@ private:
     QTimer* enemySpawnTimer;
     std::vector<ClankerSim::Enemy> enemies;
     int enemySpawnCount = 0;
+    int lastSelectedId = -1;
 
     void updateUI();
 };
