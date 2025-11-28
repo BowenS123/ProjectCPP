@@ -151,6 +151,30 @@ void MainWindow::on_damageButton_clicked()
     updateUI();
 }
 
+void MainWindow::on_restartButton_clicked()
+{
+    // Stop timers to avoid intermediate updates while resetting
+    if (gameTimer->isActive()) gameTimer->stop();
+    if (enemySpawnTimer->isActive()) enemySpawnTimer->stop();
+
+    // Reset simulation state
+    factory.reset("My Factory");
+    enemies.clear();
+    enemySpawnCount = 0;
+    lastSelectedId = -1;
+
+    // Reset GUI and The Log
+    ui->logTextEdit->clear();
+    ui->logTextEdit->append("Game restarted. Factory online. Controls ready.");
+    ui->pauseButton->setText("Pause");
+
+    updateUI();
+
+    // Restart timers as running
+    gameTimer->start(1000);
+    enemySpawnTimer->start(7000);
+}
+
 // Main simulation tick: advance clankers and resolve combat.
 void MainWindow::gameLoop()
 {

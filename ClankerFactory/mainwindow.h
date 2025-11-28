@@ -30,6 +30,7 @@ private slots:
     void on_produceBatteryButton_clicked();
     void on_giveBatteryButton_clicked();
     void on_damageButton_clicked();
+    void on_restartButton_clicked();
     void gameLoop();
     void spawnEnemy();
     void updateBatteryButtonState();
