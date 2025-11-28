@@ -30,6 +30,9 @@ public:
 
     Factory& operator=(const Factory&) = delete;
 
+    // Reset factory
+    void reset(const std::string& nameValue = "Unnamed Factory");
+
     // Production & resources
     void produceClanker(Clanker* clankerPtr);
     bool produceBattery(int count = 1);
