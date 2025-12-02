@@ -343,4 +343,32 @@ void Factory::log(const std::string& message) const {
     logFile << '[' << timestamp << "] " << message << '\n';
 }
 
+void Factory::reset(const std::string& nameValue) {
+    // Destroy everything and it will also reset the list
+    for (auto* clanker : clankers) {
+        delete clanker;
+    }
+    clankers.clear();
+
+    // Reset identity and state
+    name = nameValue;
+    id = 255;
+    health = MAX_HEALTH / 2;
+    resources = 100;
+    batteryStorage = 2;
+
+    // Reopen log file (close previous if needed)
+    if (logFile.is_open()) {
+        log("Factory reset");
+        logFile.close();
+    }
+    loggingEnabled = true;
+    logFile.open(logPath, std::ios::app);
+    if (!logFile) {
+        loggingEnabled = false;
+    } else {
+        log("Factory reset");
+    }
+}
+
 } // namespace ClankerSim
