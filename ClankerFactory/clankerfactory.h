@@ -2,6 +2,7 @@
 #define CLANKERFACTORY_H
 
 #include <vector>
+#include <memory>
 #include <string>
 #include <mutex>
 #include <thread>
@@ -82,7 +83,7 @@ private:
 
 class Factory : public Entity {
 private:
-    std::vector<Clanker*> clankers;
+    std::vector<std::unique_ptr<Clanker>> clankers;
     std::mutex mtx;
     bool running;
     int resources = 100;
@@ -96,31 +97,30 @@ public:
 
     ~Factory() {
         shutdown();
-        for (auto c : clankers) {
-            delete c;
-        }
     }
 
-    void produceClanker(Clanker* c) {
+    void produceClanker(std::unique_ptr<Clanker> c) {
         std::lock_guard<std::mutex> lock(mtx);
 
-        if (auto worker = dynamic_cast<WorkerClanker*>(c)) {
+        Clanker* raw = c.get();
+        if (auto worker = dynamic_cast<WorkerClanker*>(raw)) {
             worker->setFactory(this);
         }
-        if (auto scout = dynamic_cast<ScoutClanker*>(c)) {
+        if (auto scout = dynamic_cast<ScoutClanker*>(raw)) {
             scout->setFactory(this);
         }
-        if (auto def = dynamic_cast<DefenderClanker*>(c)) {
+        if (auto def = dynamic_cast<DefenderClanker*>(raw)) {
             def->setFactory(this);
         }
 
-        clankers.push_back(c);
-        std::cout << "Produced clanker: " << c->getName() << "\n";
+        std::cout << "Produced clanker: " << raw->getName() << "\n";
+        clankers.push_back(std::move(c));
     }
 
     void updateAll(float dt) {
         std::lock_guard<std::mutex> lock(mtx);
-        for (auto* c : clankers) {
+        for (auto& uptr : clankers) {
+            Clanker* c = uptr.get();
             if (c && !c->isDestroyed()) {
                 c->update(dt);
             }
@@ -148,7 +148,14 @@ public:
     }
 
     int getResources() const { return resources; }
-    std::vector<Clanker*> getClankers() const { return clankers; }
+    std::vector<const Clanker*> getClankers() const {
+        std::vector<const Clanker*> snapshot;
+        snapshot.reserve(clankers.size());
+        for (const auto& uptr : clankers) {
+            snapshot.push_back(uptr.get());
+        }
+        return snapshot;
+    }
 
     int getBatteries() const { return batteryStorage; }
     void addBatteries(int n) { batteryStorage += n; if (batteryStorage < 0) batteryStorage = 0; }
@@ -168,7 +175,8 @@ public:
         running = true;
         std::thread([this]() {
             while(running) {
-                produceClanker(new WorkerClanker("Worker", 1));
+                auto unit = std::make_unique<WorkerClanker>("Worker", 1);
+                produceClanker(std::move(unit));
                 std::this_thread::sleep_for(std::chrono::seconds(5));
             }
         }).detach();
