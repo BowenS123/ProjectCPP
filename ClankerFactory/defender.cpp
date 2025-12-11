@@ -1,5 +1,6 @@
 #include "defender.h"
 #include "factory.h"
+#include <iostream>
 
 namespace ClankerSim {
 

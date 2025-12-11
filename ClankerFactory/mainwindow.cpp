@@ -1,9 +1,8 @@
+// Main window implementation: wires UI, timers, and factory logic.
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     setWindowTitle("Clanker Factory Command");
@@ -29,14 +28,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->clankerDetailTableWidget->horizontalHeader()->setSectionResizeMode(6, QHeaderView::ResizeToContents);
     ui->clankerDetailTableWidget->verticalHeader()->setVisible(false);
 
+    // Factory health bar
     ui->factoryHealthBar->setMinimum(0);
     ui->factoryHealthBar->setMaximum(ClankerSim::Factory::MAX_HEALTH);
     ui->factoryHealthBar->setValue(factory.getHealth());
+
     // Initial button state and helpful tooltip.
     ui->giveBatteryButton->setEnabled(false);
     ui->giveBatteryButton->setToolTip("Select a non-destroyed clanker with energy < 100 and ensure batteries > 0");
     ui->clankerDetailTableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->clankerDetailTableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
     // Show production costs in the type selector tooltip for quick reference.
     ui->clankerTypeComboBox->setItemText(0, "Worker");
     ui->clankerTypeComboBox->setItemText(1, "Scout");
@@ -48,15 +50,16 @@ MainWindow::MainWindow(QWidget *parent)
     // Timers drive the game simulation and enemy spawns.
     gameTimer = new QTimer(this);
     connect(gameTimer, &QTimer::timeout, this, &MainWindow::gameLoop);
-    gameTimer->start(1000);
+    gameTimer->start(1000); // 1 second per tick
 
     enemySpawnTimer = new QTimer(this);
     connect(enemySpawnTimer, &QTimer::timeout, this, &MainWindow::spawnEnemy);
-    enemySpawnTimer->start(7000);
+    enemySpawnTimer->start(7000); // 7 seconds per spawn
 
+    // Check if "Give Battery" may be used when selection changes.
     connect(ui->clankerDetailTableWidget->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::updateBatteryButtonState);
 
-    updateUI();
+    updateUI(); // push initial factory state into all widgets
 }
 
 MainWindow::~MainWindow()
@@ -66,12 +69,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pauseButton_clicked()
 {
-    if (gameTimer->isActive()) {
+    if (gameTimer->isActive()) {         //stopping timers if active
         gameTimer->stop();
+        enemySpawnTimer->stop();
         ui->pauseButton->setText("Resume");
         ui->logTextEdit->append("Game paused.");
     } else {
         gameTimer->start(1000);
+        enemySpawnTimer->start(7000);
         ui->pauseButton->setText("Pause");
         ui->logTextEdit->append("Game resumed.");
     }
@@ -82,15 +87,16 @@ void MainWindow::on_produceButton_clicked()
     QString type = ui->clankerTypeComboBox->currentText();
 
     bool ok = false;
+    // Using template function for unit production
     if (type == "Worker") {
-        ok = factory.produceWorker();
+        ok = factory.produceUnit<ClankerSim::WorkerClanker>(ClankerSim::Factory::WORKER_COST, "Worker");
     } else if (type == "Scout") {
-        ok = factory.produceScout();
+        ok = factory.produceUnit<ClankerSim::ScoutClanker>(ClankerSim::Factory::SCOUT_COST, "Scout");
     } else if (type == "Defender") {
-        ok = factory.produceDefender();
+        ok = factory.produceUnit<ClankerSim::DefenderClanker>(ClankerSim::Factory::DEFENDER_COST, "Defender");
     }
 
-    if (ok) {
+    if (ok) {                       // Successful production
         ui->logTextEdit->append(QString("Produced %1 Clanker!").arg(type));
     } else {
         ui->logTextEdit->append("Not enough resources to produce this Clanker!");
@@ -114,29 +120,20 @@ void MainWindow::on_giveBatteryButton_clicked()
     // Use selection from detail table to find clanker ID
     auto* table = ui->clankerDetailTableWidget;
     auto selected = table->selectedItems();
-    if (selected.isEmpty()) {
+    if (selected.isEmpty()) {                                           // No selection made
         ui->logTextEdit->append("Select a clanker row first.");
         return;
     }
-    // First column holds ID
-    int row = selected.first()->row();
-    auto* idItem = table->item(row, 0);
-    if (!idItem) {
-        ui->logTextEdit->append("No ID in selected row.");
-        return;
-    }
-    bool ok = false;
-    unsigned char id = static_cast<unsigned char>(idItem->text().toUShort(&ok));
-    if (!ok) {
-        ui->logTextEdit->append("Invalid ID.");
-        return;
-    }
-    if (factory.getBatteries() <= 0) {
+
+    if (factory.getBatteries() <= 0) {                                  // No batteries available
         ui->logTextEdit->append("No batteries available.");
         updateBatteryButtonState();
         return;
     }
-    if (factory.giveBatteryTo(id)) {
+
+    unsigned char id = static_cast<unsigned char>(selected[0]->text().toInt());
+
+    if (factory.giveBatteryTo(id)) {                                    // Attempt to give battery
         ui->logTextEdit->append(QString("Battery given to clanker ID %1").arg(id));
     } else {
         ui->logTextEdit->append("Battery not given (unit may be full or destroyed or missing).");
@@ -178,7 +175,12 @@ void MainWindow::on_restartButton_clicked()
 // Main simulation tick: advance clankers and resolve combat.
 void MainWindow::gameLoop()
 {
-    factory.update(1.0f);
+    factory.updateAll(1.0f);
+    
+    // Log factory state using friend function operator<<
+    std::ostringstream ss;
+    ss << factory;
+    ui->logTextEdit->append("[State] " + QString::fromStdString(ss.str()));
 
     for (ClankerSim::Enemy &enemy : enemies) {
         if (!enemy.isAlive()) {
@@ -235,7 +237,7 @@ void MainWindow::updateUI()
         bool inactive;
         unsigned char id;
     };
-    const std::vector<ClankerSim::Clanker*>& activeClankers = factory.getClankers();
+    const std::vector<const ClankerSim::Clanker*>& activeClankers = factory.getClankers();
     std::vector<UnitRow> unitRows;
     unitRows.reserve(activeClankers.size());
     for (auto* c : activeClankers) {
@@ -248,21 +250,21 @@ void MainWindow::updateUI()
         const bool inactive = !destroyed && energyValue <= 0;
         QString typeLabel = "Unknown";
         int attackValue = 0;
-        if (auto* w = dynamic_cast<ClankerSim::WorkerClanker*>(c)) {
+        if (auto* w = dynamic_cast<const ClankerSim::WorkerClanker*>(c)) {
             typeLabel = "Worker";
             attackValue = ClankerSim::WorkerClanker::RETALIATION_DAMAGE;
             if (!destroyed && !inactive) {
                 workerCount++;
                 workerEnergy += energyValue;
             }
-        } else if (auto* s = dynamic_cast<ClankerSim::ScoutClanker*>(c)) {
+        } else if (auto* s = dynamic_cast<const ClankerSim::ScoutClanker*>(c)) {
             typeLabel = "Scout";
             attackValue = 0;
             if (!destroyed && !inactive) {
                 scoutCount++;
                 scoutEnergy += energyValue;
             }
-        } else if (auto* d = dynamic_cast<ClankerSim::DefenderClanker*>(c)) {
+        } else if (auto* d = dynamic_cast<const ClankerSim::DefenderClanker*>(c)) {
             typeLabel = "Defender";
             attackValue = ClankerSim::DefenderClanker::RETALIATION_DAMAGE;
             if (!destroyed && !inactive) {

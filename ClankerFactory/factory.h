@@ -10,12 +10,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
+#include <stdexcept>
+#include <sstream>
 
 namespace ClankerSim {
 
 class Enemy;
+class Factory;
 
-// Coordinates clankers, resources, and defenses for the UI.
+// Friend function for logging factory state
+std::ostream& operator<<(std::ostream& os, const Factory& f);
+
 class Factory {
 public:
     static constexpr int MAX_HEALTH = 500;
@@ -26,56 +32,56 @@ public:
     Factory();
     explicit Factory(std::string name);
     Factory(const Factory& other) = delete;
+
     ~Factory();
-
     Factory& operator=(const Factory&) = delete;
-
-    // Reset factory
     void reset(const std::string& nameValue = "Unnamed Factory");
-
-    // Production & resources
-    void produceClanker(Clanker* clankerPtr);
-    bool produceBattery(int count = 1);
-
+    void produceClanker(std::unique_ptr<Clanker> clankerPtr);
+    bool produceBattery();
     void updateAll(float dt = 1.0f);
-    void update(float dt);
-
-    // Health
     void takeDamage(int dmg);
     void repair(int hp = 10);
-
-    // Resource queries
     void addResources(int delta = 0);
     int getResources() const;
-    const std::vector<Clanker*>& getClankers() const;
+    std::vector<const Clanker*> getClankers() const;
     int getBatteries() const;
     void addBatteries(int diff);
     bool giveBatteryTo(unsigned char id);
+    
+    // Template function for flexible unit production
+    template<typename UnitType>
+    bool produceUnit(int cost, const std::string& unitName = "Unit") {
+        if (resources < cost) {
+            return false;
+        }
+        resources -= cost;
+        auto unit = std::make_unique<UnitType>(unitName, 0);
+        unsigned char id = unit->getId();
+        produceClanker(std::move(unit));
+        log(std::string("Produced ") + unitName + " (ID=" + std::to_string(id) + ")");
+        return true;
+    }
+    
+    // bool produceWorker();
+    // bool produceScout();
+    // bool produceDefender();
 
-    // Convenience production
-    bool produceWorker();
-    bool produceScout();
-    bool produceDefender();
-
-    // Combat
     std::string defendAgainst(Enemy& enemy);
-
     const std::string& getName() const;
     unsigned char getId() const;
     int getHealth() const;
     bool isDestroyed() const;
+    
+    friend std::ostream& operator<<(std::ostream& os, const Factory& f);
 
 private:
-    // Persist a timestamped message so the UI can inspect activity history.
     void log(const std::string& message) const;
 
-    // Identity & overall health
     std::string name;
     unsigned char id;
     int health;
-
-    // Operational state
-    std::vector<Clanker*> clankers;
+    std::vector<std::unique_ptr<Clanker>> clankers;
+    
     bool loggingEnabled;
     int resources;
     int batteryStorage;
@@ -83,6 +89,6 @@ private:
     mutable std::ofstream logFile;
 };
 
-}
+}  // namespace ClankerSim
 
 #endif // FACTORY_H

@@ -25,26 +25,25 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pauseButton_clicked();
-    void on_produceButton_clicked();
-    void on_produceBatteryButton_clicked();
-    void on_giveBatteryButton_clicked();
-    void on_damageButton_clicked();
-    void on_restartButton_clicked();
-    void gameLoop();
-    void spawnEnemy();
-    void updateBatteryButtonState();
+    void on_pauseButton_clicked();          // Toggle game + spawn timers
+    void on_produceButton_clicked();        // Build a clanker of selected type
+    void on_produceBatteryButton_clicked(); // Build a battery (resource sink)
+    void on_giveBatteryButton_clicked();    // Assign a battery to selected unit
+    void on_damageButton_clicked();         // Apply damage to the factory
+    void on_restartButton_clicked();        // Reset simulation and UI
+    void gameLoop();                        // Main tick: advance sim + combat
+    void spawnEnemy();                      // Timer-driven enemy spawns
+    void updateBatteryButtonState();        // Enable/disable battery button
 
 private:
-    Ui::MainWindow *ui;
-    ClankerSim::Factory factory{"My Factory"};
-    QTimer* gameTimer;
-    QTimer* enemySpawnTimer;
-    std::vector<ClankerSim::Enemy> enemies;
-    int enemySpawnCount = 0;
-    int lastSelectedId = -1;
-
-    void updateUI();
+    Ui::MainWindow *ui;                        // Generated UI elements owner
+    ClankerSim::Factory factory{"My Factory"}; // Model: owns all clankers
+    QTimer* gameTimer;                         // Drives gameLoop each second
+    QTimer* enemySpawnTimer;                   // Spawns enemies periodically
+    std::vector<ClankerSim::Enemy> enemies;    // Active enemies in the scene
+    int enemySpawnCount = 0;                   // Counts spawns to scale difficulty
+    int lastSelectedId = -1;                   // Remember selection across UI refreshes
+    void updateUI();                           // Refresh all widgets from model state
 };
 
 #endif // MAINWINDOW_H

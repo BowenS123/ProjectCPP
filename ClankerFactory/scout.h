@@ -13,6 +13,8 @@ public:
     static constexpr int BASE_HP = 80;
     static constexpr int BASE_ENERGY = 100;
 
+    ScoutClanker();
+
     explicit ScoutClanker(std::string name = "Scout", unsigned char id = 0);
     ~ScoutClanker() override = default;
 

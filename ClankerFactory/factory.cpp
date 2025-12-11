@@ -4,13 +4,23 @@
 #include <algorithm>
 #include <chrono>
 #include <utility>
+#include <stdexcept>
 
 namespace ClankerSim {
 
 // Default factory bootstraps with a placeholder name.
 Factory::Factory() : Factory("Unnamed Factory") {}
 
-Factory::Factory(std::string nameValue) : name(std::move(nameValue)), id(255), health(MAX_HEALTH / 2), clankers(), loggingEnabled(true), resources(100), batteryStorage(2), logPath("factory_log.txt"), logFile(logPath, std::ios::app)
+Factory::Factory(std::string nameValue) 
+    : name(std::move(nameValue)),
+      id(255), 
+      health(MAX_HEALTH / 2), 
+      clankers(),
+      loggingEnabled(true), 
+      resources(100), 
+      batteryStorage(2), 
+      logPath("factory_log.txt"), 
+      logFile(logPath, std::ios::app) 
 {
     if (!logFile) {
         loggingEnabled = false;
@@ -20,9 +30,6 @@ Factory::Factory(std::string nameValue) : name(std::move(nameValue)), id(255), h
 }
 
 Factory::~Factory() {
-    for (auto* clanker : clankers) {
-        delete clanker;
-    }
     if (logFile.is_open()) {
         log("Factory destroyed");
         logFile.close();
@@ -42,52 +49,47 @@ bool Factory::isDestroyed() const {
     return health <= 0;
 }
 
-// Central entry point that wires a freshly built clanker into the roster.
-void Factory::produceClanker(Clanker* clankerPtr) {
+// Central entry point: wires a freshly built clanker into the roster
+void Factory::produceClanker(std::unique_ptr<Clanker> clankerPtr) {
     if (!clankerPtr) {
-        return;
+        throw std::invalid_argument("Cannot produce null clanker (exception handling example)");
     }
 
-    clankers.push_back(clankerPtr);
-    if (auto* worker = dynamic_cast<WorkerClanker*>(clankerPtr)) {
+    Clanker* raw = clankerPtr.get();
+    if (auto* worker = dynamic_cast<WorkerClanker*>(raw)) {
         worker->setFactory(*this);
-    } else if (auto* scout = dynamic_cast<ScoutClanker*>(clankerPtr)) {
+    } else if (auto* scout = dynamic_cast<ScoutClanker*>(raw)) {
         scout->setFactory(*this);
-    } else if (auto* defender = dynamic_cast<DefenderClanker*>(clankerPtr)) {
+    } else if (auto* defender = dynamic_cast<DefenderClanker*>(raw)) {
         defender->setFactory(*this);
     }
-    log("Produced clanker: " + clankerPtr->getName());
+    log("Produced clanker: " + raw->getName());
+    clankers.push_back(std::move(clankerPtr));
 }
 
 // Converts resources into rechargeable batteries for clankers.
-bool Factory::produceBattery(int count) {
-    if (count <= 0) {
-        return false;
-    }
-
-    const int cost = 15 * count;
+bool Factory::produceBattery() {
+    const int cost = 15;
     if (resources < cost) {
         return false;
     }
     resources -= cost;
-    batteryStorage += count;
-    log("Produced " + std::to_string(count) + " battery");
+    batteryStorage += 1;
+    log("Produced 1 battery");
     return true;
 }
 
-// Runs every clanker once per tick to advance their behavior.
+// Runs every clanker once per tick to advance their behavior via virtual work()
 void Factory::updateAll(float dt) {
-    std::vector<Clanker*> snapshot = clankers;
+    auto isActive = [](const std::unique_ptr<Clanker>& c) {
+        return c && !c->isDestroyed();
+    };
 
-    for (auto* clanker : snapshot) {
-        if (clanker && !clanker->isDestroyed()) {
-            clanker->doWork(dt);
+    for (auto& uptr : clankers) {
+        if (isActive(uptr)) {
+            uptr->doWork(dt);
         }
     }
-}
-
-void Factory::update(float dt) {
-    updateAll(dt);
 }
 
 // Apply direct damage from enemies when no defenders remain.
@@ -97,6 +99,7 @@ void Factory::takeDamage(int dmg) {
     }
 
     health -= dmg;
+    
     if (health < 0) {
         health = 0;
     }
@@ -122,8 +125,15 @@ int Factory::getResources() const {
     return resources;
 }
 
-const std::vector<Clanker*>& Factory::getClankers() const {
-    return clankers;
+std::vector<const Clanker*> Factory::getClankers() const {
+    std::vector<const Clanker*> snapshot;
+    snapshot.reserve(clankers.size());
+    for (const auto& uptr : clankers) {
+        if (uptr) {
+            snapshot.push_back(uptr.get());
+        }
+    }
+    return snapshot;
 }
 
 int Factory::getBatteries() const {
@@ -139,64 +149,70 @@ void Factory::addBatteries(int diff) {
 
 // Manually assign a battery to a specific clanker by ID.
 bool Factory::giveBatteryTo(unsigned char targetId) {
-    if (batteryStorage <= 0) {
+    if (batteryStorage <= 0) {                                              // No batteries available 
         return false;
     }
-    for (auto* clanker : clankers) {
-        if (!clanker || clanker->isDestroyed()) {
+    for (auto& uptr : clankers) {                                           // Search for clanker by ID
+        if (!uptr || uptr->isDestroyed()) {                                 // Skip null or destroyed units
             continue;
         }
-        if (clanker->getId() == targetId) {
-            const int current = clanker->getEnergy();
-            if (current >= 100) {
-                return false;
+        if (uptr->getId() == targetId) {                                    // Found matching clanker
+            if (uptr->getEnergy() >= 100) {                                 // Already full energy
+                return false;   
             }
-            const int needed = 100 - current;
-            clanker->takeDamage(0);
-            clanker->recharge(*this);
-            if (batteryStorage > 0) {
-            }
+            // C++ REQUIREMENT: Call-by-reference parameter
+            uptr->recharge(*this);                                          // Recharge clanker 
+            log("Battery given to clanker ID " + std::to_string(targetId));
             return true;
         }
     }
     return false;
 }
 
+// Using template instead: factory.produceUnit<WorkerClanker>(WORKER_COST, "Worker");
+/*
 bool Factory::produceWorker() {
-    if (resources < WORKER_COST) {
+    if (resources < WORKER_COST) {                                          // Not enough resources
         return false;
     }
-    resources -= WORKER_COST;
-    auto* unit = new WorkerClanker("Worker", 0);
-    unit->setFactory(*this);
-    produceClanker(unit);
-    log("Produced Worker (ID=" + std::to_string(unit->getId()) + ")");
+    resources -= WORKER_COST;                                               // Deduct cost
+    auto unit = std::make_unique<WorkerClanker>("Worker", 0);               // Create worker
+     unsigned char id = unit->getId();                                      // Store ID before transfer
+    produceClanker(std::move(unit));                                        // Transfer ownership to factory                               
+    log("Produced Worker (ID=" + std::to_string(id) + ")");                 // Log production
     return true;
 }
+*/
 
+// Using template instead: factory.produceUnit<ScoutClanker>(SCOUT_COST, "Scout");
+/*
 bool Factory::produceScout() {
     if (resources < SCOUT_COST) {
         return false;
     }
     resources -= SCOUT_COST;
-    auto* unit = new ScoutClanker("Scout", 0);
-    unit->setFactory(*this);
-    produceClanker(unit);
-    log("Produced Scout (ID=" + std::to_string(unit->getId()) + ")");
+    auto unit = std::make_unique<ScoutClanker>("Scout", 0);
+    Clanker* raw = unit.get();
+    produceClanker(std::move(unit));
+    log("Produced Scout (ID=" + std::to_string(raw->getId()) + ")");
     return true;
 }
+*/
 
+// Using template instead: factory.produceUnit<DefenderClanker>(DEFENDER_COST, "Defender");
+/*
 bool Factory::produceDefender() {
     if (resources < DEFENDER_COST) {
         return false;
     }
     resources -= DEFENDER_COST;
-    auto* unit = new DefenderClanker("Defender", 0);
-    unit->setFactory(*this);
-    produceClanker(unit);
-    log("Produced Defender (ID=" + std::to_string(unit->getId()) + ")");
+    auto unit = std::make_unique<DefenderClanker>("Defender", 0);
+    Clanker* raw = unit.get();
+    produceClanker(std::move(unit));
+    log("Produced Defender (ID=" + std::to_string(raw->getId()) + ")");
     return true;
 }
+*/
 
 // Resolve an attack step by delegating to powered clankers first.
 std::string Factory::defendAgainst(Enemy& enemy) {
@@ -209,7 +225,9 @@ std::string Factory::defendAgainst(Enemy& enemy) {
     const Clanker* firstResponder = nullptr;
     std::vector<DefenderClanker*> defendersAlive;
     std::vector<WorkerClanker*> workersAlive;
-    for (auto* clanker : clankers) {
+    
+    for (auto& uptr : clankers) {
+        Clanker* clanker = uptr.get();
         if (clanker && !clanker->isDestroyed() && !firstResponder) {
             firstResponder = clanker;
         }
@@ -344,10 +362,7 @@ void Factory::log(const std::string& message) const {
 }
 
 void Factory::reset(const std::string& nameValue) {
-    // Destroy everything and it will also reset the list
-    for (auto* clanker : clankers) {
-        delete clanker;
-    }
+    // Clear all clankers (unique_ptr handles cleanup automatically)
     clankers.clear();
 
     // Reset identity and state
@@ -369,6 +384,16 @@ void Factory::reset(const std::string& nameValue) {
     } else {
         log("Factory reset");
     }
+}
+
+// Friend function: operator<< for logging factory state (accesses private members)
+std::ostream& operator<<(std::ostream& os, const Factory& f) {
+    os << "Factory: " << f.name 
+       << " | Health: " << f.health << "/" << Factory::MAX_HEALTH
+       << " | Resources: " << f.resources
+       << " | Batteries: " << f.batteryStorage
+       << " | Units: " << f.clankers.size();
+    return os;
 }
 
 } // namespace ClankerSim

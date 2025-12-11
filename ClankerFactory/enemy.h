@@ -9,17 +9,19 @@ namespace ClankerSim {
 class Enemy {
 public:
     Enemy();
+    
     Enemy(int hp, int attack, std::string name = "Invader");
+    
     Enemy(const Enemy& other);
+    
     ~Enemy();
 
     void takeDamage(int dmg);
 
-    // Read only accessors used by the UI and factory combat loop.
     int getHP() const;
     int getAttack() const;
     const std::string& getName() const;
-    bool isAlive() const;
+    bool isAlive() const; 
 
 private:
     int hp;

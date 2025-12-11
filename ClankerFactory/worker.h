@@ -14,6 +14,8 @@ public:
     static constexpr int BASE_ENERGY = 100;
     static constexpr int RETALIATION_DAMAGE = 5;
 
+    WorkerClanker();
+    
     explicit WorkerClanker(std::string name = "Worker", unsigned char id = 0);
     ~WorkerClanker() override = default;
 
