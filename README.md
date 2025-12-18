@@ -75,7 +75,7 @@ This project fulfills the following C++ and OOP course requirements:
 - ✅ **Fully working project**: Game runs with complete mechanics (production, combat, resource management).
 - ✅ **Sufficient git commits**: Regular commits throughout development.
 - ✅ **Correct files on git**: All source files, assets, and documentation included.
-- ✅ **Working build manual**: See [HowToStartGame.md](Docs/HowToStartGame.md) for complete build instructions.
+- ✅ **Working build manual**: See [HowToStartGame.md](Docs/HowToStartUpGame.md) for complete build instructions.
 
 #### OOP
 - ✅ **At least 2 default constructors**: Multiple classes have default constructors.
@@ -116,10 +116,10 @@ This project fulfills the following C++ and OOP course requirements:
 - ✅ **Useful Qt class**: Multiple Qt classes (QMainWindow, QWidget, QPushButton, etc.).
 - ✅ **Useful usage of signals/slots**: Qt signal/slot mechanism for UI interaction and event handling.
 - ✅ **Test-driven development**: Comprehensive test plan documented in [TestPlan.md](Docs/TestPlan.md) covering all major features.
-- ✅ **Solve bug ticket**: Issues tracked and resolved via commits.
-- ✅ **Report a bug ticket on another project**: Contributed to external project issue tracking.
+- ❌ **Solve bug ticket**
+- ❌ **Report a bug ticket on another project**
 - ✅ **Usage of a GUI**: Complete Qt-based graphical user interface.
-- ✅ **Usage of OpenGL or other 3D engine**: N/A for this 2D project.
-- ✅ **Useful usage of an external library**: Qt framework extensively used.
-- ✅ **Project that communicates with hardware**: N/A for this simulation.
-- ✅ **Nice extra**: Custom resource management system, wave-based enemy spawning, strategic gameplay balance.
+- ❌ **Usage of OpenGL or other 3D engine**
+- ✅ **Useful usage of an external library**: Qt framework extensively used and CPP.
+- ❌ **Project that communicates with hardware**
+- ✅ **Nice extra**: color-coded HTML logging 
