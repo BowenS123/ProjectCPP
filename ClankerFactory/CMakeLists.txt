@@ -13,22 +13,28 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-)
+    main.cpp
+    mainwindow.cpp
+    mainwindow.h
+    mainwindow.ui
+    clanker.cpp
+    worker.cpp
+    scout.cpp
+    defender.cpp
+    factory.cpp
+    enemy.cpp)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ClankerFactory
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        clanker.h clanker.cpp
-        worker.h worker.cpp
-        scout.h scout.cpp
-        defender.h defender.cpp
-        factory.h factory.cpp
-        enemy.h enemy.cpp
+        
+    clanker.h
+    worker.h
+    scout.h
+    defender.h
+    factory.h
+    enemy.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ClankerFactory APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
