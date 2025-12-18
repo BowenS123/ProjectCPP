@@ -52,15 +52,15 @@ This project fulfills the following C++ and OOP course requirements:
 
 ### Basis
 
-- ✅ **Useful and correct class**: `Clanker` class represents all unit types with shared behavior (movement, health, energy management). This abstraction avoids code duplication.
-- ✅ **Useful and correct abstraction**: The `Clanker` base class abstracts common properties (position, health, energy) while derived classes add specific behaviors.
+- ✅ **Useful and correct class**: `Clanker` class represents all unit types with shared behavior (health, energy management). This abstraction avoids code duplication.
+- ✅ **Useful and correct abstraction**: The `Clanker` base class abstracts common properties (health, energy) while derived classes add specific behaviors.
 - ✅ **Useful and correct encapsulation**: All member variables are private/protected with public getters/setters, preventing direct manipulation.
-- ✅ **Useful and correct inheritance**: `Worker`, `Scout`, `Defender`, and `Enemy` all inherit from `Clanker`, reusing common functionality.
-- ✅ **Useful and correct polymorphism**: Virtual functions like `update()` and `performAction()` allow different behaviors per unit type at runtime.
+- ✅ **Useful and correct inheritance**: `Worker`, `Scout`, and `Defender` all inherit from `Clanker`, reusing common functionality.
+- ✅ **Useful and correct polymorphism**: Virtual function `work()` allows different behaviors per unit type at runtime.
 - ✅ **Useful and correct object composition**: `Factory` class contains collections of `Clanker` objects, managing their lifecycle.
 - ✅ **Useful and correct base class**: `Clanker` serves as the foundation for all unit types.
-- ✅ **Useful and correct abstract base class**: `Clanker` has pure virtual functions making it abstract.
-- ✅ **Useful and correct virtual function**: `update()`, `performAction()`, and other methods are virtual for polymorphic behavior.
+- ✅ **Useful and correct abstract base class**: `Clanker` has pure virtual function `work()` making it abstract.
+- ✅ **Useful and correct virtual function**: `work()` method is virtual for polymorphic behavior.
 - ✅ **No mistake in object-oriented programming**: Proper use of inheritance hierarchy, no slicing, correct destructor chain.
 
 ### Aanvullend
@@ -79,19 +79,19 @@ This project fulfills the following C++ and OOP course requirements:
 
 #### OOP
 - ✅ **At least 2 default constructors**: Multiple classes have default constructors.
-- ✅ **At least 2 parameterized constructors**: Unit classes accept position, type parameters.
+- ✅ **At least 2 parameterized constructors**: Unit classes accept name and id parameters.
 - ✅ **At least 2 copy constructors**: Implemented for classes that need deep copying.
 - ✅ **At least 2 destructors**: Each class properly cleans up resources.
 - ✅ **Member initialization in constructors**: Constructor initializer lists used throughout.
 - ✅ **Constructor forwarding**: Delegating constructors implemented where appropriate.
 - ✅ **Useful proven (dynamic) polymorphism**: Virtual functions called on base class pointers/references.
 - ✅ **Useful usage of "this"**: Used in member functions to disambiguate and return self-reference.
-- ✅ **Useful member function**: Methods like `takeDamage()`, `heal()`, `attack()` encapsulate behavior.
+- ✅ **Useful member function**: Methods like `takeDamage()`, `recharge()`, `doWork()` encapsulate behavior.
 - ✅ **Default values in function definition**: Functions have default parameter values where applicable.
-- ✅ **Useful member variable**: Each class has relevant state (health, position, energy, etc.).
+- ✅ **Useful member variable**: Each class has relevant state (health, energy, name, id, etc.).
 - ✅ **Useful getters and setters**: Controlled access to member variables via accessor methods.
 - ✅ **Correct usage of inline function**: Small frequently-called functions marked inline.
-- ✅ **Useful template function or class**: Templates used for generic container operations.
+- ✅ **Useful template function or class**: Template function `produceUnit<UnitType>()` for generic unit production.
 - ✅ **Useful friend function or class**: Used for operator overloading and controlled access.
 
 #### C++
@@ -99,17 +99,16 @@ This project fulfills the following C++ and OOP course requirements:
 - ✅ **2 useful unsigned chars or other memory efficient types**: Used for small integer values (counts, states).
 - ✅ **At least 4 useful const references for variables**: Const references used in function parameters to avoid copying.
 - ✅ **At least 4 useful const references for functions**: Const member functions that don't modify state.
-- ✅ **At least 4 useful bool**: Boolean flags for state management (isAlive, isActive, etc.).
+- ✅ **At least 4 useful bool**: Boolean flags for state management (alive, loggingEnabled, destroyed, inactive).
 - ✅ **Dynamic memory allocation (new)**: Objects dynamically allocated as needed.
 - ✅ **Dynamic memory removing (delete)**: Proper cleanup in destructors.
 - ✅ **2 useful (modern) call-by-references**: Modern reference parameters used throughout.
 - ✅ **Useful string class usage**: QString and std::string for text handling.
-- ✅ **Useful container class**: std::vector, QList for managing collections.
+- ✅ **Useful container class**: std::vector for managing collections (units, enemies, messages).
 - ✅ **Useful usage of nullptr**: Modern null pointer literal instead of NULL.
-- ✅ **Useful usage of (modern) file-I/O**: Used for saving game state.
-- ✅ **Useful exception handling**: Try-catch blocks for error conditions.
-- ✅ **Useful usage of lambda function**: Lambdas used in Qt signal connections.
-- ✅ **Useful usage of threads**: Background processing for game simulation.
+- ✅ **Useful usage of (modern) file-I/O**: std::ofstream used for logging factory state.
+- ✅ **Useful usage of lambda function**: Lambdas used for color-coding, item creation, and filtering.
+- ✅ **Useful usage of std::async**: std::async used for asynchronous salvage scanning.
 
 ### Uitbreiding
 - ✅ **Useful Qt class**: Multiple Qt classes (QMainWindow, QWidget, QPushButton, etc.).
