@@ -51,7 +51,6 @@ ClankerFactory is a Qt-based simulation game where you manage a factory that pro
 ## Requirements
 
 * Qt framework (Qt 6.x recommended).
-* C++ (C++17 or higher).
 
 ## How to Build and Run
 
