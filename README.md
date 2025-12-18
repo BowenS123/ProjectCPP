@@ -1,41 +1,52 @@
 # ClankerFactory
 
-*A C++/Qt simulation where you manage a factory producing various Clankers (Workers, Scouts, Defenders) to gather resources, repair damage, and fend off enemies.*
+*A C++/Qt factory management simulation where you produce and manage robotic units (Clankers) to gather resources, repair your factory, and defend against enemy attacks.*
 
 ## Overview
 
-In ClankerFactory, you control a production facility that builds "Clankers" — robotic units of different types. Manage your resources, repair your infrastructure, and defend against threats strategically.
+ClankerFactory is a Qt-based simulation game where you manage a factory that produces three types of robotic units called "Clankers". Each unit type has specific abilities and energy requirements. Your goal is to balance resource production, factory repairs, and defense to keep your factory operational.
 
-## Game Objective
+## Game Mechanics
 
-Your goal is to maintain your factory and survive enemy waves:
+### Clanker Types
 
-* **Workers**: Repair walls and produce resources.
-* **Scouts**: Gather resources and explore.
-* **Defenders**: Protect the factory from enemy units.
-* Balance production, repairs, and defense to survive waves and optimize output.
+* **Workers**: Consume 5 energy per action. Can either repair the factory (costs 10 resources, heals 15 HP) or gather 5 resources.
+* **Scouts**: Consume 5 energy per action. Gather 10 resources efficiently.
+* **Defenders**: Consume 10 energy per action. Automatically engage enemies that threaten the factory.
+
+### Production Costs
+
+* Worker: 20 resources
+* Scout: 30 resources
+* Defender: 40 resources
+* Battery: 15 resources (recharges 1 clanker)
+
+### Core Systems
+
+* **Energy Management**: All clankers require energy to perform actions. Use batteries to recharge them.
+* **Resources**: Gathered by Workers and Scouts, used to produce new clankers and batteries.
+* **Factory Health**: Starts at 250 HP (max 500). Workers can repair damage when resources are available.
+* **Enemy Waves**: Hostile units spawn every 7 seconds and attack your factory. Each enemy has HP and attack power.
+* **Combat**: Defenders automatically engage nearby enemies. If enemies aren't eliminated, they damage your factory. Game over occurs when factory health reaches 0.
 
 ## Controls & UI
 
-* Use the on-screen GUI to issue commands:
-
-  * Select unit types to produce.
-  * Produce Batteries to feed Clankers.
-  * Monitor resources, factory health, clanker squads, and threats.
-* Mouse input: click on factory panels, units, or map.
+* **Production Panel**: Select clanker type and click "Produce Clanker" to create new units.
+* **Battery System**: Click "Produce Battery" to create batteries, then select a clanker and click "Give Battery" to recharge it.
+* **Squad Overview**: View active units per type and average energy levels.
+* **Detail Table**: See complete status of each clanker (ID, name, class, HP, energy, attack, status).
+* **Factory Health Bar**: Monitor your factory's structural integrity.
+* **Log Panel**: Real-time color-coded event feed showing all factory activities.
 
 ![Factory UI](assets/factory_ui.png)
 
-## Enemy Waves & Strategy
+## Strategy Tips
 
-* Enemy waves increase in difficulty over time.
-* Build Defenders to protect the factory.
-* Manage resources efficiently to maintain production and repair walls.
-
-## Winning & Losing
-
-* **Losing**: The factory is destroyed.
-* **Winning**: Survive all enemy waves.
+* Workers can repair OR gather resources - they automatically repair if resources ≥10 and factory health is below max.
+* Scouts are more efficient at gathering (10 vs 5 resources per action) but cost more to produce.
+* Defenders consume more energy but are essential for survival.
+* Balance your clanker roster based on current needs (gathering, repairing, or defending).
+* Keep batteries in stock to recharge units before they run out of energy.
 
 ## Requirements
 
