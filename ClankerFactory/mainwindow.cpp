@@ -1,13 +1,19 @@
-// Main window implementation: wires UI, timers, and factory logic.
+// Vraag 42: Qt GUI class (QMainWindow) with UI, timers, and logic.
+// Vraag 43: signals/slots connections for buttons and timers.
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+
+#include <algorithm>
+#include <chrono>
+#include <thread>
+#include <sstream>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     setWindowTitle("Clanker Factory Command");
 
-    ui->logTextEdit->append("Factory online. Controls ready.");
+    appendLog("Factory online. Controls ready.", LogTone::System);
 
     // Squad table gives a quick overview per role.
     ui->clankerTableWidget->setHorizontalHeaderLabels({"Squad", "Active Units", "Avg Energy"});
@@ -48,69 +54,106 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->clankerTypeComboBox->setItemData(2, QVariant(QString("Cost: %1 Resources").arg(ClankerSim::Factory::DEFENDER_COST)), Qt::ToolTipRole);
 
     // Timers drive the game simulation and enemy spawns.
+    // Vraag 32: dynamic allocation (new) for QTimer objects (Qt parent manages cleanup)
     gameTimer = new QTimer(this);
-    connect(gameTimer, &QTimer::timeout, this, &MainWindow::gameLoop);
+    connect(gameTimer, &QTimer::timeout, this, &MainWindow::gameLoop); // Vraag 43: signal/slot
     gameTimer->start(1000); // 1 second per tick
 
+    // Vraag 32: dynamic allocation (new) for another QTimer
     enemySpawnTimer = new QTimer(this);
-    connect(enemySpawnTimer, &QTimer::timeout, this, &MainWindow::spawnEnemy);
+    connect(enemySpawnTimer, &QTimer::timeout, this, &MainWindow::spawnEnemy); // Vraag 43: signal/slot
     enemySpawnTimer->start(7000); // 7 seconds per spawn
 
     // Check if "Give Battery" may be used when selection changes.
-    connect(ui->clankerDetailTableWidget->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::updateBatteryButtonState);
-
+    connect(ui->clankerDetailTableWidget->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::updateBatteryButtonState); // Vraag 43: signal/slot
     updateUI(); // push initial factory state into all widgets
 }
 
 MainWindow::~MainWindow()
 {
+    // Vraag 33: dynamic memory removing (deleting Qt UI)
     delete ui;
+}
+
+void MainWindow::appendLog(const QString& text, LogTone tone)
+{
+    // Vraag 51: nice extra – color-coded HTML logging with safe escaping
+    const auto colorForTone = [](LogTone toneValue) -> QString { // Vraag 40: lambda function (tone -> color)
+        switch (toneValue) {
+        case LogTone::Success:
+            return "#8BC34A";
+        case LogTone::Warning:
+            return "#FFB74D";
+        case LogTone::Danger:
+            return "#EF5350";
+        case LogTone::System:
+            return "#4FC3F7";
+        case LogTone::Salvage:
+            return "#9575CD";
+        case LogTone::Info:
+        default:
+            return "#ECEFF1";
+        }
+    };
+
+    const auto weightForTone = [](LogTone toneValue) -> QString { // Vraag 40: lambda function (tone -> weight)
+        switch (toneValue) {
+        case LogTone::Danger:
+        case LogTone::System:
+            return "600";
+        default:
+            return "400";
+        }
+    };
+
+    const QString escaped = text.toHtmlEscaped(); // escape user text to avoid injecting HTML
+    const QString html = QString("<span style=\"color:%1;font-weight:%2;\">%3</span>") .arg(colorForTone(tone), weightForTone(tone), escaped);
+    ui->logTextEdit->append(html);
 }
 
 void MainWindow::on_pauseButton_clicked()
 {
-    if (gameTimer->isActive()) {         //stopping timers if active
-        gameTimer->stop();
-        enemySpawnTimer->stop();
-        ui->pauseButton->setText("Resume");
-        ui->logTextEdit->append("Game paused.");
-    } else {
-        gameTimer->start(1000);
-        enemySpawnTimer->start(7000);
-        ui->pauseButton->setText("Pause");
-        ui->logTextEdit->append("Game resumed.");
+    if (gameTimer->isActive()) {         // Check if timers are currently running
+        gameTimer->stop(); // Stop game tick timer
+        enemySpawnTimer->stop(); // Stop enemy spawn timer
+        ui->pauseButton->setText("Resume"); // Update button text
+        appendLog("Game paused.", LogTone::System);
+    } else { // Timers are stopped, so resume them
+        gameTimer->start(1000); // Restart game tick (1 second)
+        enemySpawnTimer->start(7000); // Restart enemy spawn (7 seconds)
+        ui->pauseButton->setText("Pause"); // Update button text
+        appendLog("Game resumed.", LogTone::System);
     }
 }
 
 void MainWindow::on_produceButton_clicked()
 {
-    QString type = ui->clankerTypeComboBox->currentText();
+    QString type = ui->clankerTypeComboBox->currentText(); // Get selected unit type from dropdown
 
-    bool ok = false;
-    // Using template function for unit production
-    if (type == "Worker") {
-        ok = factory.produceUnit<ClankerSim::WorkerClanker>(ClankerSim::Factory::WORKER_COST, "Worker");
-    } else if (type == "Scout") {
-        ok = factory.produceUnit<ClankerSim::ScoutClanker>(ClankerSim::Factory::SCOUT_COST, "Scout");
-    } else if (type == "Defender") {
-        ok = factory.produceUnit<ClankerSim::DefenderClanker>(ClankerSim::Factory::DEFENDER_COST, "Defender");
+    bool ok = false; // Track if production succeeded
+    if (type == "Worker") { // User selected Worker
+        ok = factory.produceUnit<ClankerSim::WorkerClanker>(ClankerSim::Factory::WORKER_COST, "Worker"); // Try to build (costs 20 resources)
+    } else if (type == "Scout") { // User selected Scout
+        ok = factory.produceUnit<ClankerSim::ScoutClanker>(ClankerSim::Factory::SCOUT_COST, "Scout"); // Try to build (costs 30 resources)
+    } else if (type == "Defender") { // User selected Defender
+        ok = factory.produceUnit<ClankerSim::DefenderClanker>(ClankerSim::Factory::DEFENDER_COST, "Defender"); // Try to build (costs 40 resources)
     }
 
     if (ok) {                       // Successful production
-        ui->logTextEdit->append(QString("Produced %1 Clanker!").arg(type));
-    } else {
-        ui->logTextEdit->append("Not enough resources to produce this Clanker!");
+        appendLog(QString("Produced %1 Clanker!").arg(type), LogTone::Success);
+    } else { // Not enough resources
+        appendLog("Not enough resources to produce this Clanker!", LogTone::Warning);
     }
 
-    updateUI();
+    updateUI(); // Refresh display to show new unit and updated resources
 }
 
 void MainWindow::on_produceBatteryButton_clicked()
 {
     if (factory.produceBattery()) {
-        ui->logTextEdit->append("Produced a battery!");
+        appendLog("Produced a battery!", LogTone::Success);
     } else {
-        ui->logTextEdit->append("Not enough resources to produce a battery!");
+        appendLog("Not enough resources to produce a battery!", LogTone::Warning);
     }
     updateUI();
 }
@@ -121,22 +164,23 @@ void MainWindow::on_giveBatteryButton_clicked()
     auto* table = ui->clankerDetailTableWidget;
     auto selected = table->selectedItems();
     if (selected.isEmpty()) {                                           // No selection made
-        ui->logTextEdit->append("Select a clanker row first.");
+        appendLog("Select a clanker row first.", LogTone::Warning);
         return;
     }
 
     if (factory.getBatteries() <= 0) {                                  // No batteries available
-        ui->logTextEdit->append("No batteries available.");
+        appendLog("No batteries available.", LogTone::Warning);
         updateBatteryButtonState();
         return;
     }
 
+    // Vraag 46: static_cast (safe type conversion)
     unsigned char id = static_cast<unsigned char>(selected[0]->text().toInt());
 
-    if (factory.giveBatteryTo(id)) {                                    // Attempt to give battery
-        ui->logTextEdit->append(QString("Battery given to clanker ID %1").arg(id));
+    if (factory.giveBatteryTo(id)) {
+        appendLog(QString("Battery given to clanker ID %1").arg(id), LogTone::Success);
     } else {
-        ui->logTextEdit->append("Battery not given (unit may be full or destroyed or missing).");
+        appendLog("Battery not given (unit may be full or destroyed or missing).", LogTone::Warning);
     }
     updateUI();
     updateBatteryButtonState();
@@ -162,7 +206,7 @@ void MainWindow::on_restartButton_clicked()
 
     // Reset GUI and The Log
     ui->logTextEdit->clear();
-    ui->logTextEdit->append("Game restarted. Factory online. Controls ready.");
+    appendLog("Game restarted. Factory online. Controls ready.", LogTone::System);
     ui->pauseButton->setText("Pause");
 
     updateUI();
@@ -175,39 +219,40 @@ void MainWindow::on_restartButton_clicked()
 // Main simulation tick: advance clankers and resolve combat.
 void MainWindow::gameLoop()
 {
-    factory.updateAll(1.0f);
+    factory.updateAll(); // Tell all units to do their work (Worker/Scout/Defender behaviors)
     
-    // Log factory state using friend function operator<<
-    std::ostringstream ss;
-    ss << factory;
-    ui->logTextEdit->append("[State] " + QString::fromStdString(ss.str()));
+    std::ostringstream ss; // String stream for logging factory state
+    ss << factory; // Uses operator<< to format factory info
+    appendLog("[State] " + QString::fromStdString(ss.str()), LogTone::Info); // Log current state
 
-    for (ClankerSim::Enemy &enemy : enemies) {
-        if (!enemy.isAlive()) {
+    for (ClankerSim::Enemy &enemy : enemies) { // Process each enemy that's currently attacking
+        if (!enemy.isAlive()) { // Skip dead enemies
             continue;
         }
-        const std::string& outcome = factory.defendAgainst(enemy);
-        ui->logTextEdit->append(QString::fromStdString(outcome));
-        if (!enemy.isAlive()) {
-            ui->logTextEdit->append(QString::fromStdString(enemy.getName() + " defeated!"));
+        const std::string& outcome = factory.defendAgainst(enemy); // Run combat - defenders/workers fight back
+        appendLog(QString::fromStdString(outcome), LogTone::Danger); // Log combat results
+        if (!enemy.isAlive()) { // Check if we killed the enemy
+            appendLog(QString::fromStdString(enemy.getName() + " defeated!"), LogTone::Success);
+            kickOffSalvageScan(); // Start background thread to salvage dead enemy for resources
         }
     }
 
-    enemies.erase(std::remove_if(enemies.begin(), enemies.end(), [](ClankerSim::Enemy &enemy){ return !enemy.isAlive(); }), enemies.end());
+    enemies.erase(std::remove_if(enemies.begin(), enemies.end(), [](ClankerSim::Enemy &enemy){ return !enemy.isAlive(); }), enemies.end()); // Remove dead enemies from list
 
-    updateUI();
+    updateUI(); // Refresh display with new stats
+    checkSalvageScan(); // Check if background salvage operation finished
 }
 
 // Spawns progressively tougher enemies on a timer.
 void MainWindow::spawnEnemy()
 {
-    enemySpawnCount++;
+    enemySpawnCount++; // Track how many waves we've spawned (for difficulty scaling)
 
-    int hp = 40 + enemySpawnCount * 5;
+    int hp = 40 + enemySpawnCount * 5; // Each wave: enemies get +5 HP
     int attack = 5 + enemySpawnCount / 2;
 
     enemies.emplace_back(hp, attack);
-    ui->logTextEdit->append(QString("An enemy approaches! HP: %1, ATK: %2").arg(hp).arg(attack));
+    appendLog(QString("An enemy approaches! HP: %1, ATK: %2").arg(hp).arg(attack), LogTone::Danger);
 
     updateUI();
 }
@@ -245,8 +290,10 @@ void MainWindow::updateUI()
             continue;
         }
 
+        // Vraag 31: useful bool (isDestroyed(), inactive check)
         const bool destroyed = c->isDestroyed();
         const int energyValue = c->getEnergy();
+        // Vraag 31: useful bool (inactive check)
         const bool inactive = !destroyed && energyValue <= 0;
         QString typeLabel = "Unknown";
         int attackValue = 0;
@@ -297,7 +344,8 @@ void MainWindow::updateUI()
         {"Scouts", scoutCount, scoutEnergy},
         {"Defenders", defenderCount, defenderEnergy}
     };
-    auto makeItem = [](const QString& text, Qt::Alignment alignment = Qt::AlignCenter) {
+        
+    auto makeItem = [](const QString& text, Qt::Alignment alignment = Qt::AlignCenter) { // Vraag 40: lambda function (small factory for QTableWidgetItem)
         auto* item = new QTableWidgetItem(text);
         item->setTextAlignment(alignment);
         item->setFlags(item->flags() & ~Qt::ItemIsEditable);
@@ -357,7 +405,7 @@ void MainWindow::updateUI()
     updateBatteryButtonState();
 
     if (factory.isDestroyed()) {
-        ui->logTextEdit->append("GAME OVER! Factory destroyed!");
+        appendLog("GAME OVER! Factory destroyed!", LogTone::Danger);
         gameTimer->stop();
         enemySpawnTimer->stop();
     }
@@ -389,4 +437,68 @@ void MainWindow::updateBatteryButtonState()
         }
     }
     ui->giveBatteryButton->setEnabled(enable);
+}
+
+void MainWindow::kickOffSalvageScan()
+{
+    if (salvageInProgress)
+        return;
+
+    const auto clankers = factory.getClankers();
+    const ClankerSim::ScoutClanker* availableScout = nullptr;
+    for (const auto* unit : clankers) {
+        if (!unit || unit->isDestroyed()) {
+            continue;
+        }
+        if (unit->getEnergy() <= 20) {
+            continue;
+        }
+        if (const auto* scout = dynamic_cast<const ClankerSim::ScoutClanker*>(unit)) {
+            availableScout = scout;
+            break;
+        }
+    }
+
+    if (!availableScout) {
+        appendLog("[Salvage] Need a ready scout to clean up.", LogTone::Warning);
+        return;
+    }
+
+    salvageInProgress = true;
+    salvageScoutName = QString::fromStdString(availableScout->getName());
+    appendLog(QString("[Salvage] %1 moves to clean the wreck.").arg(salvageScoutName), LogTone::Salvage);
+
+    const int resourcesSnapshot = factory.getResources();
+    const int nearbyThreats = static_cast<int>(enemies.size());
+
+    // Vraag 41: usage of threads (std::async for salvage calculation)
+    salvageFuture = std::async(std::launch::async, [resourcesSnapshot, nearbyThreats]() { // Vraag 49: external library (C++ std::async)
+        std::this_thread::sleep_for(std::chrono::milliseconds(700));
+        int total = 6 + nearbyThreats * 2 + std::max(0, 150 - resourcesSnapshot) / 30;
+        if (total < 5) total = 5;
+        if (total > 18) total = 18;
+        return total;
+    });
+}
+
+void MainWindow::checkSalvageScan()
+{
+    if (!salvageInProgress)
+        return;
+
+    if (!salvageFuture.valid()) {
+        salvageInProgress = false;
+        return;
+    }
+
+    if (salvageFuture.wait_for(std::chrono::seconds(0)) != std::future_status::ready) {
+        return;
+    }
+    const int bonus = salvageFuture.get();
+    salvageInProgress = false;
+    factory.addResources(bonus);
+    const QString scoutLabel = salvageScoutName.isEmpty() ? QStringLiteral("Scout") : salvageScoutName;
+    appendLog(QString("[Salvage] %1 hauled +%2 resources.").arg(scoutLabel).arg(bonus), LogTone::Salvage);
+    salvageScoutName.clear();
+    updateUI();
 }

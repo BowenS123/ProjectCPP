@@ -3,36 +3,30 @@
 
 #include <algorithm>
 #include <chrono>
-#include <utility>
 #include <stdexcept>
 
-namespace ClankerSim {
+// Vraag 27: own namespace
+namespace ClankerSim { 
 
 // Default factory bootstraps with a placeholder name.
+// Vraag 17: constructor forwarding
 Factory::Factory() : Factory("Unnamed Factory") {}
 
-Factory::Factory(std::string nameValue) 
-    : name(std::move(nameValue)),
-      id(255), 
-      health(MAX_HEALTH / 2), 
-      clankers(),
-      loggingEnabled(true), 
-      resources(100), 
-      batteryStorage(2), 
-      logPath("factory_log.txt"), 
-      logFile(logPath, std::ios::app) 
+// Vraag 16: member initialization in constructors (the stuff behind a colon)
+Factory::Factory(std::string nameValue) : name(std::move(nameValue)), id(255), health(MAX_HEALTH / 2), clankers(), loggingEnabled(true), resources(100), batteryStorage(2), logPath("factory_log.txt"), logFile(logPath, std::ios::app)
 {
-    if (!logFile) {
-        loggingEnabled = false;
+    if (!logFile) { // Check if file opened successfully
+        loggingEnabled = false; // Disable logging if file can't be opened
     } else {
-        log("Factory constructed");
+        log("Factory constructed"); // Write first log entry
     }
 }
 
+// Vraag 15: destructor (sluit file netjes)
 Factory::~Factory() {
-    if (logFile.is_open()) {
-        log("Factory destroyed");
-        logFile.close();
+    if (logFile.is_open()) { // Check if log file is still open
+        log("Factory destroyed"); // Write final log entry
+        logFile.close(); // Close file properly before program ends
     }
 }
 
@@ -51,48 +45,51 @@ bool Factory::isDestroyed() const {
 
 // Central entry point: wires a freshly built clanker into the roster
 void Factory::produceClanker(std::unique_ptr<Clanker> clankerPtr) {
-    if (!clankerPtr) {
+    if (!clankerPtr) { // Safety check - ensure pointer is not null
+        // Vraag 39: useful exception handling (throw on incorrect input)
         throw std::invalid_argument("Cannot produce null clanker (exception handling example)");
     }
 
-    Clanker* raw = clankerPtr.get();
-    if (auto* worker = dynamic_cast<WorkerClanker*>(raw)) {
-        worker->setFactory(*this);
-    } else if (auto* scout = dynamic_cast<ScoutClanker*>(raw)) {
-        scout->setFactory(*this);
-    } else if (auto* defender = dynamic_cast<DefenderClanker*>(raw)) {
-        defender->setFactory(*this);
+    Clanker* raw = clankerPtr.get(); // Get raw pointer (unique_ptr still owns it)
+    if (auto* worker = dynamic_cast<WorkerClanker*>(raw)) { // Check if it's a Worker
+        worker->setFactory(*this); // Link worker to this factory
+    } else if (auto* scout = dynamic_cast<ScoutClanker*>(raw)) { // Check if it's a Scout
+        scout->setFactory(*this); // Link scout to this factory
+    } else if (auto* defender = dynamic_cast<DefenderClanker*>(raw)) { // Check if it's a Defender
+        defender->setFactory(*this); // Link defender to this factory
     }
-    log("Produced clanker: " + raw->getName());
-    clankers.push_back(std::move(clankerPtr));
+    log("Produced clanker: " + raw->getName()); // Log creation event
+    clankers.push_back(std::move(clankerPtr)); // Transfer ownership to our vector
 }
 
 // Converts resources into rechargeable batteries for clankers.
+// Vraag 20: useful member function (resources -> battery)
 bool Factory::produceBattery() {
-    const int cost = 15;
-    if (resources < cost) {
-        return false;
+    const int cost = 15; // Each battery costs 15 resources
+    if (resources < cost) { // Not enough resources to build
+        return false; // Tell caller we failed
     }
-    resources -= cost;
-    batteryStorage += 1;
-    log("Produced 1 battery");
-    return true;
+    resources -= cost; // Spend the resources
+    batteryStorage += 1; // Add battery to storage
+    log("Produced 1 battery"); // Log the production
+    return true; // Tell caller we succeeded
 }
 
 // Runs every clanker once per tick to advance their behavior via virtual work()
-void Factory::updateAll(float dt) {
-    auto isActive = [](const std::unique_ptr<Clanker>& c) {
-        return c && !c->isDestroyed();
+// Vraag 40: nuttige lambda (filter actief)
+void Factory::updateAll() {
+    // Vraag 29: const reference parameter (avoid copying unique_ptr)
+    auto isActive = [](const std::unique_ptr<Clanker>& c) { // Lambda checks if unit is alive
+        return c && !c->isDestroyed(); // Valid pointer AND not destroyed
     };
 
-    for (auto& uptr : clankers) {
-        if (isActive(uptr)) {
-            uptr->doWork(dt);
+    for (auto& uptr : clankers) { // Loop through all units
+        if (isActive(uptr)) { // Only process living units
+            uptr->doWork(); // Tell unit to do its job (Worker/Scout/Defender specific)
         }
     }
 }
 
-// Apply direct damage from enemies when no defenders remain.
 void Factory::takeDamage(int dmg) {
     if (dmg <= 0) {
         return;
@@ -126,8 +123,9 @@ int Factory::getResources() const {
 }
 
 std::vector<const Clanker*> Factory::getClankers() const {
-    std::vector<const Clanker*> snapshot;
+    std::vector<const Clanker*> snapshot; // Vraag 36: useful container (read-only snapshot for UI)
     snapshot.reserve(clankers.size());
+    // Vraag 29: const reference in range-loop (avoid unnecessary copies)
     for (const auto& uptr : clankers) {
         if (uptr) {
             snapshot.push_back(uptr.get());
@@ -157,10 +155,9 @@ bool Factory::giveBatteryTo(unsigned char targetId) {
             continue;
         }
         if (uptr->getId() == targetId) {                                    // Found matching clanker
-            if (uptr->getEnergy() >= 100) {                                 // Already full energy
+            if (uptr->isFullEnergy()) {
                 return false;   
             }
-            // C++ REQUIREMENT: Call-by-reference parameter
             uptr->recharge(*this);                                          // Recharge clanker 
             log("Battery given to clanker ID " + std::to_string(targetId));
             return true;
@@ -169,23 +166,25 @@ bool Factory::giveBatteryTo(unsigned char targetId) {
     return false;
 }
 
-// Using template instead: factory.produceUnit<WorkerClanker>(WORKER_COST, "Worker");
 /*
+REMOVED - REPLACED BY TEMPLATE
+These three functions were moved to a single generic template function
+because they performed nearly identical operations. The template approach is better because:
+- One function instead of three
+- Extensible: Easy to add new unit
+
 bool Factory::produceWorker() {
-    if (resources < WORKER_COST) {                                          // Not enough resources
+    if (resources < WORKER_COST) {
         return false;
     }
-    resources -= WORKER_COST;                                               // Deduct cost
-    auto unit = std::make_unique<WorkerClanker>("Worker", 0);               // Create worker
-     unsigned char id = unit->getId();                                      // Store ID before transfer
-    produceClanker(std::move(unit));                                        // Transfer ownership to factory                               
-    log("Produced Worker (ID=" + std::to_string(id) + ")");                 // Log production
+    resources -= WORKER_COST;
+    auto unit = std::make_unique<WorkerClanker>("Worker", 0);
+    unsigned char id = unit->getId();
+    produceClanker(std::move(unit));
+    log("Produced Worker (ID=" + std::to_string(id) + ")");
     return true;
 }
-*/
 
-// Using template instead: factory.produceUnit<ScoutClanker>(SCOUT_COST, "Scout");
-/*
 bool Factory::produceScout() {
     if (resources < SCOUT_COST) {
         return false;
@@ -197,10 +196,7 @@ bool Factory::produceScout() {
     log("Produced Scout (ID=" + std::to_string(raw->getId()) + ")");
     return true;
 }
-*/
 
-// Using template instead: factory.produceUnit<DefenderClanker>(DEFENDER_COST, "Defender");
-/*
 bool Factory::produceDefender() {
     if (resources < DEFENDER_COST) {
         return false;
@@ -215,6 +211,7 @@ bool Factory::produceDefender() {
 */
 
 // Resolve an attack step by delegating to powered clankers first.
+// Vraag 34: moderne call-by-reference
 std::string Factory::defendAgainst(Enemy& enemy) {
     if (!enemy.isAlive()) {
         return "Enemy already defeated";
@@ -252,29 +249,31 @@ std::string Factory::defendAgainst(Enemy& enemy) {
         log(std::string("First responder: ") + firstResponder->getName());
     }
 
-    std::vector<std::string> narrative;
-    auto addMessage = [&](const std::string& msg) {
-        if (!msg.empty()) {
-            narrative.push_back(msg);
+    std::vector<std::string> narrative; // Collect messages describing what happened in combat
+    // Vraag 29: const reference lambda parameter (efficient message handling)
+    // Vraag 40: lambda function (captures narrative by reference)
+    auto addMessage = [&](const std::string& msg) { // Helper lambda to add combat messages
+        if (!msg.empty()) { // Only add non-empty messages
+            narrative.push_back(msg); // Add to list
         }
     };
 
     std::string outcome;
-    if (defenderCount > 0) {
-        const int retaliateDamage = defenderCount * DefenderClanker::RETALIATION_DAMAGE;
-        enemy.takeDamage(retaliateDamage);
+    if (defenderCount > 0) { // Defenders with energy fight back first
+        const int retaliateDamage = defenderCount * DefenderClanker::RETALIATION_DAMAGE; // Each defender deals 10 damage
+        enemy.takeDamage(retaliateDamage); // Apply damage to enemy
         outcome = "Defenders deal " + std::to_string(retaliateDamage) + " damage.";
         log(outcome);
         addMessage(outcome);
-    } else if (workerCount > 0) {
-        const int retaliateDamage = workerCount * WorkerClanker::RETALIATION_DAMAGE;
-        enemy.takeDamage(retaliateDamage);
+    } else if (workerCount > 0) { // If no defenders, workers fight back
+        const int retaliateDamage = workerCount * WorkerClanker::RETALIATION_DAMAGE; // Each worker deals 5 damage
+        enemy.takeDamage(retaliateDamage); // Apply damage to enemy
         outcome = "Workers deal " + std::to_string(retaliateDamage) + " damage.";
         log(outcome);
         addMessage(outcome);
     }
 
-    if (!enemy.isAlive()) {
+    if (!enemy.isAlive()) { // Check if we killed the enemy
         if (outcome.empty()) {
             addMessage("Enemy defeated before striking.");
         }
@@ -290,7 +289,9 @@ std::string Factory::defendAgainst(Enemy& enemy) {
 
     int incomingDamage = enemy.getAttack();
     std::string retaliation;
-    auto applyDamage = [&](auto& group, const char* label) {
+    // Vraag 19: useful usage of "this" (needed for member access)
+    // Vraag 40: lambda function (generic damage applicator with captures)
+    auto applyDamage = [&, this](auto& group, const char* label) {
         bool hitSomeone = false;
         for (auto* unit : group) {
             if (!unit || unit->isDestroyed() || incomingDamage <= 0) {
@@ -302,10 +303,9 @@ std::string Factory::defendAgainst(Enemy& enemy) {
             incomingDamage -= dealt;
             hitSomeone = true;
             const int hpLeft = unit->getHp();
-            const std::string detail = unit->getName() + " takes " + std::to_string(dealt) +
-                " damage (" + std::to_string(hpLeft) + " HP left)";
+            const std::string detail = unit->getName() + " takes " + std::to_string(dealt) + " damage (" + std::to_string(hpLeft) + " HP left)";
             addMessage(detail);
-            log(detail);
+            this->log(detail);
         }
         if (hitSomeone) {
             if (!retaliation.empty()) {
@@ -351,13 +351,13 @@ std::string Factory::defendAgainst(Enemy& enemy) {
     }
     return joined.empty() ? outcome : joined;
 }
-
+// Vraag 29: const reference parameter (avoid string copy on every log call)
 void Factory::log(const std::string& message) const {
     if (!loggingEnabled || !logFile.is_open()) {
         return;
     }
 
-    const auto timestamp = std::chrono::system_clock::now().time_since_epoch().count();
+    const auto timestamp = std::chrono::system_clock::now().time_since_epoch().count(); // Vraag 49: external library (std::chrono)
     logFile << '[' << timestamp << "] " << message << '\n';
 }
 
