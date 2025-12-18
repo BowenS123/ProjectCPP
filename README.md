@@ -44,7 +44,7 @@ Your goal is to maintain your factory and survive enemy waves:
 
 ## How to Build and Run
 
-See [HowToStartGame.md](Docs/HowToStartGame.md) for detailed instructions on downloading, setting up Qt Creator, building, and playing the game.
+See [HowToStartGame.md](Docs/HowToStartUpGame.md) for detailed instructions on downloading, setting up Qt Creator, building, and playing the game.
 
 ## Project Requirements Checklist
 
