@@ -39,12 +39,12 @@ Your goal is to maintain your factory and survive enemy waves:
 
 ## Requirements
 
-* Qt framework Qt6.
+* Qt framework (Qt 6.x recommended).
 * C++ (C++17 or higher).
 
 ## How to Build and Run
 
-See [HowToStartGame.md](Docs/HowToStartUpGame.md) for detailed instructions on downloading, setting up Qt Creator, building, and playing the game.
+See [HowToStartUpGame.md](Docs/HowToStartUpGame.md) for detailed instructions on downloading, setting up Qt Creator, building, and playing the game.
 
 ## Project Requirements Checklist
 
@@ -75,7 +75,7 @@ This project fulfills the following C++ and OOP course requirements:
 - ✅ **Fully working project**: Game runs with complete mechanics (production, combat, resource management).
 - ✅ **Sufficient git commits**: Regular commits throughout development.
 - ✅ **Correct files on git**: All source files, assets, and documentation included.
-- ✅ **Working build manual**: See [HowToStartGame.md](Docs/HowToStartUpGame.md) for complete build instructions.
+- ✅ **Working build manual**: See [HowToStartUpGame.md](Docs/HowToStartUpGame.md) for complete build instructions.
 
 #### OOP
 - ✅ **At least 2 default constructors**: Multiple classes have default constructors.
@@ -106,13 +106,12 @@ This project fulfills the following C++ and OOP course requirements:
 - ✅ **Useful string class usage**: QString and std::string for text handling.
 - ✅ **Useful container class**: std::vector, QList for managing collections.
 - ✅ **Useful usage of nullptr**: Modern null pointer literal instead of NULL.
-- ✅ **Useful usage of (modern) file-I/O**: Used for saving/loading game state.
+- ✅ **Useful usage of (modern) file-I/O**: Used for saving game state.
 - ✅ **Useful exception handling**: Try-catch blocks for error conditions.
-- ✅ **Useful usage of lambda function**: Lambdas used in Qt signal connections and algorithms.
+- ✅ **Useful usage of lambda function**: Lambdas used in Qt signal connections.
 - ✅ **Useful usage of threads**: Background processing for game simulation.
 
 ### Uitbreiding
-
 - ✅ **Useful Qt class**: Multiple Qt classes (QMainWindow, QWidget, QPushButton, etc.).
 - ✅ **Useful usage of signals/slots**: Qt signal/slot mechanism for UI interaction and event handling.
 - ✅ **Test-driven development**: Comprehensive test plan documented in [TestPlan.md](Docs/TestPlan.md) covering all major features.
@@ -120,6 +119,6 @@ This project fulfills the following C++ and OOP course requirements:
 - ❌ **Report a bug ticket on another project**
 - ✅ **Usage of a GUI**: Complete Qt-based graphical user interface.
 - ❌ **Usage of OpenGL or other 3D engine**
-- ✅ **Useful usage of an external library**: Qt framework extensively used and CPP.
+- ✅ **Useful usage of an external library**: Qt framework extensively used (QMainWindow, QTimer, QTableWidget, signals/slots).
 - ❌ **Project that communicates with hardware**
-- ✅ **Nice extra**: color-coded HTML logging 
+- ✅ **Nice extra**: color-coded HTML logging (dynamic color-coding with lambda functions) 
