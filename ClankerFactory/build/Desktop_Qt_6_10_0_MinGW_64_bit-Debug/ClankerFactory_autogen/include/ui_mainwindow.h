@@ -62,6 +62,7 @@ public:
     QPushButton *produceBatteryButton;
     QPushButton *giveBatteryButton;
     QPushButton *pauseButton;
+    QPushButton *restartButton;
     QGroupBox *logGroupBox;
     QVBoxLayout *logLayout;
     QLabel *logHintLabel;
@@ -254,6 +255,11 @@ public:
 
         controlsGridLayout->addWidget(pauseButton, 5, 0, 1, 1);
 
+        restartButton = new QPushButton(controlsGroupBox);
+        restartButton->setObjectName("restartButton");
+
+        controlsGridLayout->addWidget(restartButton, 6, 0, 1, 1);
+
 
         controlsAndLogLayout->addWidget(controlsGroupBox);
 
@@ -338,6 +344,7 @@ public:
         produceBatteryButton->setText(QCoreApplication::translate("MainWindow", "Produce Battery", nullptr));
         giveBatteryButton->setText(QCoreApplication::translate("MainWindow", "Give Battery to Selected", nullptr));
         pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
+        restartButton->setText(QCoreApplication::translate("MainWindow", "Restart", nullptr));
         logGroupBox->setTitle(QCoreApplication::translate("MainWindow", "Mission Log", nullptr));
         logHintLabel->setText(QCoreApplication::translate("MainWindow", "Latest events", nullptr));
         logTextEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "Production updates, combat results, and warnings appear here.", nullptr));
